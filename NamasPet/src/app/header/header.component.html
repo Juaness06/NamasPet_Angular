@@ -1,0 +1,34 @@
+<header> <!--header de la pagina-->
+    <div id="contenedorLogoTitulo">
+        <div id="contenedorLogo">
+            <img id="logo" src="\assets\Imagenes\logo-blanco.png" alt="Logo NamasPet" width="100" height="100" />
+        </div>
+        <div id="contenedorTitulo">
+            <h1 class="titulo">NAMASPET</h1>
+        </div>
+    </div>
+    <div id="contenedorMenuDesplegable">
+        <nav class="navbar">
+            <ul class="menuHorizontal">
+                <li><a th:href="@{/}">Inicio</a></li> <!-- ir al landing page-->
+                <li>
+                    <a>Tratamientos</a>
+                </li>
+                <li>
+                    <a th:href="@{/perro/all}">Mascotas</a> <!-- ver las mascotas-->
+                </li>
+                <li>
+                    <a>Información</a>
+                </li>
+                <li><a th:href="@{/cliente/all}">Clientes</a></li> <!-- ver los clientes-->
+                <li id="btnItem">
+                    <button class="btnPerfil">
+                        <a id="btnLogin" th:href="@{/login/cliente}">
+                            <img class="btnPerfil" src="\assets\Imagenes\logo_corrected.png"> <!--boton de login-->
+                        </a>
+                    </button>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</header>
