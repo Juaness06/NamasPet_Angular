@@ -1,4 +1,6 @@
-#bienvenida, #blog, #contenedorPerritoFooter{
+#bienvenida,
+#blog,
+#contenedorPerritoFooter {
   background-color: #d0fdd7;
 }
 
@@ -34,7 +36,6 @@ aside {
   border-radius: 3px;
 }
 
-
 main .contenedor {
   flex-direction: column;
 }
@@ -68,69 +69,65 @@ main .contenedor {
   align-items: center;
   font-size: 15px;
   color: #d8d9e7;
-
 }
 
-
-.DivCarrusel{
-  margin-left: 10PX;
+.DivCarrusel {
+  margin-left: 10px;
   position: relative;
-  width: 820PX;
+  width: 820px;
   height: 475px;
-  box-shadow: 0 8px 32px 0 rgb(23,26,74);
+  box-shadow: 0 8px 32px 0 rgb(23, 26, 74);
   border-radius: 10px;
   overflow: hidden;
 }
 
-.carrusel{
+.carrusel {
   width: 400%;
   height: 100%;
   display: flex;
 }
 
-.slider-section{
+.slider-section {
   width: calc(100% / 4);
   height: 100%;
 }
 
-.slider-section img{
+.slider-section img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
 .btn-left,
-.btn-right{
+.btn-right {
   display: flex;
   position: absolute;
   top: 50%;
   font-size: 1.5rem;
   background-color: transparent;
   border-radius: 50%;
-  padding:5px;
+  padding: 5px;
   font-weight: 600;
   cursor: pointer;
   color: aquamarine;
   transform: translate(0, -50%);
-  transition: .5s ease;
+  transition: 0.5s ease;
   user-select: none;
 }
 
 .btn-left:hover,
-.btn-right:hover{
+.btn-right:hover {
   background-color: #64c27b;
-  color: white  ;
+  color: white;
 }
 
-.btn-left{
+.btn-left {
   left: 10px;
 }
 
-.btn-right{
+.btn-right {
   right: 10px;
 }
-
-
 
 .nombrePerrito {
   font-family: "Patua One", serif;
@@ -236,40 +233,11 @@ main .contenedor {
   color: #171a4a;
 }
 
-/* *  ============ custom shape footer =========== */
-
-.custom-shape-divider-bottom-1707855607 {
-  position: relative;
-  left: 0;
-  width: 100%;
-  bottom: 0;
-  overflow: hidden;
-  line-height: 0;
-  transform: rotate(180deg);
-  z-index: -1;
-}
-
-.custom-shape-divider-bottom-1707855607 svg {
-  position: relative;
-  display: block;
-  width: 100%;
-  height: 174px;
-  transform: rotateY(180deg);
-}
-
-.custom-shape-divider-bottom-1707855607 .shape-fill {
-  fill: #64c27b;
-}
-
-.textoFoterin {
-  font-family: "Dosis", sans-serif;
-}
-
-#mapa{
+#mapa {
   margin-left: 20px;
 }
 
-#textoConMapa{
+#textoConMapa {
   display: flex;
   height: 400px;
   margin-bottom: 100px;
@@ -279,30 +247,30 @@ main .contenedor {
   background-color: #d0fdd7;
   margin-top: 50px;
   position: relative;
-  z-index: 2; 
+  z-index: 2;
 }
 
 #perritoFooter {
   position: absolute;
-  bottom: -0px; 
+  bottom: -0px;
   left: 15%;
   transform: translateY(70%);
-  z-index: 3; 
+  z-index: 3;
 }
 
-#bienvenida{
+#bienvenida {
   display: flex;
   justify-content: space-evenly;
   margin-top: 10px;
 }
 
-#nombrePerrito{
-  font-family: 'Patua One', sans-serif;
+#nombrePerrito {
+  font-family: "Patua One", sans-serif;
   color: #171a4a;
   font-size: 80px;
 }
 
-#divTestimonioPerrito{
+#divTestimonioPerrito {
   display: flex;
   flex-direction: column;
   word-wrap: break-word;
@@ -310,8 +278,8 @@ main .contenedor {
   max-height: 200px;
 }
 
-#testimonioPerrito{
-  font-family: 'Patua One', sans-serif;
+#testimonioPerrito {
+  font-family: "Patua One", sans-serif;
   color: #171a4a;
   font-size: 25px;
   max-width: 400px;
@@ -320,74 +288,74 @@ main .contenedor {
   min-width: 400px;
 }
 
-#divNombrePerrito{
+#divNombrePerrito {
   margin-bottom: 30px;
 }
 
-#divTestimonioPerritoTexto{
+#divTestimonioPerritoTexto {
   max-width: 400px;
-  max-height:200px;
+  max-height: 200px;
 }
 
-.perrritoAcostado{
+.perrritoAcostado {
   background-color: #d0fdd7;
 }
 
 /* *  ============ perrito animado =========== */
 
 * {
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 body,
 html {
-	width: 100%;
-	height: 100%;
+  width: 100%;
+  height: 100%;
 }
 .container {
-	width: 100%;
-	height: 350px;
-	display: flex;
-	justify-content: center;
-	align-items: center;
+  width: 100%;
+  height: 350px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .dog {
-	width: 160px;
-	height: 186px;
-	position: relative;
+  width: 160px;
+  height: 186px;
+  position: relative;
   margin-bottom: 40px;
 }
 @keyframes head {
-	0% {
-		transform: rotate(0deg);
-	}
-	30% {
-		transform: rotate(0deg);
-	}
-	40% {
-		transform: rotate(-20deg);
-	}
-	80% {
-		transform: rotate(-20deg);
-	}
-	90% {
-		transform: rotate(0deg);
-	}
-	100% {
-		transform: rotate(0deg);
-	}
+  0% {
+    transform: rotate(0deg);
+  }
+  30% {
+    transform: rotate(0deg);
+  }
+  40% {
+    transform: rotate(-20deg);
+  }
+  80% {
+    transform: rotate(-20deg);
+  }
+  90% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
 }
 .dog-head {
-	width: 100px;
+  width: 100px;
   height: 90px;
   position: absolute;
-	z-index: 5;
+  z-index: 5;
   top: 30px;
   left: calc(50% - 50px);
   background-color: #efc092;
   border-radius: 50%;
-	animation: head 6s linear infinite;
+  animation: head 6s linear infinite;
 }
 .dog-head:before,
 .dog-head:after {
@@ -409,7 +377,7 @@ html {
   transform: rotate(-49deg);
 }
 .dog-mouth {
-	width: 60px;
+  width: 60px;
   height: 35px;
   background-color: #fee2d2;
   position: absolute;
@@ -419,8 +387,8 @@ html {
   border-radius: 50%;
 }
 .dog-mouth:after {
-	content: "";
-	width: 10px;
+  content: "";
+  width: 10px;
   height: 40px;
   background-color: #fee2d2;
   position: absolute;
@@ -430,36 +398,36 @@ html {
   border-radius: 20px;
 }
 .dog-nose {
-	width: 16px;
-	height: 10px;
-	position: absolute;
-	top: 8px;
-	left: calc(50% - 8px);
-	background-color: #000;
-	border-radius: 50%;
+  width: 16px;
+  height: 10px;
+  position: absolute;
+  top: 8px;
+  left: calc(50% - 8px);
+  background-color: #000;
+  border-radius: 50%;
 }
 @keyframes tongue {
-	0% {
-		height: 10px;
-	}
-	30% {
-		height: 10px;
-	}
-	40% {
-		height: 20px;
-	}
-	60% {
-		height: 10px;
-	}
-	80% {
-		height: 20px;
-	}
-	90% {
-		height: 10px;
-	}
-	100% {
-		height: 10px;
-	}
+  0% {
+    height: 10px;
+  }
+  30% {
+    height: 10px;
+  }
+  40% {
+    height: 20px;
+  }
+  60% {
+    height: 10px;
+  }
+  80% {
+    height: 20px;
+  }
+  90% {
+    height: 10px;
+  }
+  100% {
+    height: 10px;
+  }
 }
 .dog-tongue {
   width: 20px;
@@ -469,10 +437,10 @@ html {
   left: calc(50% - 10px);
   background-color: #f4a4ad;
   border-radius: 0 0 10px 10px;
-	animation: tongue 4s linear infinite;
+  animation: tongue 4s linear infinite;
 }
 .dog-eyes {
-	width: 10px;
+  width: 10px;
   height: 16px;
   background-color: #000;
   position: absolute;
@@ -494,32 +462,32 @@ html {
 }
 .dog-ears {
   width: 80px;
-	height: 50px;
-	position: absolute;
-	z-index: 0;
-	top: -2px;
-	border-radius: 150px 0 150px 0;
-	background-color: #efc092;
+  height: 50px;
+  position: absolute;
+  z-index: 0;
+  top: -2px;
+  border-radius: 150px 0 150px 0;
+  background-color: #efc092;
 }
 .dog-ears:after {
-	content: "";
+  content: "";
   width: 50px;
-	height: 30px;
-	position: absolute;
-	z-index: 0;
-	top: 8px;
-	left: 20px;
-	border-radius: 150px 0 150px 0;
-	transform: rotate(-176deg);
-	background-color: #fee2d2;
+  height: 30px;
+  position: absolute;
+  z-index: 0;
+  top: 8px;
+  left: 20px;
+  border-radius: 150px 0 150px 0;
+  transform: rotate(-176deg);
+  background-color: #fee2d2;
 }
 .ears-left {
-	left: -22px;
-	transform: rotate(-105deg);
+  left: -22px;
+  transform: rotate(-105deg);
 }
 .ears-right {
-	right: -22px;
-	transform: rotate(-22deg);
+  right: -22px;
+  transform: rotate(-22deg);
 }
 .dog-body {
   width: 54px;
@@ -551,7 +519,7 @@ html {
   border-radius: 100px 100px 0 0;
 }
 .dog-foot {
-	width: 20px;
+  width: 20px;
   height: 13px;
   position: absolute;
   z-index: 5;
@@ -559,18 +527,18 @@ html {
   left: 8px;
   background-color: #fce2d3;
   border-radius: 10px 10px 0 0;
-	box-shadow: 33px 0 0 #fce2d3;
+  box-shadow: 33px 0 0 #fce2d3;
 }
 @keyframes tail {
-	0% {
-  	transform: rotate(-47deg);
-	}
-	100% {
-  	transform: rotate(-57deg);
-	}
+  0% {
+    transform: rotate(-47deg);
+  }
+  100% {
+    transform: rotate(-57deg);
+  }
 }
 .dog-tail {
-	width: 10px;
+  width: 10px;
   height: 50px;
   position: absolute;
   top: 120px;
@@ -578,14 +546,14 @@ html {
   background-color: #ecc093;
   transform: rotate(-47deg);
   border-radius: 10px 0 0 0px / 50px 0 0 0px;
-	animation: tail .08s infinite alternate;
+  animation: tail 0.08s infinite alternate;
 }
 .ball {
-	width: 30px;
-	height: 30px;
-	position: absolute;
-	bottom: 0;
-	right: 0px;
-	border-radius: 50%;
-	background-color: #6E64F0;
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  bottom: 0;
+  right: 0px;
+  border-radius: 50%;
+  background-color: #6e64f0;
 }

@@ -2,10 +2,10 @@
 
     <div id="divTestimonioPerrito"> <!--div que contiene el testimonio del perro-->
         <div id="divNombrePerrito">
-            <h1 id="nombrePerrito">MANOLO</h1>
+            <h1 id="nombrePerrito" #nombrePerrito>MANOLO</h1>
         </div>
         <div id="divTestimonioPerritoTexto">
-            <p id="testimonioPerrito"> <!--texto del testimonio del perro-->
+            <p id="testimonioPerrito" #testimonioPerrito> <!--texto del testimonio del perro-->
                 Hola soy Manolo! Un dia me senti super enfermo <br>mis dueñose me llevaron a NamasPet y me cuidaron muy
                 bien
             </p>
@@ -31,29 +31,27 @@
     </div>
 
     <div class="DivCarrusel"> <!--div que contiene el carrusel-->
-        <div class="carrusel" id="slider">
-            <section class="slider-section">
-                <img id="imagen" src="\assets\Imagenes\perro1JPG.jpg" alt="" />
-            </section>
+        <div class="carrusel" #slider>
+            <div class="slider-section">
+                <img class="imagen" src="assets/Imagenes/perro1JPG.jpg" alt="" />
+            </div>
 
-            <section class="slider-section">
-                <img id="imagen" src="\assets\Imagenes\perro6JPG.jpg" alt="" height="700" />
-            </section>
+            <div class="slider-section">
+                <img class="imagen" src="assets/Imagenes/perro6JPG.jpg" alt="" />
+            </div>
 
-            <section class="slider-section">
-                <img id="imagen" src="\assets\Imagenes\perro4JPG.jpg" alt="" />
-            </section>
+            <div class="slider-section">
+                <img class="imagen" src="assets/Imagenes/perro4JPG.jpg" alt="" />
+            </div>
 
-            <section class="slider-section">
-                <img id="imagen" src="\assets\Imagenes\perro5JPG.jpg}" alt="" />
-            </section>
+            <div class="slider-section">
+                <img class="imagen" src="assets/Imagenes/perro5JPG.jpg" alt="" />
+            </div>
 
         </div>
-        <div class="btn-left"><i class='bx bx-chevron-right bx-rotate-180'></i></div>
-        <div class="btn-right"><i class='bx bxs-chevron-right'></i></div>
+        <div class="btn-left" (click)="moveToLeft()"><i class='bx bx-chevron-right bx-rotate-180'></i></div>
+        <div class="btn-right" (click)="moveToRight()"><i class='bx bxs-chevron-right'></i></div>
     </div>
-
-
 </section>
 
 
