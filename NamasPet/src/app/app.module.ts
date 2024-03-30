@@ -8,6 +8,15 @@ import { FooterComponent } from './footer/footer.component';
 import { LandingPageComponent } from './landing-page/landing-page.component';
 import { ListaMascotasComponent } from './mascotas/lista-mascotas/lista-mascotas.component';
 import { VerMascotaComponent } from './mascotas/ver-mascota/ver-mascota.component';
+import { ListaClientesComponent } from './clientes/lista-clientes/lista-clientes.component';
+import { ErrorPageComponent } from './error-page/error-page.component';
+import { LogInComponent } from './clientes/log-in/log-in.component';
+import { TarjetonesComponent } from './mascotas/tarjetones/tarjetones.component';
+import { AgregarMascotasComponent } from './mascotas/agregar-mascotas/agregar-mascotas.component';
+import { EditarMascotasComponent } from './mascotas/editar-mascotas/editar-mascotas.component';
+import { AgregarClientesComponent } from './clientes/agregar-clientes/agregar-clientes.component';
+import { EditarClientesComponent } from './clientes/editar-clientes/editar-clientes.component';
+import { VerMascotasClienteComponent } from './clientes/ver-mascotas-cliente/ver-mascotas-cliente.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +25,16 @@ import { VerMascotaComponent } from './mascotas/ver-mascota/ver-mascota.componen
     FooterComponent,
     LandingPageComponent,
     ListaMascotasComponent,
-    VerMascotaComponent
+    VerMascotaComponent,
+    ListaClientesComponent,
+    ErrorPageComponent,
+    LogInComponent,
+    TarjetonesComponent,
+    AgregarMascotasComponent,
+    EditarMascotasComponent,
+    AgregarClientesComponent,
+    EditarClientesComponent,
+    VerMascotasClienteComponent
   ],
   imports: [
     BrowserModule,

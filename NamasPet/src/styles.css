@@ -2,6 +2,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Macondo&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Patua+One&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Dosis:wght@200..800&family=Patua+One&display=swap");
+@import "~bootstrap/dist/css/bootstrap.css";
 
 
 html,body {
@@ -10,7 +11,4 @@ html,body {
   background-color: #d0fdd7;
   box-sizing: border-box;
   scroll-margin-top: 30px
-}
-body{
-  background-color: #d0fdd7;
 }

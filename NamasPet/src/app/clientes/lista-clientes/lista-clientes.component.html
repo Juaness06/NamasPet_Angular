@@ -1,0 +1,49 @@
+<section id="sectionTabla"> <!--Section de la pagina-->
+
+    <div id="divTitulo">
+        <div id="space"> <!-- div del espacio en la pagina-->
+        </div>
+        <div id="titulo">
+            <h1>CLIENTES</h1>
+        </div>
+        <div id="divBtn">
+            <a [routerLink]="['/clientes/add']" id="anchorAgregarClientes">
+                <button id="btnAgregar">Agregar</button> <!--boton de agregar-->
+            </a>
+        </div>
+    </div>
+    <div id="divTabla">
+        <table>
+            <thead>
+                <tr> <!--Cabecueras de columna-->
+                    <th>CEDULA</th>
+                    <th>NOMBRE</th>
+                    <th>CORREO</th>
+                    <th>CELULAR</th>
+                    <th>USUARIO</th>
+                    <th>MASCOTAS</th>
+                    <th>ACCIONES</th>
+                </tr>
+            </thead>
+            <tbody> <!--cuerpo de la tabla-->
+                <tr th:each="cliente : ${cliente}"> <!--Se trae a todos los clinetes-->
+                    <td th:text="${cliente.cedula}"></td>
+                    <td th:text="${cliente.nombre}"></td>
+                    <td class="correo" th:text="${cliente.correo}"></td>
+                    <td th:text="${cliente.celular}"></td>
+                    <td th:text="${cliente.usuario}"></td>
+                    <td>
+                        <a id="anchorPerros" [routerLink]="['/cliente/{cedula}/mascotas']">PERROS</a>
+                        <!--anchor de ver perros-->
+                    </td>
+                    <td>
+                        <a class="btnEdi" [routerLink]="['cliente/edit/{cedula}']">EDITAR</a>
+                        <!--anchor de editar-->
+                        <a class="btnEli" th:href="@{/cliente/delete/{cedula}(cedula=${cliente.cedula})}">ELIMINAR</a>
+                        <!--anchor de eliminar-->
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</section>

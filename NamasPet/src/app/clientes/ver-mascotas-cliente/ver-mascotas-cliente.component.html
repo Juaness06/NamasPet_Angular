@@ -1,0 +1,16 @@
+<section id="sectionTitulo">
+    <h1 id="titulo" th:text="${'Perros del cliente: ' + cliente.nombre}"></h1>
+</section>
+
+<section class="sectionTarjetones">
+    <div class="divTarjetones">
+        <a class="btnTarjeton" th:each="perros : ${perros}" th:href="@{/perro/find/{id}(id=${perros.id})}">
+            <div class="card">
+                <div class="card-image-container">
+                    <img th:src="${perros.imagen}" alt="Perro" />
+                </div>
+                <p class="card-title" th:text="${perros.nombre}"></p>
+            </div>
+        </a>
+    </div>
+</section>

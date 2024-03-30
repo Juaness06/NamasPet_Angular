@@ -8,8 +8,14 @@
   margin-top: 50px;
 }
 
+#titulo{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 #space {
-  width: 450px;
+  width: 440px;
 }
 
 #divTitulo {
@@ -19,13 +25,6 @@
   font-weight: 400;
   font-size: 35px;
   color: #171a4a;
-  width: 1160px;
-}
-
-#divTituloMascotas{
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 #btnAgregar {
@@ -35,35 +34,19 @@
   margin-bottom: 10px;
 }
 
-#anchorAgregarMascota{
+#anchorAgregarClientes {
+  margin-left: 325px;
   text-decoration: none;
-  margin-left: 275px;
   display: flex;
   width: fit-content;
   height: fit-content;
 }
 
-
-#space {
+#divBtn {
   display: flex;
-  align-items: flex-end; /* Esto alineará tus ítems al final */
-  height: 100%; /* Asegúrate de que el div ocupe la altura que deseas */
-  height: 90px;
 }
 
-.iconos {
-  text-decoration: none;
-  color: #171a4a;
-  margin-right: 10px;
-  /* Asegúrate de que el tamaño de los íconos y el espaciado es el deseado */
-}
-
-.iconos:hover {
-  font-size: 38px;
-}
-
-
-/** ============ tabla =========== */
+/* ============ tabla =========== */
 
 #divTabla, table {
   margin: 0;
@@ -91,9 +74,9 @@
 
 #divTabla {
   border-radius: 10px;
-  max-height: 505px;
+  max-height: 562px;
   overflow-y: scroll;
-  width: 1150px;
+  width: 1160px;
   display: block;
 }
 
@@ -217,10 +200,45 @@ td span {
   text-decoration: none;
 }
 
+.correo {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 310px; /* Ajusta este valor según el ancho deseado para tu celda */
+}
+
+#anchorPerros {
+  position: relative;
+  text-decoration: none;
+  color: lightsalmon;
+  font-size: 20px;
+  letter-spacing: 0.5px;
+}
+
+#anchorPerros::after {
+  content: "";
+  position: absolute;
+  background-color: #000000;
+  height: 3;
+  width: 0;
+  left: 0;
+  bottom: -10px;
+  transition: 0.3s;
+}
+
+#anchorPerros:hover {
+  font-size: 23px;
+  text-decoration: none;
+}
+
+#anchorPerros:hover::after {
+  width: 100%;
+  text-decoration: none;
+}
+
 /** ============ btn agregar =========== */
 
 #btnAgregar {
-  position: static;
   font-family: "Patua One", sans-serif;
   text-decoration: none;
   background-color: #171a4a;
@@ -254,59 +272,4 @@ td span {
 #btnAgregar:hover::after {
   width: 100%;
   text-decoration: none;
-}
-
-/** ============ btn ver tarjetones =========== */
-
-#btnVistaGeneral {
-  margin-left: 5px;
-  border-top-left-radius: 10px;
-  border-bottom-left-radius: 10px;
-  border-top-right-radius: 10px;
-  margin-bottom: 10px;
-}
-
-#btnVistaGeneral {
-  position: static;
-  font-family: "Patua One", sans-serif;
-  text-decoration: none;
-  background-color: #171a4a;
-  color: white;
-  font-size: 20px;
-  letter-spacing: 0.5px;
-  height: 80px;
-  width: 150px;
-  border: 1px solid #64c27b;
-  color: #ccff7a;
-  top: 0px;
-  border-bottom-right-radius: 10px;
-}
-
-#btnVistaGeneral::after {
-  content: "";
-  position: absolute;
-  background-color: #000000;
-  height: 3;
-  width: 0;
-  left: 0;
-  bottom: -10px;
-  transition: 0.3s;
-}
-
-#btnVistaGeneral:hover {
-  font-size: 22px;
-  text-decoration: none;
-}
-
-#btnVistaGeneral:hover::after {
-  width: 100%;
-  text-decoration: none;
-}
-
-#tdEliminarEditar{
-    display: flex;
-    flex-direction: column;
-    margin: 0px;
-    justify-content: center;
-    align-items: center;
 }

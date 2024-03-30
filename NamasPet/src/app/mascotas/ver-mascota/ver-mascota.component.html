@@ -1,1 +1,16 @@
-<p>ver-mascota works!</p>
+<section id="sectionInformacionPerro">
+    <div class="card">
+        <div class="card-image-container">
+            <img th:src="${perro.imagen}" />
+        </div>
+    </div>
+    <div id="divInformacionPerrito"> <!--Aqui van los atributos del perro, mirar que los nombres coincidan-->
+        <h1 th:text="${perro.nombre}"></h1>
+        <h3 th:text="'ID: ' + ${perro.id}"> </h3>
+        <h3 th:text="'Raza: ' + ${perro.raza}"></h3>
+        <h3 th:text="'Edad: ' + ${perro.edad} + ' años'"></h3>
+        <h3 th:text="'Actividad: ' + ${perro.actividad}"></h3>
+        <h3 th:text="'Peso: ' + ${perro.peso} + ' kg'"></h3>
+        <h3 th:text="'# Atenciones: ' + ${perro.numeroAtenciones}"></h3>
+    </div>
+</section>

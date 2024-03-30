@@ -10,20 +10,20 @@
     <div id="contenedorMenuDesplegable">
         <nav class="navbar">
             <ul class="menuHorizontal">
-                <li><a th:href="@{/}">Inicio</a></li> <!-- ir al landing page-->
+                <li><a [routerLink]="['/home']">Inicio</a></li> <!-- ir al landing page-->
                 <li>
                     <a>Tratamientos</a>
                 </li>
                 <li>
-                    <a th:href="@{/perro/all}">Mascotas</a> <!-- ver las mascotas-->
+                    <a [routerLink]="['/mascotas/all']">Mascotas</a> <!-- ver las mascotas-->
                 </li>
                 <li>
                     <a>Información</a>
                 </li>
-                <li><a th:href="@{/cliente/all}">Clientes</a></li> <!-- ver los clientes-->
+                <li><a [routerLink]="['/clientes/all']">Clientes</a></li> <!-- ver los clientes-->
                 <li id="btnItem">
                     <button class="btnPerfil">
-                        <a id="btnLogin" th:href="@{/login/cliente}">
+                        <a id="btnLogin" [routerLink]="['/login']">
                             <img class="btnPerfil" src="\assets\Imagenes\logo_corrected.png"> <!--boton de login-->
                         </a>
                     </button>

@@ -1,0 +1,12 @@
+.mensaje { 
+    background-color: #171a4a;
+    color: white;
+    padding: 40px;
+    border-radius: 20px;
+}
+
+:host {
+    display: block; /* O flex, dependiendo de cómo quieras organizar el componente */
+    min-height: 100vh;
+    background-color: #d0fdd7; /* Fondo para todo el componente */
+}

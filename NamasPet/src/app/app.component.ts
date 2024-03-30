@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router, NavigationEnd } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,29 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'NamasPet';
+
+  pantallasPermitidasHeader = ['home', 'mascotas', 'clientes'];
+  pantallasPermitidasFooter = ['home']; // Asegúrate de que el nombre sea consistente
+
+  mostrarHeader: boolean = true;
+  mostrarFooter: boolean = true;
+
+  constructor(private router: Router) {
+    this.router.events.subscribe(event => {
+      if (event instanceof NavigationEnd) {
+        this.mostrarHeaderFooter(event.url);
+      }
+    });
+  }
+
+  // Método para mostrar o no el header y el footer
+  mostrarHeaderFooter(url: string) {
+    const pantalla = url.split('/')[1]; // Asume que la URL es del tipo '/pantalla/...'
+    this.mostrarHeader = this.pantallasPermitidasHeader.includes(pantalla);
+    this.mostrarFooter = this.pantallasPermitidasFooter.includes(pantalla);
+    if(pantalla == '**'){
+      this.mostrarHeader = false;
+      this.mostrarFooter = false;
+    }
+  }
 }

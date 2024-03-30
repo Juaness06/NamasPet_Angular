@@ -1,0 +1,44 @@
+<section id="sectionTitulo">
+    <h1 id="titulo">REGISTRAR MASCOTA</h1>
+</section>
+
+<section id="sectionForm">
+    <div id="divForm">
+        <form th:action="@{/perro/agregar}" method="POST" th:object="${perro}"> <!-- formulario de registro con metodo POST-->
+            <div>
+                <label for="nombre" class="form-label">Nombre</label>
+                <input type="text" th:field="*{nombre}" id="nombre">
+            </div>
+            <div>
+                <label for="raza">Raza</label>
+                <input type="text" th:field="*{raza}" id="raza">
+            </div>
+            <div>
+                <label for="edad">Edad</label>
+                <input type="number" th:field="*{edad}" id="edad">
+            </div>
+            <div>
+                <label for="peso">Peso</label>
+                <input type="number" th:field="*{peso}" id="peso" step="0.01">
+            </div>
+            <div>
+                <label for="estado">Estado</label>
+                <select id="spinnerDeEstados">
+                    <option value="true">Activo</option>
+                    <option value="false">Inactivo</option>
+                </select>
+            </div>                
+            <div>
+                <label for="imagen">Foto</label>
+                <input type="url" th:field="*{imagen}" id="imagen">
+            </div>
+            <div>
+                <label for="dueno">Cedula Del Dueñ@</label>
+                <input type="number" th:field="*{cliente.cedula}" id="dueno"> <!--campo de cedula del dueño-->
+            </div>
+            <div id="btnRegistrar">
+                <button type="submit">Registrar</button> <!--boton de registrar-->
+            </div>
+        </form>
+    </div>
+</section>
