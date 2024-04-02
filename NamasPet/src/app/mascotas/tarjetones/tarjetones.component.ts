@@ -21,7 +21,7 @@ export class TarjetonesComponent implements OnInit {
 
   mostrarMascota(mascotaId: number): void {
     // Navega a la página de detalles de la mascota
-    this.router.navigate(['/perro/find', mascotaId]);
+    this.router.navigate(['/mascotas', mascotaId]);
   }
   
 

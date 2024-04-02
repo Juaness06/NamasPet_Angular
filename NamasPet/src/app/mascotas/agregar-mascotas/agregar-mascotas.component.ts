@@ -1,6 +1,7 @@
 import { Component, EventEmitter, Output } from '@angular/core';
 import { Mascota } from '../mascota';
 
+
 @Component({
   selector: 'app-agregar-mascotas',
   templateUrl: './agregar-mascotas.component.html',
@@ -23,11 +24,7 @@ export class AgregarMascotasComponent {
     peso: 0.0,
     actividad: false, // O 'false', según lo que necesites
     imagen: '',
-
-
     dueno: 0, // Temporal, según comentas
-
-
     numeroAtenciones: 0
   };
 
@@ -38,11 +35,10 @@ export class AgregarMascotasComponent {
     this.addMascotaEvent.emit(this.sendMascota);
   }
 
-  registrarMascota(form: any): void {
+  registrarMascota(): void {
     console.log(this.formMascota);
     this.sendMascota = Object.assign({},this.formMascota);
 
     this.addMascotaEvent.emit(this.sendMascota);
   }
-  
 }

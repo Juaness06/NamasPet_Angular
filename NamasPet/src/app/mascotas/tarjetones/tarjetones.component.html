@@ -1,10 +1,18 @@
 <section id="sectionTitulo">
-    <h1 id="titulo">MASCOTAS</h1>
+    <div id="space"> <!--Corregir de una vez lo que se pone-->
+        <a class="iconos" [routerLink]="['/mascotas/tarjetones']"><i class='bx bx-grid-alt'></i></a>
+        <a class="iconos" [routerLink]="['/mascotas/all']"><i class='bx bx-table'></i></a>
+    </div>
+    <div>
+        <h1 id="titulo">MASCOTAS</h1>
+    </div>
+    <div id="spaceInvisible">
+    </div>
 </section>
 
 <section class="sectionTarjetones"> <!-- Aquí se contienen todos los tarjetones -->
     <div class="divTarjetones">
-        <a class="btnTarjeton" *ngFor="let mascota of mascotasList" >
+        <a class="btnTarjeton" *ngFor="let mascota of mascotasList" [routerLink]="['/mascotas/', mascota.id]" >
             <div class="card" >
                 <div class="card-image-container" (click)="mostrarMascota(mascota.id)"> <!-- Aquí se muestra la imagen de la mascota -->
                     <!-- Uso de [src] para vincular dinámicamente la propiedad de imagen de la mascota -->

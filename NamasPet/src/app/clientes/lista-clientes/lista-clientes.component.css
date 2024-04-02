@@ -1,5 +1,9 @@
 /* ============ section tabla =========== */
 
+h1{
+  font-weight: 900;
+}
+
 #sectionTabla {
   display: flex;
   flex-direction: column;
