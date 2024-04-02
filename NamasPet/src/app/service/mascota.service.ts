@@ -7,6 +7,7 @@ import { Mascota } from '../mascotas/mascota';
 })
 export class MascotaService {
   mascotasList: Mascota[] = [
+    /*
     {
     id:1,
     nombre:"maria",
@@ -18,13 +19,14 @@ export class MascotaService {
     numeroAtenciones:0,
     dueno:123456789
     }
+    */
   ];
 
   constructor() {
-    //this.generarMascotas(); // Inicializa las mascotas en el constructor
+    this.generarMascotas(); // Inicializa las mascotas en el constructor
   }
 
-  /*
+  
   generarMascotas() {
     const nombresPerros = [
       "Max", "Bella", "Charlie", "Luna", "Rocky", "Molly", "Toby", "Lucy", "Coco", "Bailey",
@@ -61,7 +63,7 @@ export class MascotaService {
   generarNumeroAleatorio(min: number, max: number): number {
     return Math.floor(Math.random() * (max - min + 1)) + min;
   }
-  */
+
 
   findAll() {
     return this.mascotasList;

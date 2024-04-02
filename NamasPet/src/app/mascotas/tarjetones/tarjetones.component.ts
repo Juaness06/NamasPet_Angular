@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Mascota } from '../mascota';
 import { MascotaService } from 'src/app/service/mascota.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-tarjetones',
@@ -12,15 +13,17 @@ export class TarjetonesComponent implements OnInit {
   mascotasList: Mascota[] = []; // Initialize the list
   seleccionarMascota?: Mascota;  // Make it optional
   
-  constructor(private mascotaService: MascotaService) {}
+  constructor(private mascotaService: MascotaService, private router: Router) {}
 
   ngOnInit(): void {
     this.mascotasList = this.mascotaService.findAll();
   }
 
-  mostrarMascota(mascota: Mascota): void {
-    this.seleccionarMascota = mascota; // Assign the pet to the property
+  mostrarMascota(mascotaId: number): void {
+    // Navega a la página de detalles de la mascota
+    this.router.navigate(['/perro/find', mascotaId]);
   }
+  
 
   agregarMascota(mascota: Mascota): void {
     this.mascotasList.push(mascota);

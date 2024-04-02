@@ -2,15 +2,16 @@
     <h1 id="titulo">MASCOTAS</h1>
 </section>
 
-<section class="sectionTarjetones"> <!--Aqui se contienen todos los tarjetones-->
+<section class="sectionTarjetones"> <!-- Aquí se contienen todos los tarjetones -->
     <div class="divTarjetones">
-        <a class="btnTarjeton" th:each="perros : ${perros}" th:href="@{/perro/find/{id}(id=${perros.id})}"> <!--Aqui se hace la redireccion a la informacion del perro-->
-            <div class="card">
-                <div class="card-image-container"> <!--Aqui se muestra la imagen del perro-->
-                    <img th:src="${perros.imagen}" alt="Perro" />
+        <a class="btnTarjeton" *ngFor="let mascota of mascotasList" >
+            <div class="card" >
+                <div class="card-image-container" (click)="mostrarMascota(mascota.id)"> <!-- Aquí se muestra la imagen de la mascota -->
+                    <!-- Uso de [src] para vincular dinámicamente la propiedad de imagen de la mascota -->
+                    <img [src]="mascota.imagen" alt="Imagen de la mascota">
                 </div>
-                <p class="card-title" th:text="${perros.nombre}"></p>
-                <p class="card-text" th:text="${'Dueñ@: ' + perros.cliente.nombre}"></p> <!--Aqui se muestra el duenyo del perro-->
+                <!-- Uso de interpolación {{ }} para mostrar el nombre y el dueño de la mascota -->
+                <p class="card-title">{{ mascota.nombre }}</p>
             </div>
         </a>
     </div>
