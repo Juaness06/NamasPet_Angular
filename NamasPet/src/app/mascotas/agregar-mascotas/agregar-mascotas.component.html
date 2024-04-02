@@ -4,10 +4,10 @@
 
 <section id="sectionForm">
     <div id="divForm">
-        <form #formMascota="ngForm" (ngSubmit)="registrarMascota(registrarFormMascota)">
+        <form #formMascota="ngForm" (ngSubmit)="registrarMascota(formMascota)">
             <div>
                 <label for="nombre" class="form-label">Nombre</label>
-                <input type="text" [(ngModel)]="formMascota.nombre" name="nombre" id="nombre">
+                <input type="text"name="nombre" id="nombre" [(ngModel)]="formMascota.nombre" >
             </div>
             <div>
                 <label for="raza">Raza</label>
@@ -15,26 +15,19 @@
             </div>
             <div>
                 <label for="edad">Edad</label>
-                <input type="number" [(ngModel)]="formMascota.edad" name="edad" id="edad">
+                <input type="number" name="edad" id="edad" [(ngModel)]="formMascota.edad" >
             </div>
             <div>
                 <label for="peso">Peso</label>
-                <input type="number" [(ngModel)]="formMascota.peso" name="peso" id="peso" step="0.01">
-            </div>
-            <div>
-                <label for="estado">Estado</label>
-                <select [(ngModel)]="formMascota.actividad" name="estado" id="spinnerDeEstados">
-                    <option value="true">Activo</option>
-                    <option value="false">Inactivo</option>
-                </select>
+                <input type="number" name="peso" id="peso" step="0.01" [(ngModel)]="formMascota.peso" >
             </div>
             <div>
                 <label for="imagen">Foto</label>
-                <input type="url" [(ngModel)]="formMascota.imagen" name="imagen" id="imagen">
+                <input type="url" name="imagen" id="imagen" [(ngModel)]="formMascota.imagen" >
             </div>
             <div>
                 <label for="dueno">Cedula Del Dueñ@</label>
-                <input type="number" [(ngModel)]="formMascota.cliente.cedula" name="dueno" id="dueno">
+                <input type="number"  name="dueno" id="dueno" [(ngModel)]="formMascota.dueno">
             </div>
             <div id="btnRegistrar">
                 <button type="submit">Registrar</button>

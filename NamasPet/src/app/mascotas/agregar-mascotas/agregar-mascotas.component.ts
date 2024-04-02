@@ -7,8 +7,12 @@ import { Mascota } from '../mascota';
   styleUrls: ['./agregar-mascotas.component.css']
 })
 export class AgregarMascotasComponent {
-  @Output() addMascotaEvent = new EventEmitter<Mascota>();
-  @Output() ocultarFormularioEvent = new EventEmitter<boolean>();
+  @Output() 
+  addMascotaEvent = new EventEmitter<Mascota>();
+
+  @Output() 
+  ocultarFormularioEvent = new EventEmitter<boolean>();
+  
   sendMascota!:Mascota;
 
   formMascota: Mascota = {
@@ -17,7 +21,7 @@ export class AgregarMascotasComponent {
     raza: '',
     edad: 0,
     peso: 0.0,
-    actividad: true, // O 'false', según lo que necesites
+    actividad: false, // O 'false', según lo que necesites
     imagen: '',
 
 
@@ -36,7 +40,9 @@ export class AgregarMascotasComponent {
 
   registrarMascota(form: any): void {
     console.log(this.formMascota);
-    // No necesitas asignar a una nueva variable, puedes emitir directamente formMascota
-    this.addMascotaEvent.emit({...this.formMascota}); // Usar el spread operator para clonar el objeto
+    this.sendMascota = Object.assign({},this.formMascota);
+
+    this.addMascotaEvent.emit(this.sendMascota);
   }
+  
 }
