@@ -29,23 +29,21 @@
                 </tr>
             </thead>
             <tbody>
-                <tr th:each="perros : ${perros}">
-                    <td th:text="${perros.id}"></td>
-                    <td th:text="${perros.nombre}"></td>
-                    <td th:text="${perros.raza}"></td>
-                    <td th:text="${perros.edad}"></td>
-                    <td th:text="${perros.actividad}"></td>
-                    <td th:text="${perros.peso}"></td>
-                    <!--<td><span th:text="${perro.enfermedades}"></span></td> -->
+                <tr *ngFor="let mascota of mascotasList">
+                    <td>{{ mascota.id }}</td>
+                    <td>{{ mascota.nombre }}</td>
+                    <td>{{ mascota.raza }}</td>
+                    <td>{{ mascota.edad }}</td>
+                    <td>{{ mascota.actividad ? 'Activo' : 'Inactivo' }}</td>
+                    <td>{{ mascota.peso }}</td>
                     <td>
-                        <img th:src="${perros.imagen}" alt="Imagen de la mascota"
-                            style="max-width:100%; height:auto;" />
+                        <img [src]="mascota.imagen" alt="Imagen de la mascota"
+                             style="max-width:100%; height:auto;">
                     </td>
-                    <!--<td th:text="${perro.drogas}"></td>-->
-                    <td th:text="${perros.numeroAtenciones}"></td>
+                    <td>{{ mascota.numeroAtenciones }}</td>
                     <td id="tdEliminarEditar">
-                        <a class="btnEdi" [routerLink]="['/perro/edit']">Editar</a> <!--revisar esto-->
-                        <a class="btnEli" th:href="@{/perro/delete/{id}(id=${perros.id})}">Eliminar</a>
+                        <a class="btnEdi" [routerLink]="['/mascotas/edit', mascota.id]">Editar</a>
+                        <a class="btnEli" (click)="eliminarMascota(mascota)">Eliminar</a>
                     </td>
                 </tr>
             </tbody>

@@ -17,6 +17,7 @@ import { EditarMascotasComponent } from './mascotas/editar-mascotas/editar-masco
 import { AgregarClientesComponent } from './clientes/agregar-clientes/agregar-clientes.component';
 import { EditarClientesComponent } from './clientes/editar-clientes/editar-clientes.component';
 import { VerMascotasClienteComponent } from './clientes/ver-mascotas-cliente/ver-mascotas-cliente.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -34,11 +35,12 @@ import { VerMascotasClienteComponent } from './clientes/ver-mascotas-cliente/ver
     EditarMascotasComponent,
     AgregarClientesComponent,
     EditarClientesComponent,
-    VerMascotasClienteComponent
+    VerMascotasClienteComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
