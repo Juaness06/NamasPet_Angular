@@ -15,7 +15,7 @@ import { VerMascotaComponent } from './mascotas/ver-mascota/ver-mascota.componen
 
 const routes: Routes = [
   {path: '', pathMatch: "full", component: LandingPageComponent},
-  {path: '', pathMatch: 'full', redirectTo: 'home' }, //manera de ingresar directamente a localhost:4200
+  {path: '', pathMatch: 'full', redirectTo: '' }, //manera de ingresar directamente a localhost:4200
   {path: 'mascotas/all', component: ListaMascotasComponent},
   {path: 'mascotas/tarjetones', component: TarjetonesComponent},
   {path: 'mascotas/add', component: AgregarMascotasComponent},

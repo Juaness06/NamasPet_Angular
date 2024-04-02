@@ -76,6 +76,7 @@ export class MascotaService {
     const mascota:Mascota = this.mascotasList.find(o => o.id === id)!;
     return mascota;
   }
+  
 
   agregarMascota(mascota:Mascota){
     console.log(this.mascotasList.length)
@@ -84,4 +85,5 @@ export class MascotaService {
     console.log(mascota);
     console.log(this.mascotasList.length)
   }
+
 }

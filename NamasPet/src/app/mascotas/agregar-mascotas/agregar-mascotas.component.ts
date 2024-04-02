@@ -1,6 +1,7 @@
 import { Component, EventEmitter, Output } from '@angular/core';
 import { Mascota } from '../mascota';
 import { MascotaService } from 'src/app/service/mascota.service';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -11,15 +12,12 @@ import { MascotaService } from 'src/app/service/mascota.service';
 export class AgregarMascotasComponent {
 
   constructor(
-    private mascotaService: MascotaService
+    private mascotaService: MascotaService,
+    private router: Router
   ) { }
-
 
   @Output() 
   addMascotaEvent = new EventEmitter<Mascota>();
-
-  @Output() 
-  ocultarFormularioEvent = new EventEmitter<boolean>();
   
   sendMascota!:Mascota;
 
@@ -39,12 +37,14 @@ export class AgregarMascotasComponent {
     console.log(this.formMascota);
     this.sendMascota = Object.assign({},this.formMascota);
 
-    this.addMascotaEvent.emit(this.sendMascota);
+    //this.addMascotaEvent.emit(this.sendMascota);
 
     this.mascotaService.agregarMascota(this.formMascota);
+    this.router.navigate(['/mascotas/all']);
+
   }
 
-  registrarMascota(form:any): void {
+  registrarMascota(): void {
     console.log(this.formMascota);
     this.sendMascota = Object.assign({},this.formMascota);
 
