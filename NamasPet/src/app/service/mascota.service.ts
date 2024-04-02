@@ -7,7 +7,7 @@ import { Mascota } from '../mascotas/mascota';
 })
 export class MascotaService {
   mascotasList: Mascota[] = [
-    /*
+    
     {
     id:1,
     nombre:"maria",
@@ -19,11 +19,11 @@ export class MascotaService {
     numeroAtenciones:0,
     dueno:123456789
     }
-    */
+    
   ];
 
   constructor() {
-    this.generarMascotas(); // Inicializa las mascotas en el constructor
+    //this.generarMascotas(); // Inicializa las mascotas en el constructor
   }
 
   
@@ -66,11 +66,22 @@ export class MascotaService {
 
 
   findAll() {
+    console.log(this.mascotasList.length)
+
+
     return this.mascotasList;
   }
 
   findById(id:number):Mascota{ 
     const mascota:Mascota = this.mascotasList.find(o => o.id === id)!;
     return mascota;
+  }
+
+  agregarMascota(mascota:Mascota){
+    console.log(this.mascotasList.length)
+
+    this.mascotasList.push(mascota);
+    console.log(mascota);
+    console.log(this.mascotasList.length)
   }
 }

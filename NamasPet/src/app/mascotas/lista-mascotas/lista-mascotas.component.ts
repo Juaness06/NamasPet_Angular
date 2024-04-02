@@ -16,6 +16,7 @@ export class ListaMascotasComponent implements OnInit {
 
   ngOnInit(): void {
     this.mascotasList = this.mascotaService.findAll();
+    console.log("Numero de mascotas:" + this.mascotasList.length);
   }
 
   mostrarMascota(mascota: Mascota): void {

@@ -14,7 +14,7 @@ import { VerMascotasClienteComponent } from './clientes/ver-mascotas-cliente/ver
 import { VerMascotaComponent } from './mascotas/ver-mascota/ver-mascota.component';
 
 const routes: Routes = [
-  {path: 'home', pathMatch: "full", component: LandingPageComponent},
+  {path: '', pathMatch: "full", component: LandingPageComponent},
   {path: '', pathMatch: 'full', redirectTo: 'home' }, //manera de ingresar directamente a localhost:4200
   {path: 'mascotas/all', component: ListaMascotasComponent},
   {path: 'mascotas/tarjetones', component: TarjetonesComponent},

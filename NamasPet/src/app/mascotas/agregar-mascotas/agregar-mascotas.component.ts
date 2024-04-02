@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Output } from '@angular/core';
 import { Mascota } from '../mascota';
+import { MascotaService } from 'src/app/service/mascota.service';
 
 
 @Component({
@@ -8,6 +9,12 @@ import { Mascota } from '../mascota';
   styleUrls: ['./agregar-mascotas.component.css']
 })
 export class AgregarMascotasComponent {
+
+  constructor(
+    private mascotaService: MascotaService
+  ) { }
+
+
   @Output() 
   addMascotaEvent = new EventEmitter<Mascota>();
 
@@ -33,9 +40,11 @@ export class AgregarMascotasComponent {
     this.sendMascota = Object.assign({},this.formMascota);
 
     this.addMascotaEvent.emit(this.sendMascota);
+
+    this.mascotaService.agregarMascota(this.formMascota);
   }
 
-  registrarMascota(): void {
+  registrarMascota(form:any): void {
     console.log(this.formMascota);
     this.sendMascota = Object.assign({},this.formMascota);
 
