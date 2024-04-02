@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, inject,Input } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { MascotaService } from 'src/app/service/mascota.service';
 import { Mascota } from '../mascota';
