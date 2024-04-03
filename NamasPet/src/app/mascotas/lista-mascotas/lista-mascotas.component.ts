@@ -28,7 +28,8 @@ export class ListaMascotasComponent implements OnInit {
   }
 
   eliminarMascota(mascota: Mascota): void {
-    this.mascotasList = this.mascotasList.filter(m => m !== mascota); // Use filter for immutability
+    this.mascotasList = this.mascotasList.filter(m => m !== mascota);
+    this.mascotaService.eliminarMascota(mascota.id);
   }
 
   mostrarFormulario(): void {

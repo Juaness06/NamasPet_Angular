@@ -9,7 +9,7 @@ export class MascotaService {
   mascotasList: Mascota[] = [
     
     {
-    id:1,
+    id:101,
     nombre:"maria",
     imagen:"https://labradoresdeabantueso.com/wp-content/uploads/2023/09/Foto-Labrador-1-Guia-min.jpg",
     raza:"Beagle",
@@ -23,7 +23,7 @@ export class MascotaService {
   ];
 
   constructor() {
-    //this.generarMascotas(); // Inicializa las mascotas en el constructor
+    this.generarMascotas(); // Inicializa las mascotas en el constructor
   }
 
   
@@ -77,13 +77,25 @@ export class MascotaService {
     return mascota;
   }
   
-
+eliminarMascota(id:number){
+  const index = this.mascotasList.findIndex(o => o.id === id);
+  if (index !== -1) {
+    this.mascotasList.splice(index, 1);
+  }
+}
   agregarMascota(mascota:Mascota){
-    console.log(this.mascotasList.length)
+    mascota.id = this.mascotasList.length + 1
 
     this.mascotasList.push(mascota);
     console.log(mascota);
     console.log(this.mascotasList.length)
   }
+editarMascota(mascota:Mascota){
+  const index = this.mascotasList.findIndex(o => o.id === mascota.id);
+  if (index !== -1) {
+    this.mascotasList[index] = mascota;
+  }
+
+}
 
 }
