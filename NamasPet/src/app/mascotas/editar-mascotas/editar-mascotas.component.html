@@ -4,40 +4,38 @@
 
 <section id="sectionForm">
     <div id="divForm">
-        <form th:action="@{/perro/agregar}" method="POST" th:object="${perro}"> <!-- formulario de registro con metodo POST-->
+        <form>
             <div>
-                <label for="nombre" class="form-label">Nombre</label>
-                <input type="text" th:field="*{nombre}" id="nombre">
+                <label for="nombre" class="form-label" >Nombre</label>
+                <input type="text" name="nombre" id="nombre" [(ngModel)]="formMascota.nombre">
             </div>
             <div>
                 <label for="raza">Raza</label>
-                <input type="text" th:field="*{raza}" id="raza">
+                <input type="text" name="raza" id="raza" [(ngModel)]="formMascota.raza">
             </div>
             <div>
                 <label for="edad">Edad</label>
-                <input type="number" th:field="*{edad}" id="edad">
+                <input type="number" name="edad" id="edad" [(ngModel)]="formMascota.edad">
             </div>
             <div>
                 <label for="peso">Peso</label>
-                <input type="number" th:field="*{peso}" id="peso" step="0.01">
+                <input type="number" name="peso" id="peso" step="0.01" [(ngModel)]="formMascota.peso">
             </div>
-            <div>
-                <label for="estado">Estado</label>
-                <select id="spinnerDeEstados">
-                    <option value="true">Activo</option>
-                    <option value="false">Inactivo</option>
-                </select>
-            </div>                
+            <label for="actividad">Estado</label>
+            <select class="spinnerDeEstados" name="actividad" id="actividad" [(ngModel)]="formMascota.actividad">
+                <option value="true">Activo</option>
+                <option value="false">Inactivo</option>
+            </select>
             <div>
                 <label for="imagen">Foto</label>
-                <input type="url" th:field="*{imagen}" id="imagen">
+                <input type="url" name="imagen" id="imagen" [(ngModel)]="formMascota.imagen">
             </div>
             <div>
                 <label for="dueno">Cedula Del Dueñ@</label>
-                <input type="number" th:field="*{cliente.cedula}" id="dueno"> <!--campo de cedula del dueño-->
+                <input type="number"  name="dueno" id="dueno" [(ngModel)]="formMascota.dueno">
             </div>
             <div id="btnRegistrar">
-                <button type="submit">Registrar</button> <!--boton de registrar-->
+                <button type="submit">Registrar</button>
             </div>
         </form>
     </div>
