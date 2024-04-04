@@ -83,13 +83,18 @@ eliminarMascota(id:number){
     this.mascotasList.splice(index, 1);
   }
 }
-  agregarMascota(mascota:Mascota){
-    mascota.id = this.mascotasList.length + 1
+agregarMascota(mascota:Mascota){
+    let maxId = 0;
+    if (this.mascotasList.length > 0) {
+        maxId = Math.max(...this.mascotasList.map(m => m.id));
+    }
+    mascota.id = maxId + 1;
 
     this.mascotasList.push(mascota);
     console.log(mascota);
-    console.log(this.mascotasList.length)
+    console.log(this.mascotasList.length);
   }
+
 editarMascota(mascota:Mascota){
   const index = this.mascotasList.findIndex(o => o.id === mascota.id);
   if (index !== -1) {
