@@ -36,6 +36,7 @@ export class ListaMascotasComponent implements OnInit {
     this.mostrarForm = true;
   }
 
+
   ocultarFormulario(): void {
     this.mostrarForm = false;
   }
