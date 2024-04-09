@@ -25,11 +25,13 @@ export class ListaMascotasComponent implements OnInit {
 
   agregarMascota(mascota: Mascota): void {
     this.mascotasList.push(mascota);
+    this.mascotaService.agregarMascota(mascota);
   }
 
   eliminarMascota(mascota: Mascota): void {
     this.mascotasList = this.mascotasList.filter(m => m !== mascota);
     this.mascotaService.eliminarMascota(mascota.id);
+    
   }
 
   mostrarFormulario(): void {

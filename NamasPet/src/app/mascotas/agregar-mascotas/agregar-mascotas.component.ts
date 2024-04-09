@@ -29,7 +29,7 @@ export class AgregarMascotasComponent {
     peso: 0.0,
     actividad: false, // O 'false', según lo que necesites
     imagen: '',
-    dueno: 0, // Temporal, según comentas
+    cliente: undefined, // Temporal, según comentas
     numeroAtenciones: 0
   };
 

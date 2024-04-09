@@ -1,7 +1,9 @@
+import { Cliente } from "../clientes/Cliente";
+
 export interface Mascota {
     id:number;
-    nombre:string;
     imagen:string;
+    nombre:string;
     raza:string;
     edad:number;
     actividad:boolean;
@@ -9,7 +11,7 @@ export interface Mascota {
     numeroAtenciones:number;
 
    //despues quitar
-   dueno:number;
+   cliente?:Cliente;
   // public cliente?:Cliente; // Opcional, dependiendo de si siempre esperas tener esta información
    //public tratamientos:Tratamiento[];
 }

@@ -1,6 +1,6 @@
 import { Mascota } from "../mascotas/mascota";
 
-export class MascotaCL implements Mascota {
+export class MascotaCL  {
    public id:number;
    public nombre:string;
    public imagen:string;
@@ -11,7 +11,6 @@ export class MascotaCL implements Mascota {
    public numeroAtenciones:number;
 
    //despues quitar
-   public dueno:number;
   // public cliente?:Cliente; // Opcional, dependiendo de si siempre esperas tener esta información
    //public tratamientos:Tratamiento[];
 
