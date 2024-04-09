@@ -36,7 +36,7 @@ export class MascotaCL  {
     this.actividad = actividad
     this.peso = peso
     this.numeroAtenciones = numeroAtenciones
-    this.dueno = dueno
+  
     //this.cliente = cliente
     //this.tratamientos = tratamientos
   }   

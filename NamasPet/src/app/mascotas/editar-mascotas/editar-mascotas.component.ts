@@ -27,7 +27,7 @@ export class EditarMascotasComponent {
   ngOnInit(): void {
     this.route.paramMap.subscribe(params => {
       const id = Number(params.get('id'));
-      //this.buscarMascota = Object.assign({}, this.mascotaService.findById(id));
+      this.buscarMascota = Object.assign({}, this.mascotaService.findById(id));
       console.log(this.buscarMascota);
       this.formMascota = Object.assign({}, this.buscarMascota);
   });

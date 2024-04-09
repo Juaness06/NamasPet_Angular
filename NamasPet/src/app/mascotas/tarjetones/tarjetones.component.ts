@@ -16,7 +16,10 @@ export class TarjetonesComponent implements OnInit {
   constructor(private mascotaService: MascotaService, private router: Router) {}
 
   ngOnInit(): void {
-    this.mascotasList = this.mascotaService.findAll();
+  this.mascotaService.findAll().subscribe(
+    mascotas => this.mascotasList = mascotas
+   );
+  console.log("Numero de mascotas:" + this.mascotasList.length);
   }
 
   mostrarMascota(mascotaId: number): void {
@@ -33,6 +36,7 @@ export class TarjetonesComponent implements OnInit {
     this.mascotasList = this.mascotasList.filter(m => m !== mascota); // Use filter for immutability
   }
 
+  
   mostrarFormulario(): void {
     this.mostrarForm = true;
   }

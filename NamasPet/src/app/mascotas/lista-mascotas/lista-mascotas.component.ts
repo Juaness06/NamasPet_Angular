@@ -15,7 +15,9 @@ export class ListaMascotasComponent implements OnInit {
   constructor(private mascotaService: MascotaService) {}
 
   ngOnInit(): void {
-    this.mascotasList = this.mascotaService.findAll();
+     this.mascotaService.findAll().subscribe(
+      mascotas => this.mascotasList = mascotas
+     );
     console.log("Numero de mascotas:" + this.mascotasList.length);
   }
 
@@ -31,7 +33,7 @@ export class ListaMascotasComponent implements OnInit {
   eliminarMascota(mascota: Mascota): void {
     this.mascotasList = this.mascotasList.filter(m => m !== mascota);
     this.mascotaService.eliminarMascota(mascota.id);
-    
+
   }
 
   mostrarFormulario(): void {

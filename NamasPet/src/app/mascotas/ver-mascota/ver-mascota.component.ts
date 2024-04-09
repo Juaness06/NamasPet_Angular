@@ -23,27 +23,29 @@ constructor(
   private clienteService: CLienteService
 ) {}
 ngOnInit(): void {
-  console.log("ngoninit de mostrar");
- this.route.paramMap.subscribe(params => {
-   const id = Number(params.get('id'));
-   this.mascotaService.findById(id).pipe(
-    mergeMap(
-      (mascotainform) => {
-        this.mascota = mascotainform;
-        return this.clienteService.findById(this.cliente.cedula);
+  this.route.paramMap.subscribe(params => {
+    const id = Number(params.get('id'));
+    this.mascotaService.findById(id).subscribe(
+      (mascotaInformacion) => {
+        // Aquí, mascotaInformacion incluye todos los datos de la mascota,
+        // incluido el objeto cliente, como se define en tu interfaz.
+        this.mascota = mascotaInformacion;
+        console.log(this.mascota);
+      },
+      error => {
+        console.error('Error al buscar la mascota:', error);
       }
-    )
-   ).subscribe(
-    (cliente) => {
-      this.mascota.cliente = cliente;
-    }
-   )
- })
+    );
+  });
+}
+
+  ;
+  ngochanges(): void {
+    console.log("ngonchanges");
+  
   };
 }
-ngochanges(): void {
-  console.log("ngonchanges");
 
-};
+
 
 
