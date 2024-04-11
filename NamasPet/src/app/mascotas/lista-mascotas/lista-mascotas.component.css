@@ -156,9 +156,6 @@ td span {
   max-height: 100%;
 }
 
-#tdEliminarEditar{
-  height: 125px;
-}
 
 /* ============ anchors =========== */
 
@@ -307,14 +304,6 @@ td span {
 #btnVistaGeneral:hover::after {
   width: 100%;
   text-decoration: none;
-}
-
-#tdEliminarEditar{
-    display: flex;
-    flex-direction: column;
-    margin: 0px;
-    justify-content: center;
-    align-items: center;
 }
 
 #space2{
