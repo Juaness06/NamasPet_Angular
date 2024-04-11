@@ -38,13 +38,12 @@ agregarMascota(mascota:Mascota){
   }
 
 editarMascota(mascota:Mascota){
-  const index = this.mascotasList.findIndex(o => o.id === mascota.id);
-  if (index !== -1) {
-    this.mascotasList[index] = mascota;
-  }
+  this.http.put('http://localhost:8090/perro/editar/'+ mascota.id,mascota).subscribe();
 
 }
 findClientePerro(id:number):Observable<Mascota[]>{
+
   return this.http.get<Mascota[]>('http://localhost:8090/perro/cliente/'+id);
 }
+
 }

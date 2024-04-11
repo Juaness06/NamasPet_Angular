@@ -38,6 +38,14 @@ agregarMascota(cliente:Cliente){
    this.http.post('http://localhost:8080/cliente/agregar',cliente).subscribe();
   }
 
+  editarMascota(cliente:Cliente){
+    this.http.put('http://localhost:8080/cliente/edit/'+ cliente.cedula,cliente).subscribe();
+  
+  }
+/*
+ findPerrosCliente(id:number):Observable<Mascota[]>{
+   
+ } 
   /*
 editarMascota(cliente:Cliente){
   const index = this.clientelist.findIndex(o => o.id === mascota.id);
