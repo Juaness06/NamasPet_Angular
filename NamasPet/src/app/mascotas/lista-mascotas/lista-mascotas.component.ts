@@ -9,8 +9,8 @@ import { MascotaService } from 'src/app/service/mascota.service';
 })
 export class ListaMascotasComponent implements OnInit {
   mostrarForm: boolean = false;
-  mascotasList: Mascota[] = []; // Initialize the list
-  seleccionarMascota?: Mascota;  // Make it optional
+  mascotasList: Mascota[] = []; 
+  seleccionarMascota?: Mascota;  
   
   constructor(private mascotaService: MascotaService) {}
 

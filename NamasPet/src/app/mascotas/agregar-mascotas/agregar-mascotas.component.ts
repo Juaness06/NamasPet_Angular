@@ -22,27 +22,36 @@ export class AgregarMascotasComponent {
   sendMascota!:Mascota;
 
   formMascota: Mascota = {
-    id: 0, // Asume que el ID se genera en el backend
+    id: 0,
+    imagen: '',
     nombre: '',
     raza: '',
     edad: 0,
+    actividad: false,
     peso: 0.0,
-    actividad: false, // O 'false', según lo que necesites
-    imagen: '',
-    cliente: undefined, // Temporal, según comentas
-    numeroAtenciones: 0
-  };
+    numeroAtenciones: 0,
+    cliente: {
+      cedula: 0,
+      nombre: "",
+      correo: "",
+      celular: 0,
+      contrasena: "",
+      usuario: ""
+    }
+};
 
-  registrarFormMascota() {
-    console.log(this.formMascota);
-    this.sendMascota = Object.assign({},this.formMascota);
 
-    //this.addMascotaEvent.emit(this.sendMascota);
-
-    this.mascotaService.agregarMascota(this.formMascota);
-    this.router.navigate(['/mascotas/all']);
-
+registrarFormMascota() {
+  if (!this.formMascota.cliente) {
+      console.error('Cliente information is missing');
+      return;
   }
+  console.log(this.formMascota);
+  this.sendMascota = Object.assign({}, this.formMascota);
+
+  this.mascotaService.agregarMascota(this.formMascota);
+  this.router.navigate(['/mascotas/all']);
+}
 
   registrarMascota(): void {
     console.log(this.formMascota);

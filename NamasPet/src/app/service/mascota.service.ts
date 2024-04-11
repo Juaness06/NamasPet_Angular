@@ -21,20 +21,20 @@ export class MascotaService {
 
 
   findAll():Observable<Mascota[]> {
-    return this.http.get<Mascota[]>('http://localhost:8080/perro/all');
+    return this.http.get<Mascota[]>('http://localhost:8090/perro/all');
   }
 
   findById(id:number):Observable<Mascota>{
-    const perro = this.http.get<Mascota>('http://localhost:8080/perro/find/'+id);
+    const perro = this.http.get<Mascota>('http://localhost:8090/perro/find/'+id);
     return perro;
   }
   
 eliminarMascota(id:number){
   console.log("Eliminando mascota con id: "+id);
-  this.http.delete('http://localhost:8080/perro/delete/'+id).subscribe();
+  this.http.delete('http://localhost:8090/perro/delete/'+id).subscribe();
 }
 agregarMascota(mascota:Mascota){
-   this.http.post('http://localhost:8080/perro/agregar',mascota).subscribe();
+   this.http.post('http://localhost:8090/perro/agregar',mascota).subscribe();
   }
 
 editarMascota(mascota:Mascota){
@@ -45,6 +45,6 @@ editarMascota(mascota:Mascota){
 
 }
 findClientePerro(id:number):Observable<Mascota[]>{
-  return this.http.get<Mascota[]>('http://localhost:8080/perro/cliente/'+id);
+  return this.http.get<Mascota[]>('http://localhost:8090/perro/cliente/'+id);
 }
 }

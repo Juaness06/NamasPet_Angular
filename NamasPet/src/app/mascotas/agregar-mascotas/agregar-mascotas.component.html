@@ -31,8 +31,11 @@
                 <input type="url" name="imagen" id="imagen" [(ngModel)]="formMascota.imagen" ngModel>
             </div>
             <div>
-                <label for="dueno">Cedula Del Dueñ@</label>
-                <input type="number"  name="dueno" id="dueno" [(ngModel)]="formMascota.cliente.cedula" ngModel>
+                <div *ngIf="formMascota.cliente">
+                    <label for="dueno">Cedula Del Dueñ@</label>
+                    <input type="number" name="dueno" id="dueno" [(ngModel)]="formMascota.cliente.cedula" ngModel>
+                </div>
+                
             </div>
             <div id="btnRegistrar">
                 <button type="submit" (click)="registrarFormMascota()">Registrar</button>

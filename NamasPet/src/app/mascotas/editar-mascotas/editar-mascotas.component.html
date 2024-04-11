@@ -30,9 +30,9 @@
                 <label for="imagen">Foto</label>
                 <input type="url" name="imagen" id="imagen" [(ngModel)]="formMascota.imagen">
             </div>
-            <div>
+            <div *ngIf="formMascota.cliente">
                 <label for="dueno">Cedula Del Dueñ@</label>
-                <input type="number"  name="dueno" id="dueno" [(ngModel)]="formMascota.cliente.cedula">
+                <input type="number" name="dueno" id="dueno" [(ngModel)]="formMascota.cliente.cedula" ngModel>
             </div>
             <div id="btnRegistrar">
                 <button type="submit" (click)="actualizarMascota()">Actualizar</button> <!--revisar bien la funcion-->
