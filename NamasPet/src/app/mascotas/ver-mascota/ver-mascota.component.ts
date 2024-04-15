@@ -3,7 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { MascotaService } from 'src/app/service/mascota.service';
 import { Mascota } from '../mascota';
 import { HttpClient } from '@angular/common/http';
-import { CLienteService } from 'src/app/service/cliente.service';
+import { ClienteService } from 'src/app/service/cliente.service';
 import { mergeMap } from 'rxjs';
 
 @Component({
@@ -20,7 +20,7 @@ constructor(
   private route: ActivatedRoute,
   private router: Router,
   private http: HttpClient,
-  private clienteService: CLienteService
+  private clienteService: ClienteService
 ) {}
 ngOnInit(): void {
   this.route.paramMap.subscribe(params => {

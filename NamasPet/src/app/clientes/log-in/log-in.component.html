@@ -1,4 +1,4 @@
-<div class="login-component">
+}<div class="login-component">
     <section id="sectionTitulo" class="fondo">
         <div class="divPlanta">
             <img class="planta" src="assets/Imagenes/plantaLogIn.png" alt="plantaLogIn" width="146.23" height="222.5">
@@ -23,17 +23,13 @@
         </div>
         <div id="divlogin">
             <div class="login-box">
-                <h2>Iniciar Sesion</h2>
-                <form method="post"> <!--formulario de inicio de sesion-->
+                <h2>Iniciar Sesión</h2>
+                <form method="post" (ngSubmit)="onSubmit()">
                     <div class="user-box">
-                        <input type="text" id="cedula" name="cedula" required>
-                        <label id="labelCedula">Cedula</label>
+                        <input type="text" id="cedula" name="cedula" required [(ngModel)]="user.cedula" ngModel>
+                        <label id="labelCedula">Cédula</label>
                     </div>
-                    <div id="divIngresar">
-                        <a [routerLink]="['/clientes/']">
-                            <button id="btnIngresar" type="submit">Ingresar</button>
-                        </a>
-                    </div>
+                    <button id="btnIngresar" type="submit">Ingresar</button>
                 </form>
             </div>
         </div>

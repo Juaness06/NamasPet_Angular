@@ -1,21 +1,17 @@
-<section id="sectionTabla"> <!--Section de la pagina-->
-
+<section id="sectionTabla">
     <div id="divTitulo">
-        <div id="space"> <!-- div del espacio en la pagina-->
-        </div>
+        <div id="space"></div>
         <div id="titulo">
             <h1>CLIENTES</h1>
         </div>
         <div id="divBtn">
-            <a [routerLink]="['/clientes/add']" id="anchorAgregarClientes">
-                <button id="btnAgregar">Agregar</button> <!--boton de agregar-->
-            </a>
+            <button id="btnAgregar" (click)="mostrarFormulario()">Agregar Cliente</button>
         </div>
     </div>
     <div id="divTabla">
         <table>
             <thead>
-                <tr> <!--Cabecueras de columna-->
+                <tr>
                     <th>CEDULA</th>
                     <th>NOMBRE</th>
                     <th>CORREO</th>
@@ -25,22 +21,19 @@
                     <th>ACCIONES</th>
                 </tr>
             </thead>
-            <tbody> <!--cuerpo de la tabla-->
-                <tr th:each="cliente : ${cliente}"> <!--Se trae a todos los clinetes-->
-                    <td th:text="${cliente.cedula}"></td>
-                    <td th:text="${cliente.nombre}"></td>
-                    <td class="correo" th:text="${cliente.correo}"></td>
-                    <td th:text="${cliente.celular}"></td>
-                    <td th:text="${cliente.usuario}"></td>
+            <tbody>
+                <tr *ngFor="let cliente of clientesList">
+                    <td>{{ cliente.cedula }}</td>
+                    <td>{{ cliente.nombre }}</td>
+                    <td class="correo">{{ cliente.correo }}</td>
+                    <td>{{ cliente.celular }}</td>
+                    <td>{{ cliente.usuario }}</td>
                     <td>
-                        <a id="anchorPerros" [routerLink]="['/cliente/{cedula}/mascotas']">PERROS</a>
-                        <!--anchor de ver perros-->
+                        <a [routerLink]="['/cliente', cliente.cedula, 'mascotas']">PERROS</a>
                     </td>
                     <td>
-                        <a class="btnEdi" [routerLink]="['cliente/edit/{cedula}']">EDITAR</a>
-                        <!--anchor de editar-->
-                        <a class="btnEli" th:href="@{/cliente/delete/{cedula}(cedula=${cliente.cedula})}">ELIMINAR</a>
-                        <!--anchor de eliminar-->
+                        <a class="btnEdi" [routerLink]="['/cliente/edit', cliente.cedula]">EDITAR</a>
+                        <button class="btnEli" (click)="eliminarcliente(cliente)">ELIMINAR</button>
                     </td>
                 </tr>
             </tbody>

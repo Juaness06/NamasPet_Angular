@@ -4,7 +4,7 @@ import { LandingPageComponent } from './landing-page/landing-page.component';
 import { ListaMascotasComponent } from './mascotas/lista-mascotas/lista-mascotas.component';
 import { ListaClientesComponent } from './clientes/lista-clientes/lista-clientes.component';
 import { ErrorPageComponent } from './error-page/error-page.component';
-import { LogInComponent } from './clientes/log-in/log-in.component';
+import { LoginComponent } from './clientes/log-in/log-in.component';
 import { AgregarMascotasComponent } from './mascotas/agregar-mascotas/agregar-mascotas.component';
 import { EditarMascotasComponent } from './mascotas/editar-mascotas/editar-mascotas.component';
 import { AgregarClientesComponent } from './clientes/agregar-clientes/agregar-clientes.component';
@@ -25,7 +25,7 @@ const routes: Routes = [
   {path: 'clientes/add', component: AgregarClientesComponent},
   {path: 'cliente/edit/:cedula', component: EditarClientesComponent},
   {path: 'cliente/:cedula/mascotas', component: VerMascotasClienteComponent},
-  {path: 'login', component: LogInComponent},
+  {path: 'login', component: LoginComponent},
   {path: '**', component: ErrorPageComponent},
 ];
 

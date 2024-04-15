@@ -2,7 +2,7 @@ import { Component, EventEmitter, Output } from '@angular/core';
 import { Mascota } from '../mascota';
 import { MascotaService } from 'src/app/service/mascota.service';
 import { Router } from '@angular/router';
-import { CLienteService } from 'src/app/service/cliente.service';
+import { ClienteService } from 'src/app/service/cliente.service';
 import { Cliente } from 'src/app/clientes/Cliente';
 
 @Component({
@@ -14,7 +14,7 @@ export class AgregarMascotasComponent {
   constructor(
     private mascotaService: MascotaService,
     private router: Router,
-    private clienteService: CLienteService
+    private clienteService: ClienteService
   ) {}
 
   @Output()

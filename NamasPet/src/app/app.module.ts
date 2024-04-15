@@ -9,7 +9,7 @@ import { ListaMascotasComponent } from './mascotas/lista-mascotas/lista-mascotas
 import { VerMascotaComponent } from './mascotas/ver-mascota/ver-mascota.component';
 import { ListaClientesComponent } from './clientes/lista-clientes/lista-clientes.component';
 import { ErrorPageComponent } from './error-page/error-page.component';
-import { LogInComponent } from './clientes/log-in/log-in.component';
+import { LoginComponent } from './clientes/log-in/log-in.component';
 import { TarjetonesComponent } from './mascotas/tarjetones/tarjetones.component';
 import { AgregarMascotasComponent } from './mascotas/agregar-mascotas/agregar-mascotas.component';
 import { EditarMascotasComponent } from './mascotas/editar-mascotas/editar-mascotas.component';
@@ -29,7 +29,7 @@ import { HttpClientModule } from '@angular/common/http';
     VerMascotaComponent,
     ListaClientesComponent,
     ErrorPageComponent,
-    LogInComponent,
+    LoginComponent,
     TarjetonesComponent,
     AgregarMascotasComponent,
     AgregarMascotasComponent,
