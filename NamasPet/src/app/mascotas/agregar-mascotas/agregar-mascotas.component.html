@@ -4,7 +4,7 @@
 
 <section id="sectionForm">
     <div id="divForm">
-        <form>
+        <form (ngSubmit)="registrarFormMascota()">
             <div>
                 <label for="nombre" class="form-label">Nombre</label>
                 <input type="text" name="nombre" id="nombre" [(ngModel)]="formMascota.nombre" ngModel>
@@ -31,14 +31,13 @@
                 <input type="url" name="imagen" id="imagen" [(ngModel)]="formMascota.imagen" ngModel>
             </div>
             <div>
-                <div *ngIf="formMascota.cliente">
+                <div>
                     <label for="dueno">Cedula Del Dueñ@</label>
-                    <input type="number" name="dueno" id="dueno" [(ngModel)]="formMascota.cliente.cedula" ngModel>
+                    <input type="number" name="dueno" id="dueno" [(ngModel)]="formMascota.cedulaCliente" ngModel>
                 </div>
-                
             </div>
             <div id="btnRegistrar">
-                <button type="submit" (click)="registrarFormMascota()">Registrar</button>
+                <button type="submit">Registrar</button>
             </div>
         </form>
     </div>

@@ -5,45 +5,38 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class MascotaService {
-  mascotasList: Mascota[] = [
-    
-    ];
-    
+  mascotasList: Mascota[] = [];
 
+  constructor(private http: HttpClient) {}
 
-  constructor(private http: HttpClient) {
-    
-  }
-
-
-
-  findAll():Observable<Mascota[]> {
+  findAll(): Observable<Mascota[]> {
     return this.http.get<Mascota[]>('http://localhost:8090/perro/all');
   }
 
-  findById(id:number):Observable<Mascota>{
-    const perro = this.http.get<Mascota>('http://localhost:8090/perro/find/'+id);
-    return perro;
-  }
-  
-eliminarMascota(id:number){
-  console.log("Eliminando mascota con id: "+id);
-  this.http.delete('http://localhost:8090/perro/delete/'+id).subscribe();
-}
-agregarMascota(mascota:Mascota){
-   this.http.post('http://localhost:8090/perro/agregar',mascota).subscribe();
+  findById(id: number): Observable<Mascota> {
+    return this.http.get<Mascota>('http://localhost:8090/perro/find/' + id);
   }
 
-editarMascota(mascota:Mascota){
-  this.http.put('http://localhost:8090/perro/editar/'+ mascota.id,mascota).subscribe();
+  eliminarMascota(id: number) {
+    console.log('Eliminando mascota con id: ' + id);
+    this.http.delete('http://localhost:8090/perro/delete/' + id).subscribe();
+  }
 
-}
-findClientePerro(id:number):Observable<Mascota[]>{
+  agregarMascota(mascota: Mascota) {
+    this.http.post('http://localhost:8090/perro/agregar', mascota).subscribe();
+  }
 
-  return this.http.get<Mascota[]>('http://localhost:8090/perro/cliente/'+id);
-}
-
+  editarMascota(mascota: Mascota) {
+    this.http
+      .put('http://localhost:8090/perro/editar/' + mascota.id, mascota)
+      .subscribe();
+  }
+  findClientePerro(id: number): Observable<Mascota[]> {
+    return this.http.get<Mascota[]>(
+      'http://localhost:8090/perro/cliente/' + id
+    );
+  }
 }
