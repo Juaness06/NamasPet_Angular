@@ -6,29 +6,29 @@
     <div id="divForm">
         <form>
             <div>
-                <label for="nombre" class="form-label" >Nombre</label>
-                <input type="text" name="nombre" id="nombre" [(ngModel)]="formMascota.nombre">
+                <label for="nombre" class="form-label">Nombre</label>
+                <input type="text" name="nombre" id="nombre" [(ngModel)]="formMascota.nombre" ngModel>
             </div>
             <div>
                 <label for="raza">Raza</label>
-                <input type="text" name="raza" id="raza" [(ngModel)]="formMascota.raza">
+                <input type="text" name="raza" id="raza" [(ngModel)]="formMascota.raza" ngModel>
             </div>
             <div>
                 <label for="edad">Edad</label>
-                <input type="number" name="edad" id="edad" [(ngModel)]="formMascota.edad">
+                <input type="number" name="edad" id="edad" [(ngModel)]="formMascota.edad" ngModel>
             </div>
             <div>
                 <label for="peso">Peso</label>
-                <input type="number" name="peso" id="peso" step="0.01" [(ngModel)]="formMascota.peso">
+                <input type="number" name="peso" id="peso" step="0.01" [(ngModel)]="formMascota.peso" ngModel>
             </div>
             <label for="actividad">Estado</label>
-            <select class="spinnerDeEstados" name="actividad" id="actividad" [(ngModel)]="formMascota.actividad">
+            <select class="spinnerDeEstados" name="actividad" id="actividad" [(ngModel)]="formMascota.actividad" ngModel>
                 <option value="true">Activo</option>
                 <option value="false">Inactivo</option>
             </select>
             <div>
                 <label for="imagen">Foto</label>
-                <input type="url" name="imagen" id="imagen" [(ngModel)]="formMascota.imagen">
+                <input type="url" name="imagen" id="imagen" [(ngModel)]="formMascota.imagen" ngModel>
             </div>
             <div>
                 <label for="dueno">Cedula Del Dueñ@</label>

@@ -8,6 +8,4 @@ export interface Cliente {
     contrasena:string;
     usuario:string;
     perros?:Mascota[];
-  // public cliente?:Cliente; // Opcional, dependiendo de si siempre esperas tener esta información
-   //public tratamientos:Tratamiento[];
 }

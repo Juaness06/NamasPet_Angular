@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { BehaviorSubject, Observable, tap } from 'rxjs';
 import { Cliente } from '../clientes/Cliente';
 import { Mascota } from '../mascotas/mascota';
 
@@ -8,6 +8,11 @@ import { Mascota } from '../mascotas/mascota';
   providedIn: 'root',
 })
 export class ClienteService {
+
+  private clientesSubject = new BehaviorSubject<Cliente[]>([]);
+  public clientes$ = this.clientesSubject.asObservable();
+  updateClienteEvent: any;
+
   constructor(private http: HttpClient) {}
 
   findAll(): Observable<Cliente[]> {
@@ -25,14 +30,19 @@ export class ClienteService {
   }
 
   agregarCliente(cliente: Cliente): void {
-    this.http.post('http://localhost:8090/cliente/agregar', cliente)
-      .subscribe();
+    this.http.post('http://localhost:8090/cliente/add', cliente).subscribe();
   }
 
-  editarCliente(cliente: Cliente): void {
-    this.http.put('http://localhost:8090/cliente/edit/' + cliente.cedula, cliente)
-      .subscribe();
+  editarCliente(cliente: Cliente): Observable<any> {
+    return this.http.put(`http://localhost:8090/cliente/edit/` + cliente.cedula, cliente)
+      .pipe(
+        tap(() => {
+          this.findAll(); // Actualizar la lista después de editar
+        })
+      );
   }
+
+
 
   findPerrosCliente(cedula: number): Observable<Mascota[]> {
     return this.http.get<Mascota[]>('http://localhost:8090/cliente/' + cedula + '/mascotas');

@@ -34,6 +34,7 @@ export class MascotaService {
       .put('http://localhost:8090/perro/editar/' + mascota.id, mascota)
       .subscribe();
   }
+
   findClientePerro(id: number): Observable<Mascota[]> {
     return this.http.get<Mascota[]>(
       'http://localhost:8090/perro/cliente/' + id

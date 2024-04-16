@@ -1,9 +1,5 @@
 /* ============ section tabla =========== */
 
-h1{
-  font-weight: 900;
-}
-
 #sectionTabla {
   display: flex;
   flex-direction: column;
@@ -12,14 +8,17 @@ h1{
   margin-top: 50px;
 }
 
+#space{
+  width: 470px;
+}
+
 #titulo{
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-#space {
-  width: 440px;
+  font-family: "Macondo", cursive;
+  font-weight: bold;
+  font-weight: 900;
 }
 
 #divTitulo {
@@ -31,32 +30,15 @@ h1{
   color: #171a4a;
 }
 
-#btnAgregar {
+#btnAgregar{
+  margin-left: 345px;
   border-top-left-radius: 10px;
   border-bottom-left-radius: 10px;
   border-top-right-radius: 10px;
   margin-bottom: 10px;
 }
 
-#anchorAgregarClientes {
-  margin-left: 325px;
-  text-decoration: none;
-  display: flex;
-  width: fit-content;
-  height: fit-content;
-}
-
-#divBtn {
-  display: flex;
-}
-
 /* ============ tabla =========== */
-
-#divTabla, table {
-  margin: 0;
-  padding: 0;
-}
-
 #divTabla::-webkit-scrollbar {
   width: 15px; /* Grosor de la barra de desplazamiento */
 }
@@ -68,7 +50,7 @@ h1{
 }
 
 #divTabla::-webkit-scrollbar-thumb {
-  background: #706dca; /* Color de la barra de desplazamiento */
+  background: #706DCA; /* Color de la barra de desplazamiento */
   border-radius: 10px; /* Redondeo de las esquinas de la barra */
 }
 
@@ -76,10 +58,10 @@ h1{
   background: #64c27b; /* Color de la barra de desplazamiento al pasar el mouse */
 }
 
-#divTabla {
+#divTabla{
   border-radius: 10px;
-  max-height: 562px;
-  overflow-y: scroll;
+  max-height: 562px; 
+  overflow-y:scroll;
   width: 1160px;
   display: block;
 }
@@ -88,7 +70,6 @@ table th {
   font-family: "Patua One", serif;
   font-weight: lighter;
   font-size: 25px;
-  margin: 15px;
   padding: 15px;
   color: white;
 }
@@ -114,8 +95,7 @@ table {
   overflow: hidden;
 }
 
-td,
-th {
+td, th {
   border: 1px solid #64c27b;
 }
 
@@ -211,6 +191,7 @@ td span {
   max-width: 310px; /* Ajusta este valor según el ancho deseado para tu celda */
 }
 
+
 #anchorPerros {
   position: relative;
   text-decoration: none;
@@ -243,6 +224,7 @@ td span {
 /** ============ btn agregar =========== */
 
 #btnAgregar {
+  position:static;
   font-family: "Patua One", sans-serif;
   text-decoration: none;
   background-color: #171a4a;
@@ -276,4 +258,10 @@ td span {
 #btnAgregar:hover::after {
   width: 100%;
   text-decoration: none;
+}
+
+#thCorreo{
+  display: flex;
+  text-align: center;
+  justify-content: center;
 }

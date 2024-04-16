@@ -6,7 +6,7 @@ import { Cliente } from '../Cliente';
 @Component({
   selector: 'app-agregar-clientes',
   templateUrl: './agregar-clientes.component.html',
-  styleUrls: ['./agregar-clientes.component.css']
+  styleUrls: ['./agregar-clientes.component.css'],
 })
 export class AgregarClientesComponent {
   constructor(
@@ -25,22 +25,16 @@ export class AgregarClientesComponent {
     correo: '',
     celular: 0,
     contrasena: '',
-    usuario: ''
+    usuario: '',
   };
 
-  registrarCliente() {
-    console.log(this.formCliente);
-    if (this.clienteService.findById(this.formCliente.cedula) != null) {
-      this.sendCliente = Object.assign({}, this.formCliente);
-      this.clienteService.agregarCliente(this.formCliente); // Método corregido para agregar un cliente
-      this.router.navigate(['/clientes/all']); // Navegación actualizada al listado de clientes
-    } else {
-      console.log('El cliente no existe');
-    }
+  registrarFormCliente() {
+    this.sendCliente = Object.assign({}, this.formCliente);
+    this.clienteService.agregarCliente(this.formCliente); // Método corregido para agregar un cliente
+    this.router.navigate(['/clientes/all']); // Navegación actualizada al listado de clientes
   }
 
-  registrarFormCliente(): void {
-    console.log(this.formCliente);
+  registrarCliente(): void {
     this.sendCliente = Object.assign({}, this.formCliente);
     this.addClienteEvent.emit(this.sendCliente);
   }

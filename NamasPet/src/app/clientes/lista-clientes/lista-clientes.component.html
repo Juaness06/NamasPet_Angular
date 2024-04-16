@@ -5,7 +5,9 @@
             <h1>CLIENTES</h1>
         </div>
         <div id="divBtn">
-            <button id="btnAgregar" (click)="mostrarFormulario()">Agregar Cliente</button>
+            <a id="anchorAgregarClientes">
+                <button id="btnAgregar" [routerLink]="['/clientes/add']">Agregar Cliente</button>
+            </a>
         </div>
     </div>
     <div id="divTabla">
@@ -14,7 +16,7 @@
                 <tr>
                     <th>CEDULA</th>
                     <th>NOMBRE</th>
-                    <th>CORREO</th>
+                    <th id="thCorreo">CORREO</th>
                     <th>CELULAR</th>
                     <th>USUARIO</th>
                     <th>MASCOTAS</th>
@@ -29,11 +31,11 @@
                     <td>{{ cliente.celular }}</td>
                     <td>{{ cliente.usuario }}</td>
                     <td>
-                        <a [routerLink]="['/cliente', cliente.cedula, 'mascotas']">PERROS</a>
+                        <a id="anchorPerros" [routerLink]="['/cliente', cliente.cedula, 'mascotas']">PERROS</a>
                     </td>
                     <td>
                         <a class="btnEdi" [routerLink]="['/cliente/edit', cliente.cedula]">EDITAR</a>
-                        <button class="btnEli" (click)="eliminarcliente(cliente)">ELIMINAR</button>
+                        <a class="btnEli" (click)="eliminarcliente(cliente)">ELIMINAR</a>
                     </td>
                 </tr>
             </tbody>

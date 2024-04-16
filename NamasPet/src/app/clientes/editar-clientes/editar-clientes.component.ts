@@ -6,40 +6,55 @@ import { Cliente } from '../Cliente';
 @Component({
   selector: 'app-editar-clientes',
   templateUrl: './editar-clientes.component.html',
-  styleUrls: ['./editar-clientes.component.css']
+  styleUrls: ['./editar-clientes.component.css'],
 })
 export class EditarClientesComponent {
   constructor(
     private clienteService: ClienteService,
     private router: Router,
-    private route: ActivatedRoute,
-  ) { }
+    private route: ActivatedRoute
+  ) {}
 
-  @Output() 
+  @Output()
   updateClienteEvent = new EventEmitter<Cliente>();
-  
+
   sendCliente!: Cliente;
   buscarCliente!: Cliente;
-  formCliente!: Cliente;
+
+  formCliente: Cliente = {
+    cedula: 0,
+    nombre: '',
+    correo: '',
+    celular: 0,
+    usuario: '',
+    contrasena: '',
+  };
 
   ngOnInit(): void {
-    this.route.paramMap.subscribe(params => {
-      const id = Number(params.get('id'));
-      this.clienteService.findById(id).subscribe(
-        (clienteInformacion) => {
-         this.buscarCliente = clienteInformacion;
-         this.formCliente = Object.assign({}, this.buscarCliente);
-        },
-        error => {
-          console.error('Error al buscar el cliente:', error);
-        }
-      );
+    this.route.paramMap.subscribe((params) => {
+      const cedula = Number(params.get('cedula'));
+      console.log('Cédula obtenida de la ruta:', cedula); // Para depuración
+      if (cedula) {
+        this.clienteService.findById(cedula).subscribe(
+          (clienteInformacion) => {
+            console.log('Cliente obtenido del servicio:', clienteInformacion); // Para depuración
+            this.formCliente = clienteInformacion;
+          },
+          (error) => {
+            console.error('Error al buscar el cliente:', error);
+            // Aquí también puedes manejar la reasignación de `formCliente` o simplemente dejar el objeto como estaba.
+          }
+        );
+      }
     });
   }
+  
 
-  actualizarCliente(){
+  actualizarCliente() {
     this.sendCliente = Object.assign({}, this.formCliente);
-    this.clienteService.editarCliente(this.sendCliente);
-    this.router.navigate(['/clientes/all']);
+    this.clienteService.editarCliente(this.sendCliente).subscribe(() => {
+      this.updateClienteEvent.emit(this.sendCliente); // Emitir el cliente actualizado
+      this.router.navigate(['/clientes/all']);
+    });
   }
 }
