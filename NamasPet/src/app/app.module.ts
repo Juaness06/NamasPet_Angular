@@ -7,6 +7,8 @@ import { FooterComponent } from './footer/footer.component';
 import { LandingPageComponent } from './landing-page/landing-page.component';
 import { ListaMascotasComponent } from './mascotas/lista-mascotas/lista-mascotas.component';
 import { VerMascotaComponent } from './mascotas/ver-mascota/ver-mascota.component';
+import {VerTratamientosComponent} from './tratamientos/ver-tratamientos/ver-tratamientos.component';
+import {InformacionTratamientosComponent} from './tratamientos/informacion-tratamientos/informacion-tratamientos.component';
 import { ListaClientesComponent } from './clientes/lista-clientes/lista-clientes.component';
 import { ErrorPageComponent } from './error-page/error-page.component';
 import { LoginComponent } from './clientes/log-in/log-in.component';
@@ -37,6 +39,8 @@ import { HttpClientModule } from '@angular/common/http';
     AgregarClientesComponent,
     EditarClientesComponent,
     VerMascotasClienteComponent,
+    VerTratamientosComponent,
+    InformacionTratamientosComponent,
   ],
   imports: [
     BrowserModule,

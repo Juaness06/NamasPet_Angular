@@ -12,6 +12,8 @@ import { EditarClientesComponent } from './clientes/editar-clientes/editar-clien
 import { TarjetonesComponent } from './mascotas/tarjetones/tarjetones.component';
 import { VerMascotasClienteComponent } from './clientes/ver-mascotas-cliente/ver-mascotas-cliente.component';
 import { VerMascotaComponent } from './mascotas/ver-mascota/ver-mascota.component';
+import {VerTratamientosComponent} from './tratamientos/ver-tratamientos/ver-tratamientos.component';
+import{InformacionTratamientosComponent} from './tratamientos/informacion-tratamientos/informacion-tratamientos.component';
 
 const routes: Routes = [
   {path: '', pathMatch: "full", component: LandingPageComponent},
@@ -27,6 +29,8 @@ const routes: Routes = [
   {path: 'cliente/:cedula/mascotas', component: VerMascotasClienteComponent},
   {path: 'login', component: LoginComponent},
   {path: '**', component: ErrorPageComponent},
+  {path: 'tratamiento/all', component: VerTratamientosComponent},
+  {path: 'tratamiento/:id', component: InformacionTratamientosComponent},
 ];
 
 @NgModule({
