@@ -14,10 +14,10 @@ import { VerMascotasClienteComponent } from './clientes/ver-mascotas-cliente/ver
 import { VerMascotaComponent } from './mascotas/ver-mascota/ver-mascota.component';
 import {VerTratamientosComponent} from './tratamientos/ver-tratamientos/ver-tratamientos.component';
 import{InformacionTratamientosComponent} from './tratamientos/informacion-tratamientos/informacion-tratamientos.component';
+import { ListaDrogasComponent } from './drogas/lista-drogas/lista-drogas.component';
 
 const routes: Routes = [
-  {path: '', pathMatch: "full", component: LandingPageComponent},
-  {path: '', pathMatch: 'full', redirectTo: '' }, //manera de ingresar directamente a localhost:4200
+ //manera de ingresar directamente a localhost:4200
   {path: 'mascotas/all', component: ListaMascotasComponent},
   {path: 'mascotas/tarjetones', component: TarjetonesComponent},
   {path: 'mascotas/add', component: AgregarMascotasComponent},
@@ -28,9 +28,13 @@ const routes: Routes = [
   {path: 'cliente/edit/:cedula', component: EditarClientesComponent},
   {path: 'cliente/:cedula/mascotas', component: VerMascotasClienteComponent},
   {path: 'login', component: LoginComponent},
-  {path: '**', component: ErrorPageComponent},
   {path: 'tratamiento/all', component: VerTratamientosComponent},
   {path: 'tratamiento/:id', component: InformacionTratamientosComponent},
+  {path: 'drogas/all', component: ListaDrogasComponent},
+  {path: '**', component: ErrorPageComponent},
+  {path: '', pathMatch: "full", component: LandingPageComponent},
+  {path: '', pathMatch: 'full', redirectTo: '' },
+
 ];
 
 @NgModule({

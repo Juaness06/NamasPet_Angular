@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ClienteService } from 'src/app/service/cliente.service';
-import { TratamientoService } from 'src/app/service/tratamnientos.service';
+import { TratamientoService } from 'src/app/service/tratamientos.service';
 import { Tratamiento } from '../tratamiento';
 
 @Component({

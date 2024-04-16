@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Tratamiento } from '../tratamiento';
-import { TratamientoService } from 'src/app/service/tratamnientos.service';
+import { TratamientoService } from 'src/app/service/tratamientos.service';
 
 @Component({
   selector: 'app-ver-tratamientos',
@@ -8,27 +8,17 @@ import { TratamientoService } from 'src/app/service/tratamnientos.service';
   styleUrls: ['./ver-tratamientos.component.css']
 })
 export class VerTratamientosComponent {
-  mostrarForm: boolean = false;
-  mascotasList: Tratamiento[] = [];
-  seleccionarMascota?: Tratamiento;
+  medicamentoList: Tratamiento[] = [];
+  seleccionarMedicamento?: Tratamiento;
 
-  constructor(private mascotaService: TratamientoService) {}
+  constructor(private tratamientoService: TratamientoService) {}
 
   ngOnInit(): void {
-    this.mascotaService.findAll().subscribe((mascotas) => (this.mascotasList = mascotas));
-    console.log('Numero de mascotas:' + this.mascotasList.length);
+    this.tratamientoService.findAll().subscribe((tratamiento) => (this.medicamentoList = tratamiento));
   }
 
-  mostrarMascota(mascota: Tratamiento): void {
-    this.seleccionarMascota = mascota; // Assign the pet to the property
+  mostrarMedicamento(tratamiento: Tratamiento): void {
+    this.seleccionarMedicamento = tratamiento;
   }
 
-
-  mostrarFormulario(): void {
-    this.mostrarForm = true;
-  }
-
-  ocultarFormulario(): void {
-    this.mostrarForm = false;
-  }
 }
