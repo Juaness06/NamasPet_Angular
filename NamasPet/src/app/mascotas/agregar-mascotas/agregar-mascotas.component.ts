@@ -43,12 +43,21 @@ export class AgregarMascotasComponent {
     },
   };
 
+  formCliente: Cliente = {
+    cedula: 0,
+    nombre: '',
+    correo: '',
+    celular: 0,
+    contrasena: '',
+    usuario: '',
+  };
+
   registrarFormMascota() {
     console.log(this.formMascota);
-    if (this.clienteService.findById(this.formMascota.cedulaCliente) != null) {
-      this.formMascota.cliente!.cedula! = this.formMascota.cedulaCliente;
+    if (this.clienteService.findById(this.formCliente.cedula) != null) {
       this.sendMascota = Object.assign({}, this.formMascota);
-      this.mascotaService.agregarMascota(this.formMascota);
+      this.sendCliente = Object.assign({}, this.formCliente);
+      this.mascotaService.agregarMascota(this.formMascota,this.formCliente.cedula); 
       this.router.navigate(['/mascotas/all']);
     } else {
       console.log('El cliente no existe');

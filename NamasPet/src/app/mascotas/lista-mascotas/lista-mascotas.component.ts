@@ -23,10 +23,6 @@ export class ListaMascotasComponent implements OnInit {
     this.seleccionarMascota = mascota; // Assign the pet to the property
   }
 
-  agregarMascota(mascota: Mascota): void {
-    this.mascotasList.push(mascota);
-    this.mascotaService.agregarMascota(mascota);
-  }
 
   eliminarMascota(mascota: Mascota): void {
     this.mascotasList = this.mascotasList.filter((m) => m !== mascota);

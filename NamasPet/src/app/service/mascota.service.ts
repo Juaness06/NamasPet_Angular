@@ -25,13 +25,13 @@ export class MascotaService {
     this.http.delete('http://localhost:8090/perro/delete/' + id).subscribe();
   }
 
-  agregarMascota(mascota: Mascota) {
-    this.http.post('http://localhost:8090/perro/agregar', mascota).subscribe();
+  agregarMascota(mascota: Mascota, cedula: number) {
+    this.http.post('http://localhost:8090/perro/agregar/'+cedula, mascota).subscribe();
   }
 
-  editarMascota(mascota: Mascota) {
+  editarMascota(mascota: Mascota,cedula:number) {
     this.http
-      .put('http://localhost:8090/perro/editar/' + mascota.id, mascota)
+      .put('http://localhost:8090/perro/edit/'+cedula, mascota)
       .subscribe();
   }
 
