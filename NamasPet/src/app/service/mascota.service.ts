@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 
-import { Mascota } from '../mascotas/mascota';
+import { Mascota } from '../model/mascota';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
@@ -30,9 +30,8 @@ export class MascotaService {
   }
 
   editarMascota(mascota: Mascota,cedula:number) {
-    this.http
-      .put('http://localhost:8090/perro/edit/'+cedula, mascota)
-      .subscribe();
+    return this.http
+      .put('http://localhost:8090/perro/edit/'+cedula, mascota);
   }
 
   findClientePerro(id: number): Observable<Mascota[]> {

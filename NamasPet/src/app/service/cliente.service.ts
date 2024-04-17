@@ -1,14 +1,13 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { BehaviorSubject, Observable, tap } from 'rxjs';
-import { Cliente } from '../clientes/Cliente';
-import { Mascota } from '../mascotas/mascota';
+import { Cliente } from '../model/Cliente';
+import { Mascota } from '../model/mascota';
 
 @Injectable({
   providedIn: 'root',
 })
 export class ClienteService {
-
   private clientesSubject = new BehaviorSubject<Cliente[]>([]);
   public clientes$ = this.clientesSubject.asObservable();
   updateClienteEvent: any;
@@ -20,12 +19,15 @@ export class ClienteService {
   }
 
   findById(cedula: number): Observable<Cliente> {
-    return this.http.get<Cliente>('http://localhost:8090/cliente/find/' + cedula);
+    return this.http.get<Cliente>(
+      'http://localhost:8090/cliente/find/' + cedula
+    );
   }
 
   eliminarCliente(cedula: number): void {
     console.log('Eliminando Cliente con cédula: ' + cedula);
-    this.http.delete('http://localhost:8090/cliente/delete/' + cedula)
+    this.http
+      .delete('http://localhost:8090/cliente/delete/' + cedula)
       .subscribe();
   }
 
@@ -34,17 +36,17 @@ export class ClienteService {
   }
 
   editarCliente(cliente: Cliente): Observable<any> {
-    return this.http.put(`http://localhost:8090/cliente/edit/` + cliente.cedula, cliente)
+    return this.http
+      .put(`http://localhost:8090/cliente/edit/` + cliente.cedula, cliente)
       .pipe(
         tap(() => {
           this.findAll(); // Actualizar la lista después de editar
         })
       );
   }
-
-
-
   findPerrosCliente(cedula: number): Observable<Mascota[]> {
-    return this.http.get<Mascota[]>('http://localhost:8090/cliente/' + cedula + '/mascotas');
+    return this.http.get<Mascota[]>(
+      'http://localhost:8090/cliente/' + cedula + '/mascotas'
+    );
   }
 }
