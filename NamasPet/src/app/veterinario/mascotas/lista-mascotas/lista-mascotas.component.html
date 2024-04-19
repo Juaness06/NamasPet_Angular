@@ -1,11 +1,11 @@
 <section id="sectionTabla">
     <div id="divTitulo">
         <div id="space"> <!--Corregir de una vez lo que se pone-->
-            <a class="iconos" [routerLink]="['/mascotas/tarjetones']"><i class='bx bx-grid-alt'></i></a>
-            <a class="iconos" [routerLink]="['/mascotas/all']"><i class='bx bx-table'></i></a>
+            <a [ngClass]="{'clase-especial': mostrarEstilosEspeciales}" class="iconos" [routerLink]="['/mascotas/tarjetones']"><i class='bx bx-grid-alt'></i></a>
+            <a [ngClass]="{'clase-especial': mostrarEstilosEspeciales}" class="iconos" [routerLink]="['/mascotas/all']"><i class='bx bx-table'></i></a>
         </div>
         <div id="divTituloMascotas">
-            <h1>MASCOTAS</h1>
+            <h1 [ngClass]="{'clase-especial': mostrarEstilosEspeciales}" >MASCOTAS</h1>
         </div>
         <div id="divBtn">
             <a [routerLink]="['/mascotas/add']" id="anchorAgregarMascota">
@@ -15,7 +15,7 @@
     </div>
     <div id="divTabla">
         <table>
-            <thead>
+            <thead [ngClass]="{'clase-especial2': mostrarEstilosEspeciales}">
                 <tr>
                     <th>ID</th>
                     <th>NOMBRE</th>
@@ -30,13 +30,13 @@
             </thead>
             <tbody>
                 <tr *ngFor="let mascota of mascotasList">
-                    <td>{{ mascota.id }}</td>
-                    <td>{{ mascota.nombre }}</td>
-                    <td>{{ mascota.raza }}</td>
-                    <td>{{ mascota.edad }}</td>
-                    <td>{{ mascota.actividad ? 'Activo' : 'Inactivo' }}</td>
-                    <td>{{ mascota.peso }}</td>
-                    <td>
+                    <td [ngClass]="{'clase-especial3': mostrarEstilosEspeciales}">{{ mascota.id }}</td>
+                    <td [ngClass]="{'clase-especial3': mostrarEstilosEspeciales}">{{ mascota.nombre }}</td>
+                    <td [ngClass]="{'clase-especial3': mostrarEstilosEspeciales}">{{ mascota.raza }}</td>
+                    <td [ngClass]="{'clase-especial3': mostrarEstilosEspeciales}">{{ mascota.edad }}</td>
+                    <td [ngClass]="{'clase-especial3': mostrarEstilosEspeciales}">{{ mascota.actividad ? 'Activo' : 'Inactivo' }}</td>
+                    <td [ngClass]="{'clase-especial3': mostrarEstilosEspeciales}">{{ mascota.peso }}</td>
+                    <td [ngClass]="{'clase-especial3': mostrarEstilosEspeciales}">
                         <img [src]="mascota.imagen" alt="Imagen de la mascota"
                              style="max-width:100%; height:auto;">
                     </td>

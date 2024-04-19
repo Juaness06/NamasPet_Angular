@@ -1,25 +1,27 @@
 <div class="login-component">
     <section id="sectionTitulo" class="fondo">
         <div class="divPlanta">
-            <img class="planta" src="assets/Imagenes/plantaLogIn.png" alt="plantaLogIn" width="146.23" height="222.5">
+            <img class="planta" src="assets/Imagenes/plantaLogIn_color_changed.png" alt="plantaLogIn" width="146.23"
+                height="222.5">
         </div>
         <div id="divLogoTitulo" class="fondo">
             <div id="divLogo">
-                <img src="assets/Imagenes/logo-blanco.png" alt="Logo NamasPet" width="180" height="180" />
+                <img src="assets/Imagenes/logo-blanco_color_changed.png" alt="Logo NamasPet" width="180" height="180" />
             </div>
             <div id="divTitulo">
                 <h1>NAMASPET</h1>
             </div>
         </div>
         <div class="divPlanta">
-            <img class="planta" src="assets/Imagenes/plantaLogIn.png" alt="plantaLogIn" width="146.23" height="222.5"
-                id="plantaReflejada">
+            <img class="planta" src="assets/Imagenes/plantaLogIn_color_changed.png" alt="plantaLogIn" width="146.23"
+                height="222.5" id="plantaReflejada">
         </div>
     </section>
 
     <section id="sectionLogIn">
         <div id="plantaAbajoIzquierda">
-            <img class="planta" src="assets/Imagenes/plantaLogIn.png" alt="plantaLogIn" width="146.23" height="222.5">
+            <img class="planta" src="assets/Imagenes/plantaLogIn_color_changed.png" alt="plantaLogIn" width="146.23"
+                height="222.5">
         </div>
         <div id="divlogin">
             <div class="login-box">
@@ -31,8 +33,8 @@
                         <span></span>
                         <span></span>
                         <span></span>
-                      </button>
-                      <button id="btnLogInAdministrador" class=" btnOpcionesInicioSesion" [routerLink]="['/admin/login']">
+                    </button>
+                    <button id="btnLogInAdministrador" class=" btnOpcionesInicioSesion" [routerLink]="['/admin/login']">
                         Administrador
                         <span></span>
                         <span></span>
@@ -40,17 +42,18 @@
                         <span></span>
                     </button>
                 </div>
-                <form method="post" (ngSubmit)="onSubmit()">
+                <form (submit)="onSubmit()">
                     <div class="user-box">
-                        <input type="text" id="cedula" name="cedula" required [(ngModel)]="user.cedula" ngModel>
-                        <label id="labelCedula">Cédula</label>
+                        <input class="labelInputUsuario" type="text" id="id" name="id" [ngModel]="admin.id" ngModel required>
+                        <label class="labelInputUsuario" class="labelInicio">ID De Administrador</label>
                     </div>
                     <button id="btnIngresar" type="submit">Ingresar</button>
                 </form>
             </div>
         </div>
         <div id="plantaAbajoDerecha">
-            <img class="planta" src="assets/Imagenes/plantaLogIn.png" alt="plantaLogIn" width="146.23" height="222.5">
+            <img class="planta" src="assets/Imagenes/plantaLogIn_color_changed.png" alt="plantaLogIn" width="146.23"
+                height="222.5">
         </div>
     </section>
 </div>

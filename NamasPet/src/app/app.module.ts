@@ -24,6 +24,9 @@ import { VerMascotasClienteComponent } from './veterinario/clientes/ver-mascotas
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { ListaDrogasComponent } from './veterinario/drogas/lista-drogas/lista-drogas.component';
+import { AdministradorLandingPageComponent } from './administrador/administrador-landing-page/administrador-landing-page.component';
+import { AdministradorDashboardComponent } from './administrador/administrador-dashboard/administrador-dashboard.component';
+import { AdministradorLogInComponent } from './administrador/administrador-log-in/administrador-log-in.component';
 
 @NgModule({
   declarations: [
@@ -46,6 +49,9 @@ import { ListaDrogasComponent } from './veterinario/drogas/lista-drogas/lista-dr
     VerTratamientosComponent,
     InformacionTratamientosComponent,
     ListaDrogasComponent,
+    AdministradorLandingPageComponent,
+    AdministradorDashboardComponent,
+    AdministradorLogInComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
   providers: [provideClientHydration()],

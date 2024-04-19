@@ -12,9 +12,11 @@ import { EditarClientesComponent } from './veterinario/clientes/editar-clientes/
 import { TarjetonesComponent } from './veterinario/mascotas/tarjetones/tarjetones.component';
 import { VerMascotasClienteComponent } from './veterinario/clientes/ver-mascotas-cliente/ver-mascotas-cliente.component';
 import { VerMascotaComponent } from './veterinario/mascotas/ver-mascota/ver-mascota.component';
-import {VerTratamientosComponent} from './veterinario/tratamientos/ver-tratamientos/ver-tratamientos.component';
-import{InformacionTratamientosComponent} from './veterinario/tratamientos/informacion-tratamientos/informacion-tratamientos.component';
+import { VerTratamientosComponent} from './veterinario/tratamientos/ver-tratamientos/ver-tratamientos.component';
+import { InformacionTratamientosComponent} from './veterinario/tratamientos/informacion-tratamientos/informacion-tratamientos.component';
 import { ListaDrogasComponent } from './veterinario/drogas/lista-drogas/lista-drogas.component';
+import { AdministradorLandingPageComponent } from './administrador/administrador-landing-page/administrador-landing-page.component';
+import { AdministradorLogInComponent } from './administrador/administrador-log-in/administrador-log-in.component';
 
 const routes: Routes = [
   {path: '', pathMatch: "full", component: LandingPageComponent},
@@ -32,6 +34,8 @@ const routes: Routes = [
   {path: 'tratamiento/all', component: VerTratamientosComponent},
   {path: 'tratamiento/:id', component: InformacionTratamientosComponent},
   {path: 'drogas/all', component: ListaDrogasComponent},
+  {path: 'admin/home/:id', component: AdministradorLandingPageComponent},
+  {path: 'admin/login', component: AdministradorLogInComponent},
   {path: '**', component: ErrorPageComponent},
   
 

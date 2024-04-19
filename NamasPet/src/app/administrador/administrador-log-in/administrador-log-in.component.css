@@ -1,6 +1,6 @@
 /* Selector para el elemento raíz del componente, ajusta .login-component si tienes otro nombre de clase */
 .login-component {
-  background: linear-gradient(#171a4a, #2f2c79);
+  background: linear-gradient(#9bfab0, #64c27b);
   min-height: 100vh; /* Esto asegura que el fondo cubra toda la altura de la ventana */
 }
 
@@ -43,9 +43,9 @@
 
 #divTitulo {
   font-family: "Macondo", cursive;
-  color: white;
+  color: #171a4a;
   font-size: 30px;
-  font-weight: lighter;
+  font-weight: bold;
 }
 
 .login-box {
@@ -56,16 +56,16 @@
   width: 500px;
   padding: 40px;
   transform: translate(-50%, -50%);
-  background: #64c27b;
+  background: #171a4a;
   box-sizing: border-box;
-  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
+  box-shadow: 0 15px 25px #171a4a;
   border-radius: 10px;
 }
 
 .login-box h2 {
   margin: 0 0 30px;
   padding: 0;
-  color: #171a4a;
+  color: #64c27b;
   font-size: 30px;
   font-weight: bold;
   text-align: center;
@@ -80,10 +80,9 @@
   width: 100%;
   padding: 10px 0;
   font-size: 16px;
-  color: #171a4a;
-  margin-bottom: 30px;
+  color: #64c27b;
   border: none;
-  border-bottom: 1px solid #171a4a;
+  border-bottom: 1px solid #64c27b;
   outline: none;
   background: transparent;
 }
@@ -93,7 +92,7 @@
   left: 0;
   padding: 10px 0;
   font-size: 20px;
-  color: #171a4a;
+  color: #64c27b;
   pointer-events: none;
   transition: 0.5s;
 }
@@ -102,7 +101,7 @@
 .login-box .user-box input:valid ~ label {
   top: -20px;
   left: 0;
-  color: #171a4a;
+  color: #64c27b;
   font-size: 12px;
 }
 
@@ -110,7 +109,7 @@
   position: relative;
   display: inline-block;
   padding: 10px 20px;
-  color: #171a4a;
+  color: #64c27b;
   font-size: 20px;
   text-decoration: none;
   text-transform: uppercase;
@@ -121,16 +120,12 @@
 }
 
 .login-box button:hover {
-  background: #171a4a;
+  background: #64c27b;
   color: white;
   border-radius: 5px;
   box-shadow: 0 0 5px #171a4a, 0 0 25px #171a4a, 0 0 50px #171a4a,
     0 0 100px #171a4a;
   border-radius: 10px;
-}
-
-#btnIngresar:hover {
-  color: white;
 }
 
 .login-box button span {
@@ -157,12 +152,16 @@
 
 #btnIngresar {
   font-family: "Macondo", cursive;
-  font-size: 900;
   border-radius: 10px;
   text-decoration: none;
   border-radius: 1px solid #64c27b;
   letter-spacing: 0.5px;
   border: none;
+  color: #171a4a;
+}
+
+#btnIngresar:hover {
+  color: white;
 }
 
 #cedula {
@@ -170,7 +169,7 @@
   font-size: 25px;
 }
 
-#labelCedula {
+.labelInicio {
   font-family: "Patua One", cursive;
 }
 
@@ -182,7 +181,7 @@
   height: fit-content;
 }
 
-.btnOpcionesInicioSesion{
+.btnOpcionesInicioSesion {
   font-family: "Macondo", cursive;
   font-weight: 400;
   position: relative;
@@ -193,9 +192,14 @@
   text-transform: uppercase;
   overflow: hidden;
   transition: 0.5s;
-  letter-spacing: 4px;
+  letter-spacing: 0.5px;
   background: white;
   border: none;
   border-radius: 10px;
   padding: 10px 20px;
+}
+
+.labelInputUsuario {
+  margin-bottom: 15px;
+  font-family: "Patua One", cursive;
 }

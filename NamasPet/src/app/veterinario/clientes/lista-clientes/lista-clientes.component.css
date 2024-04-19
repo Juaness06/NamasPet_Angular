@@ -265,3 +265,11 @@ td span {
   text-align: center;
   justify-content: center;
 }
+
+
+/** ============ Estilos especiales =========== */
+
+
+.clase-especial {
+  color: white; 
+}

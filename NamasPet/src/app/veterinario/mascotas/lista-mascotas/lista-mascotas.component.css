@@ -310,3 +310,17 @@ td span {
   width: 100%;
   height: 150px;
 }
+
+/** ============ estilos especiales =========== */
+
+.clase-especial{
+  color: white;
+}
+
+.clase-especial2, .clase-especial2 th {
+  background-color: #C89600;
+  color: #171a4a;
+}
+
+
+

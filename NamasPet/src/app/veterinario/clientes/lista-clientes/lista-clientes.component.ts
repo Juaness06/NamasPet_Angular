@@ -1,20 +1,26 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit, OnDestroy } from '@angular/core';
 import { Cliente } from '../../../model/Cliente';
 import { ClienteService } from 'src/app/service/cliente.service';
 import { Mascota } from 'src/app/model/mascota';
+import { Subscription } from 'rxjs';
+import { EstadoUiService } from 'src/app/service/estados.service';
 
 @Component({
   selector: 'app-lista-clientes',
   templateUrl: './lista-clientes.component.html',
   styleUrls: ['./lista-clientes.component.css'],
 })
-export class ListaClientesComponent implements OnInit {
+export class ListaClientesComponent implements OnInit, OnDestroy {
+  
+  @Input() mostrarEstilosEspeciales: boolean = false;
+
   mostrarForm: boolean = false;
   clientesList: Cliente[] = [];
   seleccionarCliente?: Cliente;
   mascotasCliente: Mascota[] = [];
+  private subs = new Subscription();
 
-  constructor(private clienteService: ClienteService) {}
+  constructor(private clienteService: ClienteService, private estadoUiService: EstadoUiService) {}
 
   ngOnInit(): void {
     this.clienteService.findAll().subscribe((clientes: Cliente[]) => (this.clientesList = clientes));
@@ -26,7 +32,13 @@ export class ListaClientesComponent implements OnInit {
           return cliente;
         }
       });
-    })
+    });
+
+    this.subs.add(
+      this.estadoUiService.mostrarListaClientes$.subscribe(
+        (estado) => (this.mostrarEstilosEspeciales = estado)
+      )
+    );
   }
 
   mostrarcliente(cliente: Cliente): void {
@@ -54,5 +66,9 @@ export class ListaClientesComponent implements OnInit {
 
   ocultarFormulario(): void {
     this.mostrarForm = false;
+  }
+
+  ngOnDestroy(): void {
+    this.subs.unsubscribe();
   }
 }
