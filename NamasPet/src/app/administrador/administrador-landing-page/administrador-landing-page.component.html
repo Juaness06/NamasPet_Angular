@@ -54,6 +54,9 @@
         <ng-container *ngIf="mostrarDashboard">
             <app-administrador-dashboard></app-administrador-dashboard>
         </ng-container>
+        <ng-container *ngIf="mostrarListaVeterinario">
+            <app-lista-veterinarios></app-lista-veterinarios>
+        </ng-container>
     </section>
     <ng-container *ngIf="mostrarFooter">
         <app-footer></app-footer>

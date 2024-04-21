@@ -1,0 +1,47 @@
+<main id="contenedorMain">
+    <section id="sectionTabla">
+        <div id="divTitulo">
+            <div id="space"> <!--Corregir de una vez lo que se pone-->
+            </div>
+            <div id="divTituloMascotas">
+                <h1>VETERINARIOS</h1>
+            </div>
+            <div id="divBtn">
+                <a [routerLink]="['/veterinarios/add']" id="anchorAgregarMascota">
+                    <button id="btnAgregar">Agregar</button>
+                </a>
+            </div>
+        </div>
+        <div id="divTabla">
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>NOMBRE</th>
+                        <th>ESPECIALIDAD</th>
+                        <th>ATENCIONES</th>
+                        <th>FOTO</th>
+                        <th>ESTADO</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let veterinario of veterinariosList">
+                        <td>{{ veterinario.id }}</td>
+                        <td>{{ veterinario.nombre }}</td>
+                        <td>{{ veterinario.especialidad }}</td>
+                        <td>{{ veterianrio.atenciones }}</td>
+                        <td>
+                            <img [src]="veterianrio.foto" alt="Imagen del veterinario" style="max-width:100%; height:auto;">
+                        </td>
+                        <td>{{ veterinario.estado ? 'Activo' : 'Inactivo' }}</td>
+                        <td id="tdEliminarEditar">
+                            <a class="btnEdi" [routerLink]="['/veterinario/edit', veterinario.id]">Editar</a>
+                            <a class="btnEli" (click)="eliminarVeterinario(veterinario)">Eliminar</a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div id="space2"></div>
+    </section>
+</main>    

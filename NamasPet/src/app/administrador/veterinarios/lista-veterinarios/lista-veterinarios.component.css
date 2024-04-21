@@ -1,0 +1,516 @@
+/**Header*/
+
+#sectionHeader {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-evenly;
+  background-color: #f3d75a;
+  width: 100%;
+}
+
+#contenedorMenuDesplegable {
+  display: flex;
+}
+
+/* estilos para la barra de navegación*/
+nav {
+  max-width: 900px;
+  margin: auto;
+  font-size: 26px;
+  font-family: "Dosis", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 20px;
+}
+
+/* estilos para la barra de navegación*/
+.menuHorizontal {
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+}
+
+/* estilos para la barra de navegación*/
+.menuHorizontal li a {
+  display: block;
+  padding: 15px 20px;
+  color: #171a4a;
+  text-decoration: none;
+  width: 150px;
+}
+
+/* estilos para la barra de navegación*/
+.menuHorizontal li:hover {
+  background-color: transparent;
+  color: white;
+}
+
+/* estilos para la barra de navegación*/
+.menuVertical {
+  position: absolute;
+  display: none;
+  list-style: none;
+  width: auto;
+  background-color: #f3d75a;
+}
+
+/* estilos para la barra de navegación*/
+.menuHorizontal li:hover .menuVertical {
+  display: block;
+  z-index: 1;
+}
+
+/* estilos para la barra de navegación*/
+.menuVertical li:hover {
+  background-color: #64c27b;
+  color: white;
+}
+
+/* estilos para la barra de navegación*/
+.menuVertical li a {
+  display: block;
+  color: #171a4a;
+  padding: 15px 15px 15px 20px;
+  text-decoration: none;
+}
+
+.titulo {
+  font-family: "Macondo", cursive;
+  font-weight: 900;
+  font-style: normal;
+  font-weight: bold;
+}
+
+/* estilos para la barra de navegación*/
+#btnLogin {
+  padding-bottom: 0px;
+  padding-top: 0px;
+  padding-left: 20px;
+  padding-right: 0px;
+  width: fit-content;
+}
+
+/* estilos para la barra de navegación*/
+#btnLogin:hover {
+  text-decoration: none;
+  background-color: transparent;
+}
+
+/* estilos para la barra de navegación*/
+.btnPerfil {
+  border: none;
+  outline: none;
+  background-color: transparent;
+  padding: 0;
+  height: 50px;
+  width: 50px;
+}
+
+/* estilos para la barra de navegación*/
+a {
+  text-decoration: none;
+  outline: none;
+}
+
+/* estilos para la barra de navegación*/
+a:hover {
+  text-decoration: underline;
+  color: white;
+}
+
+/* estilos para la barra de navegación*/
+body {
+  background: #d0fdd7;
+}
+
+/* estilos para la barra de navegación*/
+.contenedor {
+  max-width: 1000px;
+  width: 90%;
+  margin: auto;
+  margin-top: auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+/* estilos para la barra de navegación*/
+#contenedorNombre {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+}
+
+/* estilos para la barra de navegación*/
+#contenedorLogo {
+  display: inline-block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* estilos para la barra de navegación*/
+#contenedorLogoTitulo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* estilos para la barra de navegación*/
+#contenedorTitulo {
+  display: inline-block;
+  display: flex;
+  justify-content: center;
+  height: auto;
+  align-items: center;
+  font-size: 15px;
+  color: #171a4a;
+}
+
+/* estilos para la barra de navegación*/
+.navbar {
+  background: #f3d75a;
+}
+
+/* estilos para la barra de navegación*/
+.navbar a {
+  color: #171a4a;
+  display: inline-block;
+  padding: 20px;
+  width: 100%;
+  text-align: center;
+  color: #000;
+  transition: 0.3s ease-out all;
+}
+
+/* estilos para la barra de navegación*/
+.navbar a:hover {
+  background: #1d2f3d;
+  color: white;
+  text-decoration: none;
+}
+
+#logo {
+  width: 100px;
+  height: 100px;
+}
+
+/**=======Tabla=======**/
+
+#contenedorMain {
+  background-color: #2f2c79;
+  min-height: 100vh;
+}
+
+#sectionTabla {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+  width: 100%;
+}
+
+#space {
+  width: 470px;
+}
+
+#divTitulo {
+  display: flex;
+  margin-bottom: 30px;
+  font-family: "Macondo", cursive;
+  font-weight: 400;
+  font-size: 35px;
+  color: #171a4a;
+  width: 1160px;
+}
+
+#divTituloMascotas {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+h1 {
+  font-weight: 800;
+}
+
+#btnAgregar {
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  border-top-right-radius: 10px;
+  margin-bottom: 10px;
+}
+
+#anchorAgregarMascota {
+  text-decoration: none;
+  margin-left: 317px;
+  display: flex;
+  width: fit-content;
+  height: fit-content;
+}
+
+#space {
+  display: flex;
+  align-items: flex-end; /* Esto alineará tus ítems al final */
+  height: 100%; /* Asegúrate de que el div ocupe la altura que deseas */
+  height: 90px;
+}
+
+.iconos {
+  text-decoration: none;
+  color: #171a4a;
+  margin-right: 10px;
+  font-size: 40px;
+  /* Asegúrate de que el tamaño de los íconos y el espaciado es el deseado */
+}
+
+.iconos:hover {
+  font-size: 38px;
+}
+
+/** ============ tabla =========== */
+
+#divTabla::-webkit-scrollbar {
+  width: 15px; /* Grosor de la barra de desplazamiento */
+}
+
+#divTabla::-webkit-scrollbar-track {
+  background: #2f2c79; /* Color de fondo de la pista de la barra de desplazamiento */
+  border-radius: 10px; /* Redondeo de las esquinas de la pista */
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.1); /* Sombra de la pista */
+}
+
+#divTabla::-webkit-scrollbar-thumb {
+  background: #706dca; /* Color de la barra de desplazamiento */
+  border-radius: 10px; /* Redondeo de las esquinas de la barra */
+}
+
+#divTabla::-webkit-scrollbar-thumb:hover {
+  background: #64c27b; /* Color de la barra de desplazamiento al pasar el mouse */
+}
+
+#divTabla {
+  border-radius: 10px;
+  max-height: 570px;
+  overflow-y: scroll;
+  width: fit-content;
+  display: block;
+}
+
+table th {
+  white-space: nowrap;
+  text-align: center;
+  font-family: "Patua One", serif;
+  font-weight: lighter;
+  font-size: 25px;
+  margin: 15px;
+  padding: 15px;
+  color: white;
+}
+
+td {
+  color: white;
+  font-family: "Patua One", serif;
+  text-align: center;
+  vertical-align: middle;
+  max-width: 150px;
+  height: 100px;
+  overflow: hidden;
+  word-wrap: break-word;
+  font-size: 20px;
+  margin: 15px;
+  padding: 15px;
+}
+
+table {
+  border-collapse: separate;
+  border-spacing: 0;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+td,
+th {
+  border: 1px solid #64c27b;
+}
+
+thead th:first-child {
+  border-top-left-radius: 10px;
+}
+
+thead th:last-child {
+  border-top-right-radius: 10px;
+}
+
+thead th {
+  background-color: #2f2c79;
+}
+
+tbody td {
+  background-color: #171a4a;
+}
+
+td span {
+  display: inline-block;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+/* ============ anchors =========== */
+
+.btnEli {
+  position: relative;
+  text-decoration: none;
+  color: rgb(235, 23, 23);
+  font-size: 18px;
+  letter-spacing: 0.5px;
+  font-weight: 800;
+}
+
+.btnEli::after {
+  content: "";
+  position: absolute;
+  background-color: #000000;
+  height: 3;
+  width: 0;
+  left: 0;
+  bottom: -10px;
+  transition: 0.3s;
+}
+
+.btnEli:hover {
+  color: rgb(235, 23, 23);
+  font-size: 20px;
+  text-decoration: none;
+}
+
+.btnEli:hover::after {
+  width: 100%;
+  text-decoration: none;
+}
+
+.btnEdi {
+  position: relative;
+  text-decoration: none;
+  color: rgb(70, 238, 92);
+  font-size: 18px;
+  letter-spacing: 0.5px;
+}
+
+.btnEdi::after {
+  content: "";
+  position: absolute;
+  background-color: #000000;
+  height: 3;
+  width: 0;
+  left: 0;
+  bottom: -10px;
+  transition: 0.3s;
+}
+
+.btnEdi:hover {
+  color: rgb(70, 238, 92);
+  font-size: 20px;
+  text-decoration: none;
+}
+
+.btnEdi:hover::after {
+  width: 100%;
+  text-decoration: none;
+}
+
+/** ============ btn agregar =========== */
+
+#btnAgregar {
+  position: static;
+  font-family: "Patua One", sans-serif;
+  text-decoration: none;
+  background-color: #171a4a;
+  color: white;
+  font-size: 20px;
+  letter-spacing: 0.5px;
+  height: 80px;
+  width: 150px;
+  border: 1px solid #64c27b;
+  color: #ffec3d;
+  top: 0px;
+  border-bottom-right-radius: 10px;
+}
+
+#btnAgregar::after {
+  content: "";
+  position: absolute;
+  background-color: #000000;
+  height: 3;
+  width: 0;
+  left: 0;
+  bottom: -10px;
+  transition: 0.3s;
+}
+
+#btnAgregar:hover {
+  font-size: 23px;
+  text-decoration: none;
+}
+
+#btnAgregar:hover::after {
+  width: 100%;
+  text-decoration: none;
+}
+
+/** ============ btn ver tarjetones =========== */
+
+#btnVistaGeneral {
+  margin-left: 5px;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  border-top-right-radius: 10px;
+  margin-bottom: 10px;
+}
+
+#btnVistaGeneral {
+  position: static;
+  font-family: "Patua One", sans-serif;
+  text-decoration: none;
+  background-color: #171a4a;
+  color: white;
+  font-size: 20px;
+  letter-spacing: 0.5px;
+  height: 80px;
+  width: 150px;
+  border: 1px solid #64c27b;
+  color: #ccff7a;
+  top: 0px;
+  border-bottom-right-radius: 10px;
+}
+
+#btnVistaGeneral::after {
+  content: "";
+  position: absolute;
+  background-color: #000000;
+  height: 3;
+  width: 0;
+  left: 0;
+  bottom: -10px;
+  transition: 0.3s;
+}
+
+#btnVistaGeneral:hover {
+  font-size: 22px;
+  text-decoration: none;
+}
+
+#btnVistaGeneral:hover::after {
+  width: 100%;
+  text-decoration: none;
+}
+
+#space2 {
+  width: 100%;
+  height: 150px;
+}

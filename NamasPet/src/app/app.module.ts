@@ -27,6 +27,7 @@ import { ListaDrogasComponent } from './veterinario/drogas/lista-drogas/lista-dr
 import { AdministradorLandingPageComponent } from './administrador/administrador-landing-page/administrador-landing-page.component';
 import { AdministradorDashboardComponent } from './administrador/administrador-dashboard/administrador-dashboard.component';
 import { AdministradorLogInComponent } from './administrador/administrador-log-in/administrador-log-in.component';
+import { ListaVeterinariosComponent } from './administrador/veterinarios/lista-veterinarios/lista-veterinarios.component';
 
 @NgModule({
   declarations: [
@@ -52,6 +53,7 @@ import { AdministradorLogInComponent } from './administrador/administrador-log-i
     AdministradorLandingPageComponent,
     AdministradorDashboardComponent,
     AdministradorLogInComponent,
+    ListaVeterinariosComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
   providers: [provideClientHydration()],
