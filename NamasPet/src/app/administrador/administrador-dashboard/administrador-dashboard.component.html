@@ -1,1 +1,125 @@
-<p>administrador-dashboard works!</p>
+<main id="contenedorMain">
+    <div id="divTitulo">
+        <h1>DASHBOARD</h1>
+    </div>
+    <section id="sectionDashboard">
+        <div class="divWidgets">
+            <div class="widgetQuery">
+                <div class="divIconoYDato">
+                    <div>
+                        {{veterinariosActivos}}
+                    </div>
+                    <div>
+                        <i class='bx bx-health'></i>
+                    </div>
+                </div>
+                <div class="divTextoQuery">
+                    <h6>Veterinarios Activos</h6>
+                </div>
+            </div>
+            <div class="widgetQuery">
+                <div class="divIconoYDato">
+                    <div>
+                        {{veterinariosInactivos}}
+                    </div>
+                    <div>
+                        <i class='bx bx-health'></i>
+                    </div>
+                </div>
+                <div class="divTextoQuery">
+                    <h6>Veterinarios Inactivos</h6>
+                </div>
+            </div>
+            <div class="widgetQuery">
+                <div class="divIconoYDato">
+                    <div>
+                        {{tratamientosUltimoMes}}
+                    </div>
+                    <div>
+                        <i class='bx bxs-capsule'></i>
+                    </div>
+                </div>
+                <div class="divTextoQuery">
+                    <h6>Tratamientos en el ultimo mes</h6>
+                </div>
+            </div>
+        </div>
+        <div class="divWidgets">
+            <div class="widgetQuery">
+                <div class="divIconoYDato">
+                    <div>
+                        {{totalMascotas}}
+                    </div>
+                    <div>
+                        <i class='bx bxs-dog'></i>
+                    </div>
+                </div>
+                <div class="divTextoQuery">
+                    <h6>Macostas En Namaspet</h6>
+                </div>
+            </div>
+            <div class="widgetQuery">
+                <div class="divIconoYDato">
+                    <div>
+                        {{mascotasActivas}}
+                    </div>
+                    <div>
+                        <i class='bx bxs-dog'></i>
+                    </div>
+                </div>
+                <div class="divTextoQuery">
+                    <h6>Mascotas Activas</h6>
+                </div>
+            </div>
+            <div class="widgetQuery">
+                <div class="divIconoYDato">
+                    <div>
+                        {{ventasTotales}}
+                    </div>
+                    <div>
+                        <i class='bx bx-money'></i>
+                    </div>
+                </div>
+                <div class="divTextoQuery">
+                    <h6>Ventas Totales De Namaspet</h6>
+                </div>
+            </div>
+        </div>
+        <div class="divWidgets">
+            <div id="divWidgtTabla&Grafica">
+                <div>
+                    <canvas id="chartTratamientosPorDroga"></canvas>
+                </div>
+                <div>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Tipo de Medicamento</th>
+                                <th>Cantidad</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let tratamiento of tratamientosPorDroga">
+                                <td>{{ tratamiento[0] }}</td>
+                                <td>{{ tratamiento[1] }}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="widgetQuery">
+                <div class="divIconoYDato">
+                    <div>
+                        {{gananciasTotales}}
+                    </div>
+                    <div>
+                        <i class='bx bx-wallet'></i>
+                    </div>
+                </div>
+                <div class="divTextoQuery">
+                    <h6>Ganancias Totales De Namaspet</h6>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>

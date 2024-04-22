@@ -25,6 +25,7 @@ export class AdministradorLandingPageComponent {
     this.mostrarListaClientes = false;
     this.mostrarListaVeterinarios = false;
     this.mostrarFooter = false;
+    this.mostrarDashboard = false;
 
     switch (seccion) {
       case 'landing':
@@ -42,6 +43,11 @@ export class AdministradorLandingPageComponent {
         break;
       case 'veterinarios':
         this.mostrarListaVeterinarios = true;
+        this.estadoUiService.setMostrarListaMascotas(false);
+        this.estadoUiService.setMostrarListaClientes(false);
+        break;
+      case 'dashboard':
+        this.mostrarDashboard = true;
         this.estadoUiService.setMostrarListaMascotas(false);
         this.estadoUiService.setMostrarListaClientes(false);
         break;
