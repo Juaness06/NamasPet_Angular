@@ -55,7 +55,7 @@ export class VeterinarioService {
 
   editarvVeterinario(cliente: Veterinario): Observable<any> {
     return this.http
-      .put(`http://localhost:8090/veterinario/edit/` + cliente.id, cliente)
+      .put(`http://localhost:8090/veterinario/editar/` + cliente.id, cliente)
       .pipe(
         tap(() => {
           this.findAll(); // Actualizar la lista después de editar
