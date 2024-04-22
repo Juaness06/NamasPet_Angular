@@ -1,1 +1,42 @@
-<p>editar-veterinarios works!</p>
+<main id="contenedorMain">
+    <app-administrador-header></app-administrador-header>
+    <section id="sectionTitulo">
+        <h1 id="titulo">Modificar Veterinario</h1>
+    </section>
+
+    <section id="sectionForm">
+        <div id="divForm">
+            <form (ngSubmit)="actualizarVeterinarios()">
+                <div>
+                    <label for="nombre" class="form-label">Nombre</label>
+                    <input type="text" name="nombre" id="nombre" [(ngModel)]="formVeterinario.nombre" ngModel>
+                </div>
+                <div>
+                    <label for="especialidad">Especialidad</label>
+                    <input type="text" name="especialidad" id="especialidad" [(ngModel)]="formVeterinario.especialidad"
+                        ngModel>
+                </div>
+                <div>
+                    <label for="atenciones"># De Atenciones</label>
+                    <input type="number" name="atenciones" id="atenciones" [(ngModel)]="formVeterinario.atenciones"
+                        ngModel>
+                </div>
+                <div>
+                    <label for="foto">Foto</label>
+                    <input type="url" name="foto" id="foto" [(ngModel)]="formVeterinario.foto" ngModel>
+                </div>
+                <div>
+                    <label for="activo">Estado</label>
+                    <select class="spinnerDeEstados" name="activo" id="activo" [(ngModel)]="formVeterinario.activo"
+                        ngModel>
+                        <option value="true">Activo</option>
+                        <option value="false">Inactivo</option>
+                    </select>
+                </div>
+                <div id="btnRegistrar">
+                    <button type="submit">Actualizar</button>
+                </div>
+            </form>
+        </div>
+    </section>
+</main>

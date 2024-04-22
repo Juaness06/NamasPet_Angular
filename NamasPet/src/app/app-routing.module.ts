@@ -19,6 +19,8 @@ import { AdministradorLandingPageComponent } from './administrador/administrador
 import { AdministradorLogInComponent } from './administrador/administrador-log-in/administrador-log-in.component';
 import { AgregarVeterinariosComponent } from './administrador/veterinarios/agregar-veterinarios/agregar-veterinarios.component';
 import { EditarVeterinariosComponent } from './administrador/veterinarios/editar-veterinarios/editar-veterinarios.component';
+import { ListaVeterinariosComponent } from './administrador/veterinarios/lista-veterinarios/lista-veterinarios.component';
+import { AdministradorDashboardComponent } from './administrador/administrador-dashboard/administrador-dashboard.component';
 
 const routes: Routes = [
   {path: '', pathMatch: "full", component: LandingPageComponent},
@@ -38,6 +40,8 @@ const routes: Routes = [
   {path: 'drogas/all', component: ListaDrogasComponent},
   {path: 'admin/home/:id', component: AdministradorLandingPageComponent},
   {path: 'admin/login', component: AdministradorLogInComponent},
+  {path: 'admin/dashboard', component: AdministradorDashboardComponent},
+  {path: 'veterinarios/all', component: ListaVeterinariosComponent},
   {path: 'veterinarios/add', component: AgregarVeterinariosComponent},
   {path: 'veterinarios/edit/:id', component: EditarVeterinariosComponent},
   {path: '**', component: ErrorPageComponent},

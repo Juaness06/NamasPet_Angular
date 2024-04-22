@@ -1,0 +1,36 @@
+<section id="sectionHeader"> <!--header de la pagina-->
+    <div id="contenedorLogoTitulo">
+        <div id="contenedorLogo">
+            <img id="logo" src="\assets\Imagenes\logo-blanco_color_changed.png" alt="Logo NamasPet" width="100" height="100" />
+        </div>
+        <div id="contenedorTitulo">
+            <h1 class="titulo">NAMASPET</h1>
+        </div>
+    </div>
+    <div id="contenedorMenuDesplegable">
+        <nav class="navbar">
+            <ul class="menuHorizontal">
+                <li><a [routerLink]="['/admin/home/1']" >Inicio</a></li> <!-- ir al landing page-->
+                <li>
+                    <a [routerLink]="['/veterinarios/all']">Veterinarios</a>
+                </li>
+                <li>
+                    <a [routerLink]="['/mascotas/all']">Mascotas</a>
+                </li>
+                <li>
+                    <a [routerLink]="['/admin/dashboard']">Dashboard</a>
+                </li>
+                <li>
+                    <a [routerLink]="['/clientes/all']">Clientes</a>
+                </li> 
+                <li id="btnItem">
+                    <button class="btnPerfil">
+                        <a id="btnLogin" [routerLink]="['/login']">
+                            <img class="btnPerfil" src="\assets\Imagenes\logo_corrected.png"> <!--boton de login-->
+                        </a>
+                    </button>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</section>

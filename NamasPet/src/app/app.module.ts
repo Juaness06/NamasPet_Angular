@@ -30,6 +30,7 @@ import { AdministradorLogInComponent } from './administrador/administrador-log-i
 import { ListaVeterinariosComponent } from './administrador/veterinarios/lista-veterinarios/lista-veterinarios.component';
 import { AgregarVeterinariosComponent } from './administrador/veterinarios/agregar-veterinarios/agregar-veterinarios.component';
 import { EditarVeterinariosComponent } from './administrador/veterinarios/editar-veterinarios/editar-veterinarios.component';
+import { AdministradorHeaderComponent } from './administrador/administrador-header/administrador-header.component';
 
 @NgModule({
   declarations: [
@@ -58,6 +59,7 @@ import { EditarVeterinariosComponent } from './administrador/veterinarios/editar
     ListaVeterinariosComponent,
     AgregarVeterinariosComponent,
     EditarVeterinariosComponent,
+    AdministradorHeaderComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
   providers: [provideClientHydration()],

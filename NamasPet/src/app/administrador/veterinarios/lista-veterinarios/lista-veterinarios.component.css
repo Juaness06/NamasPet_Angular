@@ -216,7 +216,7 @@ body {
 }
 
 #space {
-  width: 470px;
+  width: 340px;
 }
 
 #divTitulo {
@@ -225,8 +225,7 @@ body {
   font-family: "Macondo", cursive;
   font-weight: 400;
   font-size: 35px;
-  color: #171a4a;
-  width: 1160px;
+  color: white;
 }
 
 #divTituloMascotas {
@@ -248,7 +247,7 @@ h1 {
 
 #anchorAgregarMascota {
   text-decoration: none;
-  margin-left: 317px;
+  margin-left: 220px;
   display: flex;
   width: fit-content;
   height: fit-content;

@@ -1,0 +1,198 @@
+#sectionHeader {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-evenly;
+  background-color: #f3d75a;
+  width: 100%;
+}
+
+#contenedorMenuDesplegable {
+  display: flex;
+}
+
+/* estilos para la barra de navegación*/
+nav {
+  max-width: 900px;
+  margin: auto;
+  font-size: 26px;
+  font-family: "Dosis", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 20px;
+}
+
+/* estilos para la barra de navegación*/
+.menuHorizontal {
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+}
+
+/* estilos para la barra de navegación*/
+.menuHorizontal li a {
+  display: block;
+  padding: 15px 20px;
+  color: #171a4a;
+  text-decoration: none;
+  width: 150px;
+}
+
+/* estilos para la barra de navegación*/
+.menuHorizontal li:hover {
+  background-color: transparent;
+  color: white;
+}
+
+/* estilos para la barra de navegación*/
+.menuVertical {
+  position: absolute;
+  display: none;
+  list-style: none;
+  width: auto;
+  background-color: #f3d75a;
+}
+
+/* estilos para la barra de navegación*/
+.menuHorizontal li:hover .menuVertical {
+  display: block;
+  z-index: 1;
+}
+
+/* estilos para la barra de navegación*/
+.menuVertical li:hover {
+  background-color: #64c27b;
+  color: white;
+}
+
+/* estilos para la barra de navegación*/
+.menuVertical li a {
+  display: block;
+  color: #171a4a;
+  padding: 15px 15px 15px 20px;
+  text-decoration: none;
+}
+
+.titulo {
+  font-family: "Macondo", cursive;
+  font-weight: 900;
+  font-style: normal;
+  font-weight: bold;
+}
+
+/* estilos para la barra de navegación*/
+#btnLogin {
+  padding-bottom: 0px;
+  padding-top: 0px;
+  padding-left: 20px;
+  padding-right: 0px;
+  width: fit-content;
+}
+
+/* estilos para la barra de navegación*/
+#btnLogin:hover {
+  text-decoration: none;
+  background-color: transparent;
+}
+
+/* estilos para la barra de navegación*/
+.btnPerfil {
+  border: none;
+  outline: none;
+  background-color: transparent;
+  padding: 0;
+  height: 50px;
+  width: 50px;
+}
+
+/* estilos para la barra de navegación*/
+a {
+  text-decoration: none;
+  outline: none;
+}
+
+/* estilos para la barra de navegación*/
+a:hover {
+  text-decoration: underline;
+  color: white;
+}
+
+/* estilos para la barra de navegación*/
+body {
+  background: #d0fdd7;
+}
+
+/* estilos para la barra de navegación*/
+.contenedor {
+  max-width: 1000px;
+  width: 90%;
+  margin: auto;
+  margin-top: auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+/* estilos para la barra de navegación*/
+#contenedorNombre {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+}
+
+/* estilos para la barra de navegación*/
+#contenedorLogo {
+  display: inline-block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* estilos para la barra de navegación*/
+#contenedorLogoTitulo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* estilos para la barra de navegación*/
+#contenedorTitulo {
+  display: inline-block;
+  display: flex;
+  justify-content: center;
+  height: auto;
+  align-items: center;
+  font-size: 15px;
+  color: #171a4a;
+}
+
+/* estilos para la barra de navegación*/
+.navbar {
+  background: #f3d75a;
+}
+
+/* estilos para la barra de navegación*/
+.navbar a {
+  color: #171a4a;
+  display: inline-block;
+  padding: 20px;
+  width: 100%;
+  text-align: center;
+  color: #000;
+  transition: 0.3s ease-out all;
+}
+
+/* estilos para la barra de navegación*/
+.navbar a:hover {
+  background: #1d2f3d;
+  color: white;
+  text-decoration: none;
+}
+
+#logo {
+  width: 100px;
+  height: 100px;
+}

@@ -15,7 +15,6 @@
 
 #sectionDashboard{
     display: flex;
-    border: white 1px solid; /*QUITAR ESTO CUANDO YA SE ACABE*/
     margin-left: 70px;
     margin-right: 70px;
     flex-direction: column;

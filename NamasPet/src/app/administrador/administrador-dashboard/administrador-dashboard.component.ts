@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild, ElementRef, AfterViewInit } from '@angular/core';
 import { AdministradorService } from 'src/app/service/administrador.service'; // Asegúrate de importar correctamente tu servicio
 import Chart from 'chart.js/auto';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-administrador-dashboard',
@@ -9,6 +10,7 @@ import Chart from 'chart.js/auto';
 })
 export class AdministradorDashboardComponent implements OnInit {
 
+  Ocultar: boolean = true;
   tratamientosUltimoMes: number = 0;
   tratamientosPorDroga: any[] = [];
   veterinariosActivos: number = 0;
@@ -20,9 +22,20 @@ export class AdministradorDashboardComponent implements OnInit {
 
   @ViewChild('chartTratamientosPorDroga') chartRef!: ElementRef;
 
-  constructor(private adminService: AdministradorService) {}
+  constructor(private adminService: AdministradorService, private router: Router, private route: ActivatedRoute) {}
 
   ngOnInit() {
+
+    this.router.events.subscribe((event) => {
+      // Verificar la ruta actual y cambiar `Ocultar` según sea necesario
+      if (this.router.url.includes('/admin/dashboard')) {
+        this.Ocultar = false;
+      } else {
+        this.Ocultar = true;
+      }
+    });
+
+
     this.adminService.contarTratamientosUltimoMes().subscribe((data) => {
       this.tratamientosUltimoMes = data;
     });

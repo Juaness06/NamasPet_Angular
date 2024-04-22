@@ -14,7 +14,9 @@ export class VeterinarioService {
   constructor(private http: HttpClient) {}
 
   findAll(): Observable<Veterinario[]> {
-    return this.http.get<Veterinario[]>('http://localhost:8090/veterinario/all');
+    return this.http.get<Veterinario[]>(
+      'http://localhost:8090/veterinario/all'
+    );
   }
 
   findById(cedula: number): Observable<Veterinario> {
@@ -39,9 +41,10 @@ export class VeterinarioService {
   */
 
   agregarVeterinario(cliente: Veterinario): void {
-    this.http.post('http://localhost:8090/veterinario/add', cliente).subscribe();
+    this.http
+      .post('http://localhost:8090/veterinario/add', cliente)
+      .subscribe();
   }
-
 
   eliminarCliente(cedula: number): void {
     console.log('Eliminando Cliente con cédula: ' + cedula);
@@ -59,5 +62,4 @@ export class VeterinarioService {
         })
       );
   }
-  
 }

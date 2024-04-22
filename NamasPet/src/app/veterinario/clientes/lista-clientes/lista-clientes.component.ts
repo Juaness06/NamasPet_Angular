@@ -23,6 +23,7 @@ export class ListaClientesComponent implements OnInit, OnDestroy {
   constructor(private clienteService: ClienteService, private estadoUiService: EstadoUiService) {}
 
   ngOnInit(): void {
+    
     this.clienteService.findAll().subscribe((clientes: Cliente[]) => (this.clientesList = clientes));
     this.clienteService.updateClienteEvent.subscribe((clienteEditado: Cliente) => {
       this.clientesList = this.clientesList.map((cliente) => {

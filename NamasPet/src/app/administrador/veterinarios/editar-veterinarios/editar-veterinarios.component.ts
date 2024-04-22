@@ -16,7 +16,7 @@ export class EditarVeterinariosComponent {
   ) {}
 
   @Output()
-  updateClienteEvent = new EventEmitter<Veterinario>();
+  updateVeterinarioEvent = new EventEmitter<Veterinario>();
 
   sendVeterinario!: Veterinario;
   buscarVeterinario!: Veterinario;
@@ -32,16 +32,16 @@ export class EditarVeterinariosComponent {
 
   ngOnInit(): void {
     this.route.paramMap.subscribe((params) => {
-      const cedula = Number(params.get('cedula'));
-      console.log('Cédula obtenida de la ruta:', cedula); // Para depuración
-      if (cedula) {
-        this.veterinarioService.findById(cedula).subscribe(
-          (clienteInformacion) => {
-            console.log('Cliente obtenido del servicio:', clienteInformacion); // Para depuración
-            this.formVeterinario = clienteInformacion;
+      const id = Number(params.get('id'));
+      console.log('id obtenida de la ruta:', id); // Para depuración
+      if (id) {
+        this.veterinarioService.findById(id).subscribe(
+          (veterinarioInformacion) => {
+            console.log('Cliente obtenido del servicio:', veterinarioInformacion); // Para depuración
+            this.formVeterinario = veterinarioInformacion;
           },
           (error) => {
-            console.error('Error al buscar el cliente:', error);
+            console.error('Error al buscar el veterinarios:', error);
             // Aquí también puedes manejar la reasignación de `formVeterinario` o simplemente dejar el objeto como estaba.
           }
         );
@@ -50,11 +50,11 @@ export class EditarVeterinariosComponent {
   }
   
 
-  actualizarCliente() {
+  actualizarVeterinarios() {
     this.sendVeterinario = Object.assign({}, this.formVeterinario);
     this.veterinarioService.editarvVeterinario(this.sendVeterinario).subscribe(() => {
-      this.updateClienteEvent.emit(this.sendVeterinario); // Emitir el cliente actualizado
-      this.router.navigate(['/clientes/all']);
+      this.updateVeterinarioEvent.emit(this.sendVeterinario); // Emitir el cliente actualizado
+      this.router.navigate(['/veterinarios/all']);
     });
   }
 }
