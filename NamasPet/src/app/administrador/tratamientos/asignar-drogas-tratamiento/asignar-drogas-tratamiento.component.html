@@ -1,1 +1,21 @@
-<p>asignar-drogas-tratamiento works!</p>
+<main id="contenedorMain">
+    <app-administrador-header></app-administrador-header>
+    <section id="sectionTitulo">
+        <h1>Tratamiento: </h1>
+    </section>
+    <section id="sectionForm">
+        <div id="divForm">
+            <form (ngSubmit)="asignarDroga()">
+                <div>
+                    <label for="nombre" class="form-label">Drogas</label>
+                    <select name="drogas" id="drogas" [(ngModel)]="formTratamiento.droga" ngModel>
+                        <option *ngFor="let droga of drogasList" [value]="droga">{{droga}}</option>
+                    </select>
+                </div>
+                <div id="btnRegistrar">
+                    <button type="submit">Asignar Droga</button>
+                </div>
+            </form>
+        </div>
+    </section>
+</main>

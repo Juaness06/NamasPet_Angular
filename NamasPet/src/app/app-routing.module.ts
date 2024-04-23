@@ -42,7 +42,7 @@ const routes: Routes = [
   {path: 'admin/dashboard', component: AdministradorDashboardComponent},
   {path: 'tratamientos/all', component: ListaTratamientosComponent},
   {path: 'tratamientos/:id/drogas' , component: DrogasTratamientoComponent},
-  {path: 'tratamiento/:id/asignar-drogas', component: AsignarDrogasTratamientoComponent},
+  {path: 'tratamientos/:id/asignar-drogas', component: AsignarDrogasTratamientoComponent},
   {path: 'veterinarios/all', component: ListaVeterinariosComponent},
   {path: 'veterinarios/add', component: AgregarVeterinariosComponent},
   {path: 'veterinarios/edit/:id', component: EditarVeterinariosComponent},
