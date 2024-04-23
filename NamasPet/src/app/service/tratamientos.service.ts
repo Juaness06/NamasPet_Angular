@@ -1,24 +1,32 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { BehaviorSubject, Observable , tap} from 'rxjs';
+import { Observable } from 'rxjs';
 import { Tratamiento } from '../model/tratamiento';
+import { Droga } from '../model/droga';
 
 @Injectable({
   providedIn: 'root',
 })
 export class TratamientoService {
-  private clientesSubject = new BehaviorSubject<Tratamiento[]>([]);
-  public clientes$ = this.clientesSubject.asObservable();
-  updateClienteEvent: any;
+  private baseUrl = 'http://localhost:8090/tratamiento';
 
   constructor(private http: HttpClient) {}
 
   findAll(): Observable<Tratamiento[]> {
-    return this.http.get<Tratamiento[]>('http://localhost:8090/tratamiento/all');
+    return this.http.get<Tratamiento[]>(`${this.baseUrl}/all`);
   }
 
-  findById(cedula: number): Observable<Tratamiento> {
-    return this.http.get<Tratamiento>('http://localhost:8090/tratamiento/find/' + cedula);
+  findById(id: number): Observable<Tratamiento> {
+    return this.http.get<Tratamiento>(`${this.baseUrl}/find/${id}`);
   }
 
+  DrogadelTratamiento(id: number): Observable<Droga[]> {
+    return this.http.get<Droga[]>(`${this.baseUrl}/find/${id}/droga`);
+}
+
+
+  agregarDrogaATratamiento(tratamientoId: number, drogaId: number): Observable<any> {
+    return this.http.post(`${this.baseUrl}/addDroga/${tratamientoId}/${drogaId}`, {});
+  }
+  
 }

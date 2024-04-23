@@ -2,32 +2,35 @@
     <ng-container>
         <app-administrador-header></app-administrador-header>
     </ng-container>
+    <section id="sectionTitulo">
+        <h1>DROGA DEL TRATAMIENTO:</h1>
+    </section>
     <section id="sectionTabla">
         <div id="divTitulo">
             <div id="titulo">
-                <h1>DROGAS DEL TRATAMIENTO: </h1>
+                <h1>Detalles de la Droga</h1>
             </div>
         </div>
-        <div id="divTabla">
+        <div id="divTabla" *ngIf="seleccionarMedicamento">
             <table>
                 <thead>
                     <tr>
                         <th>ID</th>
-                        <th class="thsss">NOMBRE</th>
-                        <th>PRECIO VENTA</th>
-                        <th class="thsss">PRECIO COMPRA</th>
-                        <th>UNIDADES COMPRADAS</th>
-                        <th>UNIDADES VENDIDAS</th>
+                        <th class="thsss">Nombre</th>
+                        <th>Precio Venta</th>
+                        <th class="thsss">Precio Compra</th>
+                        <th>Unidades Compradas</th>
+                        <th>Unidades Vendidas</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr *ngFor="let drogas of drogasList">
-                        <td>{{ drogas.id }}</td>
-                        <td class="tdsss">{{ drogas.nombre }}</td>
-                        <td class="correo">{{ drogas.precioV }}</td>
-                        <td>{{ drogas.precioC }}</td>
-                        <td>{{ drogas.unidades_C }}</td>
-                        <td>{{ drogas.unidades_V }}</td>
+                    <tr>
+                        <td>{{ seleccionarMedicamento.id }}</td>
+                        <td class="tdsss">{{ seleccionarMedicamento.nombre }}</td>
+                        <td class="correo">{{ seleccionarMedicamento.precioV | currency:'USD':'symbol':'1.2-2' }}</td>
+                        <td>{{ seleccionarMedicamento.precioC | currency:'USD':'symbol':'1.2-2' }}</td>
+                        <td>{{ seleccionarMedicamento.unidades_C }}</td>
+                        <td>{{ seleccionarMedicamento.unidades_V }}</td>
                     </tr>
                 </tbody>
             </table>

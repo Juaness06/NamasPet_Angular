@@ -19,8 +19,7 @@ import { EditarMascotasComponent } from './veterinario/mascotas/editar-mascotas/
 import { AgregarClientesComponent } from './veterinario/clientes/agregar-clientes/agregar-clientes.component';
 import { EditarClientesComponent } from './veterinario/clientes/editar-clientes/editar-clientes.component';
 import { VerMascotasClienteComponent } from './veterinario/clientes/ver-mascotas-cliente/ver-mascotas-cliente.component';
-import { FormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';import { HttpClientModule } from '@angular/common/http';
 import { ListaDrogasComponent } from './veterinario/drogas/lista-drogas/lista-drogas.component';
 import { AdministradorLandingPageComponent } from './administrador/administrador-landing-page/administrador-landing-page.component';
 import { AdministradorDashboardComponent } from './administrador/administrador-dashboard/administrador-dashboard.component';
@@ -52,6 +51,7 @@ import { AsignarDrogasTratamientoComponent } from './administrador/tratamientos/
     EditarClientesComponent,
     VerMascotasClienteComponent,
     ListaDrogasComponent,
+
     AdministradorLandingPageComponent,
     AdministradorDashboardComponent,
     AdministradorLogInComponent,
@@ -63,7 +63,7 @@ import { AsignarDrogasTratamientoComponent } from './administrador/tratamientos/
     DrogasTratamientoComponent,
     AsignarDrogasTratamientoComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
+  imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule,ReactiveFormsModule  ],
   providers: [provideClientHydration()],
   bootstrap: [AppComponent],
 })
