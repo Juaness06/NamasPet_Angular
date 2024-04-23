@@ -22,6 +22,7 @@ import { AdministradorDashboardComponent } from './administrador/administrador-d
 import { ListaTratamientosComponent } from './administrador/tratamientos/lista-tratamientos/lista-tratamientos.component';
 import { DrogasTratamientoComponent } from './administrador/tratamientos/drogas-tratamiento/drogas-tratamiento.component';
 import { AsignarDrogasTratamientoComponent } from './administrador/tratamientos/asignar-drogas-tratamiento/asignar-drogas-tratamiento.component';
+import { HistorialMascotaComponent } from './veterinario/mascotas/historial-mascota/historial-mascota.component';
 
 const routes: Routes = [
   {path: '', pathMatch: "full", component: LandingPageComponent},
@@ -40,6 +41,7 @@ const routes: Routes = [
   {path: 'admin/home/:id', component: AdministradorLandingPageComponent},
   {path: 'admin/login', component: AdministradorLogInComponent},
   {path: 'admin/dashboard', component: AdministradorDashboardComponent},
+  {path: 'admin/mascotas/:id/historial', component: HistorialMascotaComponent},
   {path: 'tratamientos/all', component: ListaTratamientosComponent},
   {path: 'tratamientos/:id/drogas' , component: DrogasTratamientoComponent},
   {path: 'tratamientos/:id/asignar-drogas', component: AsignarDrogasTratamientoComponent},

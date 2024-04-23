@@ -4,7 +4,7 @@
 
 <section class="sectionTarjetones">
     <div class="divTarjetones">
-        <a class="btnTarjeton" *ngFor="let perro of mascotas" [routerLink]="['/perro/find', perro.id]">
+        <a class="btnTarjeton" *ngFor="let perro of mascotas" [routerLink]="['/mascotas', perro.id]">
             <div class="card">
                 <div class="card-image-container">
                     <img [src]="perro.imagen" alt="Perro">

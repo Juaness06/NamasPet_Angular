@@ -1,0 +1,28 @@
+<main id="contenedorMain">
+    <app-administrador-header></app-administrador-header>
+    <section id="sectionTitulo">
+        <h1 id="titulo">HISTORIAL DE MASCOTA: {{mascota.nombre}}</h1>
+    </section>
+    <section id="sectionTabla">
+        <div id="divTabla">
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th class="thsss">NOMBRE</th>
+                        <th>PRECIO COMPRA</th>
+                        <th>FECHA</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let tratamiento of tratamientosMascota">
+                        <td>{{ tratamiento.id }}</td>
+                        <td class="tdsss">{{ tratamiento.nombreTratamiento }}</td>
+                        <td>{{ tratamiento.precioC }}</td>
+                        <td>{{ tratamiento.fecha }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+</main>

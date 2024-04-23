@@ -31,6 +31,7 @@ import { AdministradorHeaderComponent } from './administrador/administrador-head
 import { ListaTratamientosComponent } from './administrador/tratamientos/lista-tratamientos/lista-tratamientos.component';
 import { DrogasTratamientoComponent } from './administrador/tratamientos/drogas-tratamiento/drogas-tratamiento.component';
 import { AsignarDrogasTratamientoComponent } from './administrador/tratamientos/asignar-drogas-tratamiento/asignar-drogas-tratamiento.component';
+import { HistorialMascotaComponent } from './veterinario/mascotas/historial-mascota/historial-mascota.component';
 
 @NgModule({
   declarations: [
@@ -51,7 +52,7 @@ import { AsignarDrogasTratamientoComponent } from './administrador/tratamientos/
     EditarClientesComponent,
     VerMascotasClienteComponent,
     ListaDrogasComponent,
-
+    HistorialMascotaComponent,
     AdministradorLandingPageComponent,
     AdministradorDashboardComponent,
     AdministradorLogInComponent,

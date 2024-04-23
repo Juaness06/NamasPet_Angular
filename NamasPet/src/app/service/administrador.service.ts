@@ -2,6 +2,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Administrador } from '../model/administrador';
+import { Tratamiento } from '../model/tratamiento';
 
 @Injectable({
   providedIn: 'root',
@@ -12,6 +13,11 @@ export class AdministradorService {
 
   findById(id: number): Observable<Administrador> {
     return this.http.get<Administrador>('http://localhost:8090/administrador/find/' + id);
+  }
+
+  //historial del perro
+  findHistorialPerro(idPerro: number): Observable<Tratamiento[]> {
+    return this.http.get<Tratamiento[]>('http://localhost:8090/tratamiento/historial/' + idPerro);
   }
 
   //!Querys para el dashboard del administrador
