@@ -10,7 +10,7 @@ export class DrogaService {
   constructor(private http: HttpClient) {}
 
   findAll(): Observable<Droga[]> {
-    return this.http.get<Droga[]>('http://localhost:8090/tratamiento/all');
+    return this.http.get<Droga[]>('http://localhost:8090/droga/all');
   }
 
   findById(cedula: number): Observable<Droga> {

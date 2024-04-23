@@ -21,8 +21,8 @@ export class DrogasTratamientoComponent implements OnInit {
       const id = Number(params.get('id'));
       if (id) {
         this.tratamientoService.DrogadelTratamiento(id).subscribe(
-          (droga: Droga[]) => {  // Ajustado para manejar un solo objeto Droga
-           // this.seleccionarMedicamento = droga;
+          (droga: Droga) => {  // Ajustado para manejar un solo objeto Droga
+            this.seleccionarMedicamento = droga;
           },
           error => {
             console.error('Error al obtener la droga del tratamiento:', error);

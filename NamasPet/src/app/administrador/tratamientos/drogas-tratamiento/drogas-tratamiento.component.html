@@ -15,7 +15,7 @@
             <table>
                 <thead>
                     <tr>
-                        <th>ID</th>
+                        <th>Codigo</th>
                         <th class="thsss">Nombre</th>
                         <th>Precio Venta</th>
                         <th class="thsss">Precio Compra</th>
@@ -25,7 +25,7 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <td>{{ seleccionarMedicamento.id }}</td>
+                        <td>{{ seleccionarMedicamento.codigo }}</td>
                         <td class="tdsss">{{ seleccionarMedicamento.nombre }}</td>
                         <td class="correo">{{ seleccionarMedicamento.precioV | currency:'USD':'symbol':'1.2-2' }}</td>
                         <td>{{ seleccionarMedicamento.precioC | currency:'USD':'symbol':'1.2-2' }}</td>

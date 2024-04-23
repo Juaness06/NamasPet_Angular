@@ -1,5 +1,5 @@
 export interface Droga {
-    id: number;
+    codigo: number;
     nombre: string;
     precioV: number;
     precioC: number;

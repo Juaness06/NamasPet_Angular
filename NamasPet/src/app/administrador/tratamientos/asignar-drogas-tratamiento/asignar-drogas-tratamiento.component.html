@@ -9,11 +9,11 @@
                 <div>
                     <label for="drogas" class="form-label">Drogas</label>
                     <select id="drogas" [formControl]="selectedDroga">
-                        <option *ngFor="let droga of drogasList" [value]="droga.id">{{droga.nombre}}</option>
-                    </select>
+                        <option *ngFor="let droga of drogasList" [value]="droga.codigo">{{droga.nombre}}</option>
+                    </select>                                  
                 </div>
                 <div id="btnRegistrar">
-                    
+
                     <button type="submit">Asignar Droga</button>
                 </div>
             </form>

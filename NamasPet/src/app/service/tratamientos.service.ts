@@ -20,8 +20,8 @@ export class TratamientoService {
     return this.http.get<Tratamiento>(`${this.baseUrl}/find/${id}`);
   }
 
-  DrogadelTratamiento(id: number): Observable<Droga[]> {
-    return this.http.get<Droga[]>(`${this.baseUrl}/find/${id}/droga`);
+  DrogadelTratamiento(id: number): Observable<Droga> {
+    return this.http.get<Droga>(`${this.baseUrl}/find/${id}/droga`);
 }
 
 
