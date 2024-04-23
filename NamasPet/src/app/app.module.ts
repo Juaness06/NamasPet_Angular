@@ -10,8 +10,6 @@ import { FooterComponent } from './veterinario/footer/footer.component';
 import { LandingPageComponent } from './veterinario/landing-page/landing-page.component';
 import { ListaMascotasComponent } from './veterinario/mascotas/lista-mascotas/lista-mascotas.component';
 import { VerMascotaComponent } from './veterinario/mascotas/ver-mascota/ver-mascota.component';
-import { VerTratamientosComponent } from './veterinario/tratamientos/ver-tratamientos/ver-tratamientos.component';
-import { InformacionTratamientosComponent } from './veterinario/tratamientos/informacion-tratamientos/informacion-tratamientos.component';
 import { ListaClientesComponent } from './veterinario/clientes/lista-clientes/lista-clientes.component';
 import { ErrorPageComponent } from './veterinario/error-page/error-page.component';
 import { LoginComponent } from './veterinario/clientes/log-in/log-in.component';
@@ -31,6 +29,9 @@ import { ListaVeterinariosComponent } from './administrador/veterinarios/lista-v
 import { AgregarVeterinariosComponent } from './administrador/veterinarios/agregar-veterinarios/agregar-veterinarios.component';
 import { EditarVeterinariosComponent } from './administrador/veterinarios/editar-veterinarios/editar-veterinarios.component';
 import { AdministradorHeaderComponent } from './administrador/administrador-header/administrador-header.component';
+import { ListaTratamientosComponent } from './administrador/tratamientos/lista-tratamientos/lista-tratamientos.component';
+import { DrogasTratamientoComponent } from './administrador/tratamientos/drogas-tratamiento/drogas-tratamiento.component';
+import { AsignarDrogasTratamientoComponent } from './administrador/tratamientos/asignar-drogas-tratamiento/asignar-drogas-tratamiento.component';
 
 @NgModule({
   declarations: [
@@ -50,8 +51,6 @@ import { AdministradorHeaderComponent } from './administrador/administrador-head
     AgregarClientesComponent,
     EditarClientesComponent,
     VerMascotasClienteComponent,
-    VerTratamientosComponent,
-    InformacionTratamientosComponent,
     ListaDrogasComponent,
     AdministradorLandingPageComponent,
     AdministradorDashboardComponent,
@@ -60,6 +59,9 @@ import { AdministradorHeaderComponent } from './administrador/administrador-head
     AgregarVeterinariosComponent,
     EditarVeterinariosComponent,
     AdministradorHeaderComponent,
+    ListaTratamientosComponent,
+    DrogasTratamientoComponent,
+    AsignarDrogasTratamientoComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
   providers: [provideClientHydration()],

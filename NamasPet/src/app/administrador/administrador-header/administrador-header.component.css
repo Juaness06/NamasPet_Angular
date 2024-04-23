@@ -10,6 +10,7 @@
 
 #contenedorMenuDesplegable {
   display: flex;
+  margin-right: 40px;
 }
 
 /* estilos para la barra de navegación*/
@@ -23,6 +24,11 @@ nav {
   font-style: normal;
   font-size: 20px;
 }
+
+#btnLogin{
+  padding: 0px;
+}
+
 
 /* estilos para la barra de navegación*/
 .menuHorizontal {
@@ -86,7 +92,6 @@ nav {
 #btnLogin {
   padding-bottom: 0px;
   padding-top: 0px;
-  padding-left: 20px;
   padding-right: 0px;
   width: fit-content;
 }

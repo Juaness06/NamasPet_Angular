@@ -1,8 +1,6 @@
 export interface Tratamiento {
   id: number;
-  nombre: String;
-  precioV: number;
+  nombreTratamiento: string;
   precioC: number;
-  unidades_C: number;
-  unidades_V: number;
+  fecha: Date;
 }

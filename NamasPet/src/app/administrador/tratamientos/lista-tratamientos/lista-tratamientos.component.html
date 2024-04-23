@@ -1,0 +1,40 @@
+<main id="contenedorMain">
+    <ng-container>
+        <app-administrador-header></app-administrador-header>
+    </ng-container>
+    <section id="sectionTabla">
+        <div id="divTitulo">
+            <div id="titulo">
+                <h1>TRATAMIENTOS</h1>
+            </div>
+        </div>
+        <div id="divTabla">
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th class="thsss">NOMBRE</th>
+                        <th>PRECIO COMPRA</th>
+                        <th class="thsss">FECHA</th>
+                        <th>DROGAS</th>
+                        <th>ACCIONES</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let tratamiento of medicamentoList">
+                        <td>{{ tratamiento.id }}</td>
+                        <td class="tdsss">{{ tratamiento.nombreTratamiento }}</td>
+                        <td class="correo">{{ tratamiento.precioC }}</td>
+                        <td>{{ tratamiento.fecha }}</td>
+                        <td>
+                            <a id="anchorPerros" [routerLink]="['/tratamientos', tratamiento.id, 'drogas']">Drogas</a>
+                        </td>
+                        <td>
+                            <a class="btnEdi" [routerLink]="['/tratamientos', tratamiento.id, 'asignar-drogas']">Asignar Droga</a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+</main>
