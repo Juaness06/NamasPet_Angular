@@ -1,0 +1,35 @@
+<section id="sectionTitulo">
+    <h1>Registrar Tratamiento</h1>
+</section>
+
+<section id="sectionForm">
+    <div id="divForm">
+        <form (ngSubmit)="onSubmit()">
+            <div>
+                <label for="nombreTratamiento">Nombre del Tratamiento</label>
+                <input type="text" id="nombreTratamiento" [(ngModel)]="formTratamiento.nombreTratamiento" name="nombreTratamiento">
+            </div>
+            <div>
+                <label for="precioC">Precio</label>
+                <input type="number" id="precioC" [(ngModel)]="formTratamiento.precioC" name="precioC">
+            </div>
+            <div>
+                <label for="drogaIds">Droga</label>
+                <select multiple id="drogaIds" [(ngModel)]="formDroga.codigo" name="drogaIds">
+                    <option *ngFor="let droga of drogasList" [value]="droga.codigo">{{droga.nombre}}</option>
+                </select>
+            </div> 
+            <div>
+                <label for="veterinarioId">Veterinario ID</label>
+                <input type="text" id="veterinarioId" [(ngModel)]="formVeterinario.id" name="veterinarioId">
+            </div>
+            <div>
+                <label for="mascotaId">Mascota ID</label>
+                <input type="text" id="mascotaId" [(ngModel)]="formMascota.id" name="mascotaId">
+            </div>
+            <div id="btnRegistrar">
+                <button type="submit">Registrar Tratamiento</button>
+            </div>
+        </form>
+    </div>
+</section>

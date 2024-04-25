@@ -20,6 +20,10 @@ export class TratamientoService {
     return this.http.get<Tratamiento>(`${this.baseUrl}/find/${id}`);
   }
 
+  addTratamiento(tratamiento: Tratamiento, idperro: number, iddroga: number,idtratamiento: number): Observable<any> {
+    return this.http.post(`${this.baseUrl}/add/`+ idperro +'/'+iddroga+'/'+ idtratamiento, tratamiento);
+  }
+
   DrogadelTratamiento(id: number): Observable<Droga> {
     return this.http.get<Droga>(`${this.baseUrl}/find/${id}/droga`);
 }

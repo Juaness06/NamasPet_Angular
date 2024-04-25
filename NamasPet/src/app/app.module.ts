@@ -31,6 +31,7 @@ import { AdministradorHeaderComponent } from './administrador/administrador-head
 import { ListaTratamientosComponent } from './administrador/tratamientos/lista-tratamientos/lista-tratamientos.component';
 import { DrogasTratamientoComponent } from './administrador/tratamientos/drogas-tratamiento/drogas-tratamiento.component';
 import { AsignarDrogasTratamientoComponent } from './administrador/tratamientos/asignar-drogas-tratamiento/asignar-drogas-tratamiento.component';
+import { AgregarTratamientosComponent } from './administrador/tratamientos/agregar-tratamientos/agregar-tratamientos.component';
 
 @NgModule({
   declarations: [
@@ -62,6 +63,7 @@ import { AsignarDrogasTratamientoComponent } from './administrador/tratamientos/
     ListaTratamientosComponent,
     DrogasTratamientoComponent,
     AsignarDrogasTratamientoComponent,
+    AgregarTratamientosComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule,ReactiveFormsModule  ],
   providers: [provideClientHydration()],

@@ -22,6 +22,7 @@ import { AdministradorDashboardComponent } from './administrador/administrador-d
 import { ListaTratamientosComponent } from './administrador/tratamientos/lista-tratamientos/lista-tratamientos.component';
 import { DrogasTratamientoComponent } from './administrador/tratamientos/drogas-tratamiento/drogas-tratamiento.component';
 import { AsignarDrogasTratamientoComponent } from './administrador/tratamientos/asignar-drogas-tratamiento/asignar-drogas-tratamiento.component';
+import { AgregarTratamientosComponent } from './administrador/tratamientos/agregar-tratamientos/agregar-tratamientos.component';
 
 const routes: Routes = [
   {path: '', pathMatch: "full", component: LandingPageComponent},
@@ -36,6 +37,7 @@ const routes: Routes = [
   {path: 'cliente/edit/:cedula', component: EditarClientesComponent},
   {path: 'cliente/:cedula/mascotas', component: VerMascotasClienteComponent},
   {path: 'login', component: LoginComponent},
+  {path: 'tratamientos/add',component:AgregarTratamientosComponent},
   {path: 'drogas/all', component: ListaDrogasComponent},
   {path: 'admin/home/:id', component: AdministradorLandingPageComponent},
   {path: 'admin/login', component: AdministradorLogInComponent},

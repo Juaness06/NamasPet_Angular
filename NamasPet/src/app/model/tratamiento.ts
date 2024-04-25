@@ -6,8 +6,8 @@ export interface Tratamiento {
   id: number;
   nombreTratamiento: string;
   precioC: number;
-  fecha: Date;
-  drogas?: Droga[];
+  fecha?: Date;
+  droga?: Droga;
   veterinario?: Veterinario;
   perros?:Mascota;
 }
