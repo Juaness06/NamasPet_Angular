@@ -90,25 +90,20 @@
         </div>
         <div class="divWidgets">
             <div id="divWidgtTabla&Grafica">
-                <div>
-                    <canvas id="chartTratamientosPorDroga"></canvas>
-                </div>
-                <div>
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>Tipo de Medicamento</th>
-                                <th>Cantidad</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr *ngFor="let tratamiento of tratamientosPorDroga">
-                                <td>{{ tratamiento[0] }}</td>
-                                <td>{{ tratamiento[1] }}</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Tipo de Medicamento</th>
+                            <th>Cantidad</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let tratamiento of tratamientosPorDroga">
+                            <td>{{ tratamiento[0] }}</td>
+                            <td>{{ tratamiento[1] }}</td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
             <div class="widgetQuery">
                 <div class="divIconoYDato">
@@ -117,7 +112,7 @@
                     </div>
                     <div>
                         <i class='bx bx-wallet'></i>
-                    </div>
+                    </div> 
                 </div>
                 <div class="divTextoQuery">
                     <h6>Ganancias Totales De Namaspet</h6>

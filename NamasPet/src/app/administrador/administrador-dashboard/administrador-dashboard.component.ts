@@ -82,7 +82,7 @@ export class AdministradorDashboardComponent implements OnInit {
         datasets: [{
           label: 'Cantidad por Medicamento',
           data: data,
-          backgroundColor: 'rgba(243, 215, 90, 0.5)', // Amarillo suave
+          backgroundColor: '#F3D75A', // Amarillo suave
         }]
       }
     });

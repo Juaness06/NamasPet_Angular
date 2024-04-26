@@ -1,62 +1,94 @@
 #contenedorMain {
-    background-color: #2f2c79;
-    min-height: 100vh;
+  background-color: #2f2c79;
+  min-height: 100vh;
 }
 
-#divTitulo{
-    margin-top: 30px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-family: 'Macondo', cursive;
-    color: white;
-    font-weight: bolder;
+#divTitulo {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Macondo", cursive;
+  color: white;
+  font-weight: bolder;
 }
 
-#sectionDashboard{
-    display: flex;
-    margin-left: 70px;
-    margin-right: 70px;
-    flex-direction: column;
-    align-items: center;
+#sectionDashboard {
+  display: flex;
+  margin-left: 70px;
+  margin-right: 70px;
+  flex-direction: column;
+  align-items: center;
 }
 
-.divWidgets{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    margin-bottom: 10px;
+.divWidgets {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  margin-bottom: 10px;
 }
 
-
-.widgetQuery{
-    display: flex;
-    flex-direction: column;
-    background-color: #f3d75a;
-    border-radius: 10px;
-    padding: 15px;
-    margin: 10px;
-    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+.widgetQuery {
+  display: flex;
+  flex-direction: column;
+  background-color: #f3d75a;
+  border-radius: 10px;
+  padding: 15px;
+  margin: 10px;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
 .widgetQuery:hover {
-    transform: scale(1.1); 
-    box-shadow: 0 0 20px 5px rgba(255, 255, 255, 0.5); 
+  transform: scale(1.1);
+  box-shadow: 0 0 20px 5px rgba(255, 255, 255, 0.5);
 }
 
-.divIconoYDato{
-    display: flex;
-    flex-direction: row;
-    color: #171a4a;
-    justify-content: space-evenly;
-    font-size: 80px;
+.divIconoYDato {
+  display: flex;
+  flex-direction: row;
+  color: #171a4a;
+  justify-content: space-evenly;
+  font-size: 80px;
 }
 
-.divTextoQuery{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: #171a4a;
-    font-size: 25px;
-    font-family: 'Patua One', cursive;
+.divTextoQuery {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #171a4a;
+  font-size: 25px;
+  font-family: "Patua One", cursive;
+}
+
+table {
+  margin-top: 20px;
+  width: 500px; /* Ajusta esto según necesites */
+  height: 230px;
+  border-collapse: collapse; /* Elimina el espacio entre los bordes de las celdas */
+  background-color: #f3d75a; /* Color de fondo de la tabla */
+  font-family: "Patua One ", cursive;
+  border-radius: 20px; /* Agrega bordes redondos */
+}
+
+th,
+td {
+  padding: 8px;
+  text-align: left;
+  color: #171a4a;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+
+thead {
+  background-color: #f3d75a;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+
+tbody tr:nth-child(odd) {
+  background-color: #f7efa8;
+}
+
+tbody tr:hover {
+  background-color: #e1c24f;
 }

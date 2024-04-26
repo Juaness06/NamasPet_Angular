@@ -13,4 +13,11 @@
         <h3 th:text=>Peso: {{mascota.peso}} kg</h3>
         <h3 th:text=>#Atenciones: {{mascota.numeroAtenciones}}</h3>
     </div>
+    <div id="div2">
+        <div id="divBtn">
+            <a [routerLink]="['/admin/mascotas', mascota.id, 'historial']" id="anchorAgregarMascota">
+                <button id="btnAgregar">Historial</button>
+            </a>
+        </div>
+    </div>
 </section>

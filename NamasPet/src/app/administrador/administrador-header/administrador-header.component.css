@@ -65,6 +65,7 @@ nav {
 .menuHorizontal li:hover .menuVertical {
   display: block;
   z-index: 1;
+  color: white;
 }
 
 /* estilos para la barra de navegación*/
