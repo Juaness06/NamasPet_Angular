@@ -14,6 +14,10 @@ export class AsignarDrogasTratamientoComponent implements OnInit {
   drogasList: Droga[] = [];
   selectedDroga = new FormControl();  // Usamos FormControl aquí para una mejor gestión y validación
 
+  formAsignacion = {
+    tratamientoId: 0,
+    drogaId: 0
+  };
   constructor(
     private drogaService: DrogaService,
     private tratamientoService: TratamientoService,
@@ -23,34 +27,24 @@ export class AsignarDrogasTratamientoComponent implements OnInit {
   ngOnInit(): void {
     // Obtén el id del tratamiento de los parámetros de ruta
     this.route.paramMap.subscribe(params => {
-      const tratamientoId = Number(params.get('id'));
-      // Utiliza el id para obtener las drogas o realizar otras acciones necesarias
+      const tratamientoId1 = Number(params.get('id'));
+      this.formAsignacion.tratamientoId = tratamientoId1;
+     
       this.drogaService.findAll().subscribe(drogas => {
         this.drogasList = drogas;
       });
     });
   }
 
-  asignarDroga() {
-    const tratamientoId = Number(this.route.snapshot.paramMap.get('id'));
-    const drogaId = Number(this.selectedDroga.value);
-    console.log('Tratamiento ID:', tratamientoId, 'Droga ID:', drogaId);
-  
-    if (!isNaN(drogaId) && drogaId != null && drogaId > 0) {
-      this.tratamientoService.agregarDrogaATratamiento(tratamientoId, drogaId).subscribe({
-        next: (response) => {
-          console.log('Respuesta del servidor:', response);
-          alert('Droga asignada con éxito!');
-        },
-        error: (error) => {
-          console.error('Error al asignar la droga:', error);
-          alert('Error al asignar la droga. Vea la consola para más detalles.');
-        }
-      });
-    } else {
-      console.error('Selected drug ID:', this.selectedDroga.value);
-      alert('Por favor, selecciona una droga válida antes de asignar.');
-    }
+  asignarDroga(): void {
+    this.drogaService.findById(this.formAsignacion.drogaId).subscribe(droga => {
+      if (droga) {
+        this.tratamientoService.agregarDrogaATratamiento(this.formAsignacion.tratamientoId, this.formAsignacion.drogaId);
+      } else {
+        console.log('Droga no encontrada');
+      }
+    });
   }
+  
   
 }

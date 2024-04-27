@@ -20,17 +20,17 @@ export class TratamientoService {
     return this.http.get<Tratamiento>(`${this.baseUrl}/find/${id}`);
   }
 
-  addTratamiento(tratamiento: Tratamiento, idperro: number, iddroga: number,idtratamiento: number): Observable<any> {
-    return this.http.post(`${this.baseUrl}/add/`+ idperro +'/'+iddroga+'/'+ idtratamiento, tratamiento);
-  }
+  addTratamiento(tratamiento: Tratamiento, idperro: number, iddroga: number,idveterinario: number): void {
+    this.http.post(`${this.baseUrl}/add/${idperro}/${iddroga}/${idveterinario}`, tratamiento).subscribe();
+  } 
 
   DrogadelTratamiento(id: number): Observable<Droga> {
     return this.http.get<Droga>(`${this.baseUrl}/find/${id}/droga`);
 }
 
 
-  agregarDrogaATratamiento(tratamientoId: number, drogaId: number): Observable<any> {
-    return this.http.post(`${this.baseUrl}/addDroga/${tratamientoId}/${drogaId}`, {});
+  agregarDrogaATratamiento(tratamientoId: number, drogaId: number): void {
+     this.http.put(`${this.baseUrl}/addDroga/${tratamientoId}/${drogaId}`,{}).subscribe();
   }
   
 }

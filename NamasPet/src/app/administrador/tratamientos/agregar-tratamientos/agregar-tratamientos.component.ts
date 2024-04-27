@@ -18,7 +18,7 @@ import { MascotaService } from 'src/app/service/mascota.service';
 export class AgregarTratamientosComponent implements OnInit {
   
 
-
+  sendtratamiento!: Tratamiento;
   drogasList: Droga[] = [];
   formTratamiento: Tratamiento = {
     id: 0,
@@ -116,11 +116,25 @@ formDroga: Droga = {
   }
 
   onSubmit() {
-    if (this.mascotaService.findById(this.formMascota.id) != null&&this.drogaService.findById(this.formDroga.codigo) != null&&this.veterinarioService.findById(this.formVeterinario.id) != null) {
-      this.tratamientoService.addTratamiento(this.formTratamiento,this.formMascota.id,this.formDroga.codigo,this.formVeterinario.id); 
+    console.log("dentro del on submit");
+    console.log("comprobar todos los id");
+    console.log(this.mascotaService.findById(this.formMascota.id));
+    console.log(this.drogaService.findById(this.formDroga.codigo));
+    console.log(this.veterinarioService.findById(this.formVeterinario.id));
+    
+    if (this.mascotaService.findById(this.formMascota.id) != null && this.drogaService.findById(this.formDroga.codigo) != null && this.veterinarioService.findById(this.formVeterinario.id) != null) {
+      console.log("dentro del if");
+      
+      console.log(this.formMascota.id);
+      console.log(this.formDroga.codigo);
+      console.log(this.formVeterinario.id);
+      this.sendtratamiento = Object.assign({}, this.formTratamiento);
+      this.tratamientoService.addTratamiento(this.sendtratamiento,this.formMascota.id,this.formDroga.codigo,this.formVeterinario.id); 
       this.router.navigate(['/tratamientos/all']);
     } else {
       console.log('El cliente no existe');
+
+
     }
     
   }

@@ -15,10 +15,10 @@
             </div>
             <div>
                 <label for="drogaIds">Droga</label>
-                <select multiple id="drogaIds" [(ngModel)]="formDroga.codigo" name="drogaIds">
-                    <option *ngFor="let droga of drogasList" [value]="droga.codigo">{{droga.nombre}}</option>
+                <select id="drogaIds" [(ngModel)]="formDroga.codigo" name="drogaIds">
+                  <option *ngFor="let droga of drogasList" [value]="droga.codigo">{{droga.nombre}}</option>
                 </select>
-            </div> 
+              </div>              
             <div>
                 <label for="veterinarioId">Veterinario ID</label>
                 <input type="text" id="veterinarioId" [(ngModel)]="formVeterinario.id" name="veterinarioId">

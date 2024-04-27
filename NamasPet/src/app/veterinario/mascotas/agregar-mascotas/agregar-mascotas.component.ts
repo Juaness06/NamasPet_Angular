@@ -57,7 +57,7 @@ export class AgregarMascotasComponent {
     if (this.clienteService.findById(this.formCliente.cedula) != null) {
       this.sendMascota = Object.assign({}, this.formMascota);
       this.sendCliente = Object.assign({}, this.formCliente);
-      this.mascotaService.agregarMascota(this.formMascota,this.formCliente.cedula); 
+      this.mascotaService.agregarMascota(this.sendMascota,this.formCliente.cedula); 
       this.router.navigate(['/mascotas/all']);
     } else {
       console.log('El cliente no existe');

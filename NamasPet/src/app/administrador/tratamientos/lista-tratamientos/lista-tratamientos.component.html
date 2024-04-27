@@ -18,6 +18,7 @@
                         <th class="thsss">FECHA</th>
                         <th>DROGAS</th>
                         <th>ACCIONES</th>
+                        <th>Agregar</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -31,6 +32,9 @@
                         </td>
                         <td>
                             <a id="btnAsignarDrogas" [routerLink]="['/tratamientos', tratamiento.id, 'asignar-drogas']">Asignar</a>
+                        </td>
+                        <td>
+                            <a id="btnAgregar" [routerLink]="['/tratamientos/', 'add']">Agregar</a>
                         </td>
                     </tr>
                 </tbody>
