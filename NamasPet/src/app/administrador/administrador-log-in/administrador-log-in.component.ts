@@ -19,8 +19,6 @@ export class AdministradorLogInComponent {
   ) {}
 
   onSubmit(): void {
-    console.log('dentro del on submit');
-    console.log('admin', this.admin);
     this.adminService.findByNombreAndContrasena(this.admin.nombre, this.admin.contrasena).subscribe(
       (administrador) => {
         // Verificar si el administrador es null

@@ -35,6 +35,7 @@ import { AdministradorAgregarClienteComponent } from './administrador/clientes/a
 import { AdministradorEditarClienteComponent } from './administrador/clientes/administrador-editar-cliente/administrador-editar-cliente.component';
 import { AdministradorVerMascotasClienteComponent } from './administrador/clientes/administrador-ver-mascotas-cliente/administrador-ver-mascotas-cliente.component';
 import { AdministradorVerMascotaClienteComponent } from './administrador/clientes/administrador-ver-mascota-cliente/administrador-ver-mascota-cliente.component';
+import { LogInVeterinariosComponent } from './administrador/veterinarios/log-in-veterinarios/log-in-veterinarios.component';
 
 const routes: Routes = [
   {path: '', pathMatch: "full", component: LandingPageComponent},
@@ -72,6 +73,7 @@ const routes: Routes = [
   {path: 'veterinarios/all', component: ListaVeterinariosComponent},
   {path: 'veterinarios/add', component: AgregarVeterinariosComponent},
   {path: 'veterinarios/edit/:id', component: EditarVeterinariosComponent},
+  {path: 'veterianarios/login', component: LogInVeterinariosComponent},
   {path: '**', component: ErrorPageComponent},
 ];
 

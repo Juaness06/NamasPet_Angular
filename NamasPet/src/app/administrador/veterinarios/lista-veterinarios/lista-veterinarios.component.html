@@ -19,6 +19,7 @@
                     <tr>
                         <th>ID</th>
                         <th>NOMBRE</th>
+                        <th>CONTRASEÑA</th>
                         <th>ESPECIALIDAD</th>
                         <th>ATENCIONES</th>
                         <th>FOTO</th>
@@ -30,6 +31,7 @@
                     <tr *ngFor="let veterinario of veterinariosList">
                         <td>{{ veterinario.id }}</td>
                         <td>{{ veterinario.nombre }}</td>
+                        <th class="thContrasena">*****</th>
                         <td>{{ veterinario.especialidad }}</td>
                         <td>{{ veterinario.atenciones }}</td>
                         <td>

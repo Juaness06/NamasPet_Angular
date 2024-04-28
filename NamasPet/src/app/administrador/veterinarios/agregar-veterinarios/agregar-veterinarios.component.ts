@@ -22,6 +22,7 @@ export class AgregarVeterinariosComponent {
   formVeterinario: Veterinario = {
     id: 0,
     nombre: '',
+    contrasena: '',
     especialidad: '',
     atenciones:0,
     foto:'',

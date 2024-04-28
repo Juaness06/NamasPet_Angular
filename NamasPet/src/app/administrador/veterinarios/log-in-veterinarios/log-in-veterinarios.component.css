@@ -45,7 +45,7 @@
   font-family: "Macondo", cursive;
   color: white;
   font-size: 30px;
-  font-weight: lighter;
+  font-weight: bold;
 }
 
 .login-box {
@@ -58,7 +58,7 @@
   transform: translate(-50%, -50%);
   background: #64c27b;
   box-sizing: border-box;
-  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
+  box-shadow: 0 15px 25px #171a4a;
   border-radius: 10px;
 }
 
@@ -81,7 +81,6 @@
   padding: 10px 0;
   font-size: 16px;
   color: #171a4a;
-  margin-bottom: 30px;
   border: none;
   border-bottom: 1px solid #171a4a;
   outline: none;
@@ -129,10 +128,6 @@
   border-radius: 10px;
 }
 
-#btnIngresar:hover {
-  color: white;
-}
-
 .login-box button span {
   position: absolute;
   display: block;
@@ -157,12 +152,16 @@
 
 #btnIngresar {
   font-family: "Macondo", cursive;
-  font-size: 900;
   border-radius: 10px;
   text-decoration: none;
   border-radius: 1px solid #64c27b;
   letter-spacing: 0.5px;
   border: none;
+  color: #171a4a;
+}
+
+#btnIngresar:hover {
+  color: white;
 }
 
 #cedula {
@@ -170,7 +169,7 @@
   font-size: 25px;
 }
 
-#labelCedula {
+.labelInicio {
   font-family: "Patua One", cursive;
 }
 
@@ -193,11 +192,16 @@
   text-transform: uppercase;
   overflow: hidden;
   transition: 0.5s;
-  letter-spacing: 4px;
+  letter-spacing: 0.5px;
   background: white;
   border: none;
   border-radius: 10px;
   padding: 10px 20px;
+}
+
+.labelInputUsuario {
+  margin-bottom: 15px;
+  font-family: "Patua One", cursive;
 }
 
 input[type=number]::-webkit-inner-spin-button, 

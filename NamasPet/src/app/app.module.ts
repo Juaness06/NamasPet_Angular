@@ -19,7 +19,8 @@ import { EditarMascotasComponent } from './veterinario/mascotas/editar-mascotas/
 import { AgregarClientesComponent } from './veterinario/clientes/agregar-clientes/agregar-clientes.component';
 import { EditarClientesComponent } from './veterinario/clientes/editar-clientes/editar-clientes.component';
 import { VerMascotasClienteComponent } from './veterinario/clientes/ver-mascotas-cliente/ver-mascotas-cliente.component';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';import { HttpClientModule } from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 import { ListaDrogasComponent } from './veterinario/drogas/lista-drogas/lista-drogas.component';
 import { AdministradorLandingPageComponent } from './administrador/administrador-landing-page/administrador-landing-page.component';
 import { AdministradorDashboardComponent } from './administrador/administrador-dashboard/administrador-dashboard.component';
@@ -33,7 +34,6 @@ import { DrogasTratamientoComponent } from './administrador/tratamientos/drogas-
 import { AsignarDrogasTratamientoComponent } from './administrador/tratamientos/asignar-drogas-tratamiento/asignar-drogas-tratamiento.component';
 import { AgregarTratamientosComponent } from './administrador/tratamientos/agregar-tratamientos/agregar-tratamientos.component';
 import { HistorialMascotaComponent } from './veterinario/mascotas/historial-mascota/historial-mascota.component';
-import { LogInComponent } from './administrador/veterinarios/log-in/log-in.component';
 import { VerMascotaClienteComponent } from './veterinario/clientes/ver-mascota-cliente/ver-mascota-cliente.component';
 import { AdministradorListaMascotasComponent } from './administrador/mascotas/administrador-lista-mascotas/administrador-lista-mascotas.component';
 import { AdministradorEditarMascotaComponent } from './administrador/mascotas/administrador-editar-mascota/administrador-editar-mascota.component';
@@ -45,7 +45,7 @@ import { AdministradorAgregarClienteComponent } from './administrador/clientes/a
 import { AdministradorEditarClienteComponent } from './administrador/clientes/administrador-editar-cliente/administrador-editar-cliente.component';
 import { AdministradorVerMascotasClienteComponent } from './administrador/clientes/administrador-ver-mascotas-cliente/administrador-ver-mascotas-cliente.component';
 import { AdministradorVerMascotaClienteComponent } from './administrador/clientes/administrador-ver-mascota-cliente/administrador-ver-mascota-cliente.component';
-
+import { LogInVeterinariosComponent } from './administrador/veterinarios/log-in-veterinarios/log-in-veterinarios.component';
 
 @NgModule({
   declarations: [
@@ -78,7 +78,6 @@ import { AdministradorVerMascotaClienteComponent } from './administrador/cliente
     DrogasTratamientoComponent,
     AsignarDrogasTratamientoComponent,
     AgregarTratamientosComponent,
-    LogInComponent,
     VerMascotaClienteComponent,
     AdministradorListaMascotasComponent,
     AdministradorEditarMascotaComponent,
@@ -90,8 +89,15 @@ import { AdministradorVerMascotaClienteComponent } from './administrador/cliente
     AdministradorEditarClienteComponent,
     AdministradorVerMascotasClienteComponent,
     AdministradorVerMascotaClienteComponent,
+    LogInVeterinariosComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule,ReactiveFormsModule  ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    FormsModule,
+    HttpClientModule,
+    ReactiveFormsModule,
+  ],
   providers: [provideClientHydration()],
   bootstrap: [AppComponent],
 })

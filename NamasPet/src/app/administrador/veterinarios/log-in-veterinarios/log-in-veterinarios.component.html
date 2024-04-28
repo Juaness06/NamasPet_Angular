@@ -1,7 +1,8 @@
 <div class="login-component">
     <section id="sectionTitulo" class="fondo">
         <div class="divPlanta">
-            <img class="planta" src="assets/Imagenes/plantaLogIn.png" alt="plantaLogIn" width="146.23" height="222.5">
+            <img class="planta" src="assets/Imagenes/plantaLogIn.png" alt="plantaLogIn" width="146.23"
+                height="222.5">
         </div>
         <div id="divLogoTitulo" class="fondo">
             <div id="divLogo">
@@ -12,14 +13,15 @@
             </div>
         </div>
         <div class="divPlanta">
-            <img class="planta" src="assets/Imagenes/plantaLogIn.png" alt="plantaLogIn" width="146.23" height="222.5"
-                id="plantaReflejada">
+            <img class="planta" src="assets/Imagenes/plantaLogIn.png" alt="plantaLogIn" width="146.23"
+                height="222.5" id="plantaReflejada">
         </div>
     </section>
 
     <section id="sectionLogIn">
         <div id="plantaAbajoIzquierda">
-            <img class="planta" src="assets/Imagenes/plantaLogIn.png" alt="plantaLogIn" width="146.23" height="222.5">
+            <img class="planta" src="assets/Imagenes/plantaLogIn.png" alt="plantaLogIn" width="146.23"
+                height="222.5">
         </div>
         <div id="divlogin">
             <div class="login-box">
@@ -31,8 +33,8 @@
                         <span></span>
                         <span></span>
                         <span></span>
-                      </button>
-                      <button id="btnLogInAdministrador" class=" btnOpcionesInicioSesion" [routerLink]="['/veterianarios/login']">
+                    </button>
+                    <button id="btnLogInAdministrador" class=" btnOpcionesInicioSesion" [routerLink]="['/veterianarios/login']">
                         Veterinario
                         <span></span>
                         <span></span>
@@ -40,17 +42,24 @@
                         <span></span>
                     </button>
                 </div>
-                <form method="post" (ngSubmit)="onSubmit()">
+                <form (submit)="onSubmit()">
                     <div class="user-box">
-                        <input type="number" id="cedula" name="cedula" required [(ngModel)]="user.cedula" ngModel>
-                        <label id="labelCedula">Cédula</label>
+                        <input class="labelInputUsuario" type="number" id="id" name="id" [(ngModel)]="vet.cedula"
+                            required>
+                        <label class="labelInputUsuario" class="labelInicio">Cedula</label>
+                    </div>
+                    <div class="user-box">
+                        <input class="labelInputUsuario" type="password" id="contrasena" name="contrasena"
+                            [(ngModel)]="veterinario.contrasena" required>
+                        <label class="labelInputUsuario" class="labelInicio">Contraseña</label>
                     </div>
                     <button id="btnIngresar" type="submit">Ingresar</button>
                 </form>
             </div>
         </div>
         <div id="plantaAbajoDerecha">
-            <img class="planta" src="assets/Imagenes/plantaLogIn.png" alt="plantaLogIn" width="146.23" height="222.5">
+            <img class="planta" src="assets/Imagenes/plantaLogIn.png" alt="plantaLogIn" width="146.23"
+                height="222.5">
         </div>
     </section>
 </div>

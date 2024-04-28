@@ -42,7 +42,7 @@
 
     <section class="sectionTarjetones">
         <div class="divTarjetones">
-            <a class="btnTarjeton" *ngFor="let perro of mascotas" [routerLink]="['/cleinte', perro.id]">
+            <a class="btnTarjeton" *ngFor="let perro of mascotas" [routerLink]="['/cliente/mascota/', perro.id]">
                 <div class="card">
                     <div class="card-image-container">
                         <img [src]="perro.imagen" alt="Perro">

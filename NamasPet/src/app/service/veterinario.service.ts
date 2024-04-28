@@ -62,4 +62,8 @@ export class VeterinarioService {
         })
       );
   }
+
+  findByIdAndContrasena(id: number, contrasena: string): Observable<Veterinario> {
+    return this.http.get<Veterinario>(`http://localhost:8090/veterinario/findByIdAndContrasena/${id}/${contrasena}`);
+  }
 }

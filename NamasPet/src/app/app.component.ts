@@ -9,7 +9,7 @@ import { Router, NavigationEnd } from '@angular/router';
 export class AppComponent {
   title = 'NamasPet';
 
-  pantallasPermitidasHeader = ['mascotas', 'clientes', '', 'tratamiento'];
+  pantallasPermitidasHeader = ['mascotas', 'clientes', '', 'drogas'];
   pantallasPermitidasFooter = ['']; // Asegúrate de que el nombre sea consistente
 
   mostrarHeader: boolean = true;

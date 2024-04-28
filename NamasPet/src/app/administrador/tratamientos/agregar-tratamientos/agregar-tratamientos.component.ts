@@ -36,6 +36,7 @@ export class AgregarTratamientosComponent implements OnInit {
     veterinario: {
         id: 0,
         nombre: '',
+        contrasena: '',
         especialidad: '',
         atenciones: 0,
         foto: '',
@@ -59,6 +60,7 @@ export class AgregarTratamientosComponent implements OnInit {
 formVeterinario: Veterinario = {
   id: 0,
   nombre: '',
+  contrasena: '',
   especialidad: '',
   atenciones: 0,
   foto: '',
