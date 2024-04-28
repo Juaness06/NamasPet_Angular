@@ -1,0 +1,56 @@
+<main id="contenedorMain">
+    <app-administrador-header></app-administrador-header>
+    <section id="sectionTabla">
+        <div id="divTitulo">
+            <div id="space"> <!--Corregir de una vez lo que se pone-->
+                <a class="iconos" [routerLink]="['/admin/mascotas/tarjetones']"><i class='bx bx-grid-alt'></i></a>
+                <a class="iconos" [routerLink]="['/admin/mascotas/all']"><i class='bx bx-table'></i></a>
+            </div>
+            <div id="divTituloMascotas">
+                <h1>MASCOTAS</h1>
+            </div>
+            <div id="divBtn">
+                <a [routerLink]="['/admin/mascotas/add']" id="anchorAgregarMascota">
+                    <button id="btnAgregar">Agregar</button>
+                </a>
+            </div>
+        </div>
+        <div id="divTabla">
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>NOMBRE</th>
+                        <th>RAZA</th>
+                        <th>EDAD</th>
+                        <th>ESTADO</th>
+                        <th>PESO</th>
+                        <th>IMAGEN</th>
+                        <th># ATENCIONES</th>
+                        <th>ACCIONES</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let mascota of mascotasList">
+                        <td>{{ mascota.id }}</td>
+                        <td>{{ mascota.nombre }}</td>
+                        <td>{{ mascota.raza }}</td>
+                        <td>{{ mascota.edad }}</td>
+                        <td>{{ mascota.actividad ? 'Activo' : 'Inactivo' }}</td>
+                        <td>{{ mascota.peso }}</td>
+                        <td>
+                            <img [src]="mascota.imagen" alt="Imagen de la mascota"
+                                 style="max-width:100%; height:auto;">
+                        </td>
+                        <td>{{ mascota.numeroAtenciones }}</td>
+                        <td id="tdEliminarEditar">
+                            <a class="btnEdi" [routerLink]="['/admin/mascotas/edit', mascota.id]">Editar</a>
+                            <a class="btnEli" (click)="eliminarMascota(mascota)">Eliminar</a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div id="space2"></div>
+    </section>
+</main>

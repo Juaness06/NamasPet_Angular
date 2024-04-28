@@ -9,7 +9,7 @@ import { Router, NavigationEnd } from '@angular/router';
 export class AppComponent {
   title = 'NamasPet';
 
-  pantallasPermitidasHeader = ['mascotas', 'clientes', '', '', 'cliente', 'tratamiento'];
+  pantallasPermitidasHeader = ['mascotas', 'clientes', '', 'tratamiento'];
   pantallasPermitidasFooter = ['']; // Asegúrate de que el nombre sea consistente
 
   mostrarHeader: boolean = true;
@@ -28,7 +28,8 @@ export class AppComponent {
     const pantalla = url.split('/')[1]; // Asume que la URL es del tipo '/pantalla/...'
     this.mostrarHeader = this.pantallasPermitidasHeader.includes(pantalla);
     this.mostrarFooter = this.pantallasPermitidasFooter.includes(pantalla);
-    if(pantalla == '**'){
+    const cedulaCliente:number = Number(localStorage.getItem('cedula'));
+    if(pantalla == '**' || pantalla == 'cliente/'+cedulaCliente+'/mascotas'){
       this.mostrarHeader = false;
       this.mostrarFooter = false;
     }

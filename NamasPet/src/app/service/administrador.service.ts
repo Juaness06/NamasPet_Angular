@@ -20,6 +20,10 @@ export class AdministradorService {
     return this.http.get<Tratamiento[]>('http://localhost:8090/tratamiento/historial/' + idPerro);
   }
 
+  findByNombreAndContrasena(nombre: string, contrasena: string): Observable<Administrador> {
+    return this.http.get<Administrador>(`http://localhost:8090/administrador/findByNombreAndContrasena/${nombre}/${contrasena}`);
+  }
+
   //!Querys para el dashboard del administrador
   
   //?Primera Query

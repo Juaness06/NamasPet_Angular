@@ -48,7 +48,6 @@ export class EditarClientesComponent {
       }
     });
   }
-  
 
   actualizarCliente() {
     this.sendCliente = Object.assign({}, this.formCliente);

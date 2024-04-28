@@ -25,27 +25,15 @@
         </div>
         <div id="divlogin">
             <div class="login-box">
-                <h2>Iniciar Sesión</h2>
-                <div id="divBtnsInicioSesion">
-                    <button id="btnLogInCliente" class="btnOpcionesInicioSesion" [routerLink]="['/login']">
-                        Cliente
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </button>
-                    <button id="btnLogInAdministrador" class=" btnOpcionesInicioSesion" [routerLink]="['/admin/login']">
-                        Administrador
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </button>
-                </div>
+                <h2>Iniciar Sesión Administrador</h2>
                 <form (submit)="onSubmit()">
                     <div class="user-box">
-                        <input class="labelInputUsuario" type="text" id="id" name="id" [ngModel]="admin.id" ngModel required>
-                        <label class="labelInputUsuario" class="labelInicio">ID De Administrador</label>
+                        <input class="labelInputUsuario" type="text" id="nombre" name="nombre" [(ngModel)]="admin.nombre" required>
+                        <label class="labelInputUsuario" class="labelInicio">Usuario</label>
+                    </div>
+                    <div class="user-box">
+                        <input class="labelInputUsuario" type="password" id="contrasena" name="contrasena" [(ngModel)]="admin.contrasena" required>
+                        <label class="labelInputUsuario" class="labelInicio">Contraseña</label>
                     </div>
                     <button id="btnIngresar" type="submit">Ingresar</button>
                 </form>

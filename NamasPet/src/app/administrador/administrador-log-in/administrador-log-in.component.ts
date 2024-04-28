@@ -3,31 +3,42 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Administrador } from 'src/app/model/administrador';
 import { AdministradorService } from 'src/app/service/administrador.service';
 
+//TODO http://localhost:4200/admin/login
+
 @Component({
   selector: 'app-administrador-log-in',
   templateUrl: './administrador-log-in.component.html',
   styleUrls: ['./administrador-log-in.component.css'],
 })
 export class AdministradorLogInComponent {
-  admin = { id: 1 } as Administrador; // Inicializa id como 0, suponiendo que es un número
+  admin = { id: 0, nombre: '', contrasena: '' } as Administrador;
 
   constructor(
     private router: Router,
-    private route: ActivatedRoute,
     private adminService: AdministradorService
   ) {}
 
   onSubmit(): void {
-    // No necesitas suscribirte a route.params aquí
-    const id = +this.admin.id; // Convierte id a un número
-    this.adminService.findById(id).subscribe((administrador) => {
-      // Este código se ejecutará cuando se haya encontrado el administrador con el ID proporcionado
-      console.log('Administrador encontrado:', administrador);
-      this.router.navigate(['/admin/home/' + administrador.id]);
-    }, (error) => {
-      // Este código se ejecutará si no se encuentra un administrador con el ID proporcionado
-      console.error('Error al buscar el administrador:', error);
-      // Aquí puedes manejar el error, como mostrar un mensaje al usuario
-    });
+    console.log('dentro del on submit');
+    console.log('admin', this.admin);
+    this.adminService.findByNombreAndContrasena(this.admin.nombre, this.admin.contrasena).subscribe(
+      (administrador) => {
+        // Verificar si el administrador es null
+        if (administrador === null) {
+          // Mostrar una alerta al usuario
+          alert('Las credenciales son inválidas');
+        } else {
+          // Navegar a la URL en caso de éxito
+          this.router.navigate(['/admin/home']);
+          console.log(administrador);
+        }
+      },
+      (error) => {
+        console.log(this.admin.nombre, this.admin.contrasena);
+        // Manejar el error
+        console.error('Error al buscar al administrador:', error);
+        // Aquí puedes mostrar un mensaje de error al usuario
+      }
+    );
   }
 }

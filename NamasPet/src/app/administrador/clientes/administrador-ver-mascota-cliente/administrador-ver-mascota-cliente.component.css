@@ -1,0 +1,350 @@
+#contenedorMain {
+  background-color: #2f2c79;
+  min-height: 100vh;
+}
+
+/**======Header y Body====== */
+header {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-evenly;
+  background-color: #2f2c79;
+}
+
+/* estilos para todo*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-margin-top: 30px;
+}
+
+#contenedorMenuDesplegable {
+  display: flex;
+}
+
+/* estilos para la barra de navegación*/
+nav {
+  max-width: 900px;
+  margin: auto;
+  font-size: 26px;
+  font-family: "Dosis", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 20px;
+}
+
+/* estilos para la barra de navegación*/
+.menuHorizontal {
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+}
+
+/* estilos para la barra de navegación*/
+.menuHorizontal li a {
+  display: block;
+  padding: 15px 20px;
+  text-decoration: none;
+  width: 150px;
+}
+
+/* estilos para la barra de navegación*/
+.menuHorizontal li:hover {
+  background-color: transparent;
+  color: #2f2c79;
+}
+
+/* estilos para la barra de navegación*/
+.menuVertical {
+  position: absolute;
+  display: none;
+  list-style: none;
+  width: auto;
+  background-color: #2f2c79;
+}
+
+/* estilos para la barra de navegación*/
+.menuHorizontal li:hover .menuVertical {
+  display: block;
+  z-index: 1;
+}
+
+/* estilos para la barra de navegación*/
+.menuVertical li:hover {
+  background-color: #64c27b;
+  color: #2f2c79;
+}
+
+/* estilos para la barra de navegación*/
+.menuVertical li a {
+  display: block;
+  padding: 15px 15px 15px 20px;
+  text-decoration: none;
+}
+
+.titulo {
+  font-family: "Macondo", cursive;
+  font-weight: 900;
+  font-style: normal;
+  font-weight: bold;
+}
+
+/* estilos para la barra de navegación*/
+#btnLogin {
+  padding-bottom: 0px;
+  padding-top: 0px;
+  padding-left: 20px;
+  padding-right: 0px;
+  width: fit-content;
+}
+
+/* estilos para la barra de navegación*/
+#btnLogin:hover {
+  text-decoration: none;
+  background-color: transparent;
+}
+
+/* estilos para la barra de navegación*/
+.btnPerfil {
+  border: none;
+  outline: none;
+  background-color: transparent;
+  padding: 0;
+  height: 50px;
+  width: 50px;
+}
+
+/* estilos para la barra de navegación*/
+a {
+  text-decoration: none;
+  outline: none;
+}
+
+/* estilos para la barra de navegación*/
+a:hover {
+  text-decoration: underline;
+}
+
+/* estilos para la barra de navegación*/
+.contenedor {
+  max-width: 1000px;
+  width: 90%;
+  margin: auto;
+  margin-top: auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+/* estilos para la barra de navegación*/
+#contenedorNombre {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+}
+
+/* estilos para la barra de navegación*/
+#contenedorLogo {
+  display: inline-block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* estilos para la barra de navegación*/
+#contenedorLogoTitulo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* estilos para la barra de navegación*/
+#contenedorTitulo {
+  display: inline-block;
+  display: flex;
+  justify-content: center;
+  height: auto;
+  align-items: center;
+  font-size: 15px;
+  color: #d8d9e7;
+}
+
+/* estilos para la barra de navegación*/
+.navbar {
+  background: #2f2c79;
+}
+
+/* estilos para la barra de navegación*/
+.navbar a {
+  display: inline-block;
+  padding: 20px;
+  width: 100%;
+  text-align: center;
+  transition: 0.3s ease-out all;
+}
+
+/**======Tarjeton grande mascotas====== */
+
+/** ======Carta del perro======*/
+
+.card {
+  margin-left: 150px;
+  margin-top: 50px;
+  margin-bottom: 100px;
+  display: flex;
+  flex-direction: column;
+  width: 500px;
+  height: 550px;
+  max-height: 500px;
+  background-color: #171a4a;
+  border-radius: 10px;
+  box-shadow: 0px 10px 12px rgba(0, 0, 0, 0.08),
+    -4px -4px 12px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  transition: all 0.3s;
+  box-sizing: border-box;
+  padding: 10px;
+}
+
+.card-image-container {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  overflow: hidden;
+  background-color: rgb(165, 165, 165);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card img {
+  height: 100%;
+}
+
+.card-title {
+  margin: 0;
+  font-size: 2em;
+  font-weight: 600;
+  cursor: default;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  line-clamp: 1;
+}
+
+.card-des {
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+  margin: 0;
+  font-size: 1.3em;
+  cursor: default;
+}
+
+.hide {
+  color: transparent;
+}
+
+/* *  ============ Información del perrito =========== */
+
+#sectionInformacionPerro {
+  display: flex;
+}
+
+#divInformacionPerrito {
+  margin-top: 51px;
+  margin-left: 25px;
+  font-family: "Lato", sans-serif;
+  width: 100%;
+  height: 500px;
+  max-width: 400px;
+  font-size: 16px;
+  color: #e8e8e8;
+  font-weight: 400;
+  padding: 1.5rem;
+  background: linear-gradient(145deg, #1c1e5a, #171a4a);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.15);
+  border-radius: 10px;
+  transition: all 0.3s ease;
+}
+
+#divInformacionPerrito h1 {
+  font-family: "Patua One", serif;
+  font-weight: lighter;
+  font-size: 3.5rem;
+  margin-bottom: 20px;
+}
+
+#divInformacionPerrito h3 {
+  font-family: "Patua One", serif;
+  font-weight: lighter;
+  font-size: 1.5rem; /* Adjust the size of subheadings */
+  margin-bottom: 35px; /* Adjust bottom margin */
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+  #divInformacionPerrito {
+    margin-top: 20px;
+    margin-left: 10px;
+    padding: 1rem;
+  }
+
+  #divInformacionPerrito h1 {
+    font-size: 2rem; /* Smaller title for smaller screens */
+  }
+
+  #divInformacionPerrito h3 {
+    font-size: 1.2rem; /* Smaller subheadings for smaller screens */
+  }
+}
+
+#btnAgregar {
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  border-top-right-radius: 10px;
+  margin-bottom: 10px;
+  height: 100px;
+  width: 200px;
+  background-color: #171a4a;
+  color: white;
+  font-family: "Patua One", sans-serif;
+  font-size: 25px;
+}
+
+#btnAgregar:hover {
+  background-color: #171a4a;
+  color: #64c27b;
+  text-decoration: none;
+  font-size: 30px;
+}
+
+#btnAgregar::after {
+  content: "";
+  position: absolute;
+  background-color: #000000;
+  height: 3;
+  width: 0;
+  left: 0;
+  bottom: -10px;
+  transition: 0.3s;
+}
+
+#anchorAgregarMascota {
+  text-decoration: none;
+  margin-top: 50px;
+  display: flex;
+  margin-left: 10px;
+  width: fit-content;
+  height: fit-content;
+}

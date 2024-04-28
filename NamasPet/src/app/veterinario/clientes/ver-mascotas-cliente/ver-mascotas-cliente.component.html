@@ -1,16 +1,56 @@
-<section id="sectionTitulo">
-    <h1 id="titulo">Perros del cliente: {{clienteNombre}}</h1>
-</section>
-
-<section class="sectionTarjetones">
-    <div class="divTarjetones">
-        <a class="btnTarjeton" *ngFor="let perro of mascotas" [routerLink]="['/mascotas', perro.id]">
-            <div class="card">
-                <div class="card-image-container">
-                    <img [src]="perro.imagen" alt="Perro">
-                </div>
-                <p class="card-title">{{perro.nombre}}</p>
+<main>
+    <header> <!--header de la pagina-->
+        <div id="contenedorLogoTitulo">
+            <div id="contenedorLogo">
+                <img id="logo" src="\assets\Imagenes\logo-blanco.png" alt="Logo NamasPet" width="100" height="100" />
             </div>
-        </a>
-    </div>
-</section>
+            <div id="contenedorTitulo">
+                <h1 class="titulo">NAMASPET</h1>
+            </div>
+        </div>
+        <div id="contenedorMenuDesplegable">
+            <nav class="navbar">
+                <ul class="menuHorizontal">
+                    <li>
+                        <a class="hide">Inicio</a>
+                    </li> 
+                    <li>
+                        <a class="hide">Medicamentos</a>
+                    </li>
+                    <li>
+                        <a class="hide">Mascotas</a> <!-- ver las mascotas-->
+                    </li>
+                    <li>
+                        <a class="hide">Información</a>
+                    </li>
+                    <li><a class="hide">Clientes</a></li> <!-- ver los clientes-->
+                    <li id="btnItem">
+                        <button class="btnPerfil">
+                            <a id="btnLogin" [routerLink]="['/login']">
+                                <img class="btnPerfil" src="\assets\Imagenes\logo_corrected.png"> <!--boton de login-->
+                            </a>
+                        </button>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="sectionTitulo">
+        <h1 id="titulo">Perros del cliente: {{clienteNombre}}</h1>
+    </section>
+
+    <section class="sectionTarjetones">
+        <div class="divTarjetones">
+            <a class="btnTarjeton" *ngFor="let perro of mascotas" [routerLink]="['/cleinte', perro.id]">
+                <div class="card">
+                    <div class="card-image-container">
+                        <img [src]="perro.imagen" alt="Perro">
+                    </div>
+                    <p class="card-title">{{perro.nombre}}</p>
+                </div>
+            </a>
+        </div>
+    </section>
+
+</main>

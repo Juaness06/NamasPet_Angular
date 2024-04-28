@@ -1,0 +1,18 @@
+<main id="contenedorMain">
+    <app-administrador-header></app-administrador-header>
+    <section id="sectionTitulo">
+        <h1 id="titulo">Perros del cliente: {{clienteNombre}}</h1>
+    </section>
+    <section class="sectionTarjetones">
+        <div class="divTarjetones">
+            <a class="btnTarjeton" *ngFor="let perro of mascotas" [routerLink]="['/admin/clientes/mascota/', perro.id]">
+                <div class="card">
+                    <div class="card-image-container">
+                        <img [src]="perro.imagen" alt="Perro">
+                    </div>
+                    <p class="card-title">{{perro.nombre}}</p>
+                </div>
+            </a>
+        </div>
+    </section>
+</main>

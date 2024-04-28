@@ -49,7 +49,7 @@ export class EditarMascotasComponent {
       if (id) {
         this.mascotaService.findById(id).subscribe(
           (mascotaInformacion) => {
-            this.formMascota = {...mascotaInformacion};
+            this.formMascota = { ...mascotaInformacion };
             // Suponiendo que el cliente está vinculado en la información de la mascota
             this.formCliente = mascotaInformacion.cliente || this.formCliente;
           },
@@ -62,20 +62,17 @@ export class EditarMascotasComponent {
     });
   }
 
-  
   actualizarMascota() {
     if (!this.formCliente) {
       console.error('Cliente no está definido');
       return;
     }
-  
-    this.sendMascota = Object.assign({}, this.formMascota);
-    this.mascotaService.editarMascota(this.sendMascota, this.formCliente.cedula).subscribe(
-      (mascotaInformacion) => {
-        this.router.navigate(['mascotas/all'])
-      }
-    );
-  }
-  
 
+    this.sendMascota = Object.assign({}, this.formMascota);
+    this.mascotaService
+      .editarMascota(this.sendMascota, this.formCliente.cedula)
+      .subscribe((mascotaInformacion) => {
+        this.router.navigate(['mascotas/all']);
+      });
+  }
 }

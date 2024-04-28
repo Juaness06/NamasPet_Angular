@@ -61,6 +61,7 @@
 
 #sectionInformacionPerro {
   display: flex;
+  justify-content: center;
 }
 
 #divInformacionPerrito {

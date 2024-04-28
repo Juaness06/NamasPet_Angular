@@ -33,7 +33,7 @@
                         <span></span>
                       </button>
                       <button id="btnLogInAdministrador" class=" btnOpcionesInicioSesion" [routerLink]="['/admin/login']">
-                        Administrador
+                        Veterinario
                         <span></span>
                         <span></span>
                         <span></span>
@@ -42,7 +42,7 @@
                 </div>
                 <form method="post" (ngSubmit)="onSubmit()">
                     <div class="user-box">
-                        <input type="text" id="cedula" name="cedula" required [(ngModel)]="user.cedula" ngModel>
+                        <input type="number" id="cedula" name="cedula" required [(ngModel)]="user.cedula" ngModel>
                         <label id="labelCedula">Cédula</label>
                     </div>
                     <button id="btnIngresar" type="submit">Ingresar</button>

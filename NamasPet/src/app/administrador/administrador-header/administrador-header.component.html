@@ -10,7 +10,7 @@
     <div id="contenedorMenuDesplegable">
         <nav class="navbar">
             <ul class="menuHorizontal">
-                <li><a [routerLink]="['/admin/home/1']" >Inicio</a></li> <!-- ir al landing page-->
+                <li><a [routerLink]="['/admin/home']" >Inicio</a></li> <!-- ir al landing page-->
                 <li>
                     <a [routerLink]="['/veterinarios/all']">Veterinarios</a>
                 </li>
@@ -18,21 +18,14 @@
                     <a [routerLink]="['/tratamientos/all']">Tratamientos</a>
                 </li>
                 <li>
-                    <a [routerLink]="['/mascotas/all']">Mascotas</a>
+                    <a [routerLink]="['/admin/mascotas/all']">Mascotas</a>
                 </li>
                 <li>
                     <a [routerLink]="['/admin/dashboard']">Dashboard</a>
                 </li>
                 <li>
-                    <a [routerLink]="['/clientes/all']">Clientes</a>
+                    <a [routerLink]="['/admin/clientes/all']">Clientes</a>
                 </li> 
-                <li id="btnItem">
-                    <button class="btnPerfil">
-                        <a id="btnLogin" [routerLink]="['/login']">
-                            <img class="btnPerfil" src="\assets\Imagenes\logo_corrected.png"> <!--boton de login-->
-                        </a>
-                    </button>
-                </li>
             </ul>
         </nav>
     </div>

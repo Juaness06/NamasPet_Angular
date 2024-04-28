@@ -33,6 +33,19 @@ import { DrogasTratamientoComponent } from './administrador/tratamientos/drogas-
 import { AsignarDrogasTratamientoComponent } from './administrador/tratamientos/asignar-drogas-tratamiento/asignar-drogas-tratamiento.component';
 import { AgregarTratamientosComponent } from './administrador/tratamientos/agregar-tratamientos/agregar-tratamientos.component';
 import { HistorialMascotaComponent } from './veterinario/mascotas/historial-mascota/historial-mascota.component';
+import { LogInComponent } from './administrador/veterinarios/log-in/log-in.component';
+import { VerMascotaClienteComponent } from './veterinario/clientes/ver-mascota-cliente/ver-mascota-cliente.component';
+import { AdministradorListaMascotasComponent } from './administrador/mascotas/administrador-lista-mascotas/administrador-lista-mascotas.component';
+import { AdministradorEditarMascotaComponent } from './administrador/mascotas/administrador-editar-mascota/administrador-editar-mascota.component';
+import { AdministradorTarjetonesComponent } from './administrador/mascotas/administrador-tarjetones/administrador-tarjetones.component';
+import { AdministradorVerMascotaComponent } from './administrador/mascotas/administrador-ver-mascota/administrador-ver-mascota.component';
+import { AdministradorAgregarMascotaComponent } from './administrador/mascotas/administrador-agregar-mascota/administrador-agregar-mascota.component';
+import { AdministradorListaClientesComponent } from './administrador/clientes/administrador-lista-clientes/administrador-lista-clientes.component';
+import { AdministradorAgregarClienteComponent } from './administrador/clientes/administrador-agregar-cliente/administrador-agregar-cliente.component';
+import { AdministradorEditarClienteComponent } from './administrador/clientes/administrador-editar-cliente/administrador-editar-cliente.component';
+import { AdministradorVerMascotasClienteComponent } from './administrador/clientes/administrador-ver-mascotas-cliente/administrador-ver-mascotas-cliente.component';
+import { AdministradorVerMascotaClienteComponent } from './administrador/clientes/administrador-ver-mascota-cliente/administrador-ver-mascota-cliente.component';
+
 
 @NgModule({
   declarations: [
@@ -65,6 +78,18 @@ import { HistorialMascotaComponent } from './veterinario/mascotas/historial-masc
     DrogasTratamientoComponent,
     AsignarDrogasTratamientoComponent,
     AgregarTratamientosComponent,
+    LogInComponent,
+    VerMascotaClienteComponent,
+    AdministradorListaMascotasComponent,
+    AdministradorEditarMascotaComponent,
+    AdministradorTarjetonesComponent,
+    AdministradorVerMascotaComponent,
+    AdministradorAgregarMascotaComponent,
+    AdministradorListaClientesComponent,
+    AdministradorAgregarClienteComponent,
+    AdministradorEditarClienteComponent,
+    AdministradorVerMascotasClienteComponent,
+    AdministradorVerMascotaClienteComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule,ReactiveFormsModule  ],
   providers: [provideClientHydration()],

@@ -2,7 +2,8 @@
     <section id="sectionHeader"> <!--header de la pagina-->
         <div id="contenedorLogoTitulo">
             <div id="contenedorLogo">
-                <img id="logo" src="\assets\Imagenes\logo-blanco_color_changed.png" alt="Logo NamasPet" width="100" height="100" />
+                <img id="logo" src="\assets\Imagenes\logo-blanco_color_changed.png" alt="Logo NamasPet" width="100"
+                    height="100" />
             </div>
             <div id="contenedorTitulo">
                 <h1 class="titulo">NAMASPET</h1>
@@ -11,57 +12,36 @@
         <div id="contenedorMenuDesplegable">
             <nav class="navbar">
                 <ul class="menuHorizontal">
-                    <li><a (click)="mostrarSeccion('landing')" >Inicio</a></li> <!-- ir al landing page-->
                     <li>
-                        <a (click)="mostrarSeccion('veterinarios')">Veterinarios</a>
+                        <a [routerLink]="['/admin/home']">Inicio</a> <!-- ir al landing page del administrador-->
+                    </li> 
+                    <li>
+                        <a [routerLink]="['/veterinarios/all']">Veterinarios</a>
                     </li>
                     <li>
                         <a [routerLink]="['/tratamientos/all']">Tratamientos</a>
                     </li>
                     <li>
-                        <a (click)="mostrarSeccion('mascotas')">Mascotas</a> <!-- ver las mascotas-->
+                        <a [routerLink]="['/admin/mascotas/all']">Mascotas</a> <!-- ver las mascotas-->
                     </li>
                     <li>
-                        <a (click)="mostrarSeccion('dashboard')">Dashboard</a>
+                        <a [routerLink]="['/admin/dashboard']">Dashboard</a>
                     </li>
                     <li>
-                        <a (click)="mostrarSeccion('clientes')" >Clientes</a>
-                    </li> 
-                    <li id="btnItem">
-                        <button class="btnPerfil">
-                            <a id="btnLogin" [routerLink]="['/login']">
-                                <img class="btnPerfil" src="\assets\Imagenes\logo_corrected.png"> <!--boton de login-->
-                            </a>
-                        </button>
+                        <a [routerLink]="['/admin/clientes/all']">Clientes</a>
                     </li>
                 </ul>
             </nav>
         </div>
     </section>
     <section>
-        <ng-container *ngIf="mostrarLandingPage">
-            <div id="divBienvenido">
-                <h1>BIENVENIDO ADMINISTRADOR: </h1>
-            </div>
-            <div id="divBanner">
-                <img src="assets/Imagenes/banner.jpg" alt="iamgen bienvenido" id="imgBanner">
-            </div>
-            <div id="espacio"></div>
-        </ng-container>
-        <ng-container *ngIf="mostrarListaMascotas">
-            <app-lista-mascotas [mostrarEstilosEspeciales]="mostrarListaMascotas"></app-lista-mascotas>
-        </ng-container>
-        <ng-container *ngIf="mostrarListaClientes">
-            <app-lista-clientes [mostrarEstilosEspeciales]="mostrarListaClientes"></app-lista-clientes>
-        </ng-container>
-        <ng-container *ngIf="mostrarDashboard">
-            <app-administrador-dashboard></app-administrador-dashboard>
-        </ng-container>
-        <ng-container *ngIf="mostrarListaVeterinarios">
-            <app-lista-veterinarios></app-lista-veterinarios>
-        </ng-container>
-    </section>
-    <ng-container *ngIf="mostrarFooter">
+        <div id="divBienvenido">
+            <h1>BIENVENIDO ADMINISTRADOR</h1>
+        </div>
+        <div id="divBanner">
+            <img src="assets/Imagenes/banner.jpg" alt="iamgen bienvenido" id="imgBanner">
+        </div>
+        <div id="espacio"></div>
         <app-footer></app-footer>
-    </ng-container>
+    </section>
 </main>

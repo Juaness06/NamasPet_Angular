@@ -10,5 +10,10 @@ html,body {
   padding: 0;
   background-color: #d0fdd7;
   box-sizing: border-box;
-  scroll-margin-top: 30px
+  scroll-margin-top: 30px;
+  height: 100vh;
+}
+
+app-root{
+  height: 100vh;
 }

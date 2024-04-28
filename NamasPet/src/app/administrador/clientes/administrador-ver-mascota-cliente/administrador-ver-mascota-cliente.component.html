@@ -1,0 +1,26 @@
+<main id="contenedorMain">
+    <app-administrador-header></app-administrador-header>
+    <section id="sectionInformacionPerro">
+        <div class="card">
+            <div class="card-image-container">
+                <img [src]="mascota.imagen" alt="Imagen de la mascota" />
+            </div>
+        </div>
+        <div id="divInformacionPerrito"> 
+            <h1>{{mascota.nombre}}</h1>
+            <h3 th:text=>ID: {{mascota.id}} </h3>
+            <h3 th:text=>{{mascota.raza}}</h3>
+            <h3 th:text=>Edad: {{mascota.edad}} años</h3>
+            <h3 th:text=>Estado: {{mascota.actividad}}</h3>
+            <h3 th:text=>Peso: {{mascota.peso}} kg</h3>
+            <h3 th:text=>#Atenciones: {{mascota.numeroAtenciones}}</h3>
+        </div>
+        <div id="div2">
+            <div id="divBtn">
+                <a [routerLink]="['/admin/mascotas', mascota.id, 'historial']" id="anchorAgregarMascota">
+                    <button id="btnAgregar">Historial</button>
+                </a>
+            </div>
+        </div>
+    </section>
+</main>

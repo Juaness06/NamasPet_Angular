@@ -1,0 +1,47 @@
+<main id="contenedorMain">
+    <app-administrador-header></app-administrador-header>
+    <section id="sectionTabla">
+        <div id="divTitulo">
+            <div id="space"></div>
+            <div id="titulo">
+                <h1>CLIENTES</h1>
+            </div>
+            <div id="divBtn">
+                <a id="anchorAgregarClientes">
+                    <button id="btnAgregar" [routerLink]="['/admin/clientes/add']">Agregar Cliente</button>
+                </a>
+            </div>
+        </div>
+        <div id="divTabla">
+            <table>
+                <thead>
+                    <tr>
+                        <th>CEDULA</th>
+                        <th>NOMBRE</th>
+                        <th id="thCorreo">CORREO</th>
+                        <th>CELULAR</th>
+                        <th>USUARIO</th>
+                        <th>MASCOTAS</th>
+                        <th>ACCIONES</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let cliente of clientesList">
+                        <td>{{ cliente.cedula }}</td>
+                        <td>{{ cliente.nombre }}</td>
+                        <td class="correo">{{ cliente.correo }}</td>
+                        <td>{{ cliente.celular }}</td>
+                        <td>{{ cliente.usuario }}</td>
+                        <td>
+                            <a id="anchorPerros" [routerLink]="['/admin/clientes/', cliente.cedula, 'mascotas']">PERROS</a>
+                        </td>
+                        <td>
+                            <a class="btnEdi" [routerLink]="['/admin/clientes/edit', cliente.cedula]">EDITAR</a>
+                            <a class="btnEli" (click)="eliminarcliente(cliente)">ELIMINAR</a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>    
+</main>

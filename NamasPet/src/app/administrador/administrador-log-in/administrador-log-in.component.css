@@ -19,7 +19,7 @@
 
 #plantaAbajoDerecha {
   margin-top: 130px;
-  margin-left: 760px;
+  margin-left: 870px;
   transform: scaleX(-1);
   rotate: 120deg;
 }

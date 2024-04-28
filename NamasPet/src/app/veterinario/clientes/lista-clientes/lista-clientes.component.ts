@@ -10,35 +10,29 @@ import { EstadoUiService } from 'src/app/service/estados.service';
   templateUrl: './lista-clientes.component.html',
   styleUrls: ['./lista-clientes.component.css'],
 })
-export class ListaClientesComponent implements OnInit, OnDestroy {
-  
-  @Input() mostrarEstilosEspeciales: boolean = false;
-
-  mostrarForm: boolean = false;
+export class ListaClientesComponent implements OnInit {
   clientesList: Cliente[] = [];
   seleccionarCliente?: Cliente;
   mascotasCliente: Mascota[] = [];
-  private subs = new Subscription();
 
-  constructor(private clienteService: ClienteService, private estadoUiService: EstadoUiService) {}
+  constructor(
+    private clienteService: ClienteService,
+  ) {}
 
   ngOnInit(): void {
-    
-    this.clienteService.findAll().subscribe((clientes: Cliente[]) => (this.clientesList = clientes));
-    this.clienteService.updateClienteEvent.subscribe((clienteEditado: Cliente) => {
-      this.clientesList = this.clientesList.map((cliente) => {
-        if (cliente.cedula === clienteEditado.cedula) {
-          return clienteEditado;
-        } else {
-          return cliente;
-        }
-      });
-    });
-
-    this.subs.add(
-      this.estadoUiService.mostrarListaClientes$.subscribe(
-        (estado) => (this.mostrarEstilosEspeciales = estado)
-      )
+    this.clienteService
+      .findAll()
+      .subscribe((clientes: Cliente[]) => (this.clientesList = clientes));
+    this.clienteService.updateClienteEvent.subscribe(
+      (clienteEditado: Cliente) => {
+        this.clientesList = this.clientesList.map((cliente) => {
+          if (cliente.cedula === clienteEditado.cedula) {
+            return clienteEditado;
+          } else {
+            return cliente;
+          }
+        });
+      }
     );
   }
 
@@ -56,20 +50,9 @@ export class ListaClientesComponent implements OnInit, OnDestroy {
     this.clienteService.eliminarCliente(cliente.cedula);
   }
 
-  mostrarFormulario(): void {
-    this.mostrarForm = true;
-  }
   cargarMascotasCliente(cedula: number): void {
     this.clienteService.findPerrosCliente(cedula).subscribe((mascotas) => {
       this.mascotasCliente = mascotas;
     });
-  }
-
-  ocultarFormulario(): void {
-    this.mostrarForm = false;
-  }
-
-  ngOnDestroy(): void {
-    this.subs.unsubscribe();
   }
 }

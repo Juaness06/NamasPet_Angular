@@ -1,0 +1,54 @@
+<main>
+    <header> <!--header de la pagina-->
+        <div id="contenedorLogoTitulo">
+            <div id="contenedorLogo">
+                <img id="logo" src="\assets\Imagenes\logo-blanco.png" alt="Logo NamasPet" width="100" height="100" />
+            </div>
+            <div id="contenedorTitulo">
+                <h1 class="titulo">NAMASPET</h1>
+            </div>
+        </div>
+        <div id="contenedorMenuDesplegable">
+            <nav class="navbar">
+                <ul class="menuHorizontal">
+                    <li>
+                        <a class="hide">Inicio</a>
+                    </li>
+                    <li>
+                        <a class="hide">Medicamentos</a>
+                    </li>
+                    <li>
+                        <a class="hide">Mascotas</a> <!-- ver las mascotas-->
+                    </li>
+                    <li>
+                        <a class="hide">Información</a>
+                    </li>
+                    <li><a class="hide">Clientes</a></li> <!-- ver los clientes-->
+                    <li id="btnItem">
+                        <button class="btnPerfil">
+                            <a id="btnLogin" [routerLink]="['/login']">
+                                <img class="btnPerfil" src="\assets\Imagenes\logo_corrected.png"> <!--boton de login-->
+                            </a>
+                        </button>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <section id="sectionInformacionPerro">
+        <div class="card">
+            <div class="card-image-container">
+                <img [src]="mascota.imagen" alt="Imagen de la mascota" />
+            </div>
+        </div>
+        <div id="divInformacionPerrito"> <!--Aqui van los atributos del perro, mirar que los nombres coincidan-->
+            <h1>{{mascota.nombre}}</h1>
+            <h3 th:text=>ID: {{mascota.id}} </h3>
+            <h3 th:text=>{{mascota.raza}}</h3>
+            <h3 th:text=>Edad: {{mascota.edad}} años</h3>
+            <h3 th:text=>Estado: {{mascota.actividad}}</h3>
+            <h3 th:text=>Peso: {{mascota.peso}} kg</h3>
+            <h3 th:text=>#Atenciones: {{mascota.numeroAtenciones}}</h3>
+        </div>
+    </section>
+</main>

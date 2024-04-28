@@ -41,7 +41,6 @@ nav {
 .menuHorizontal li a {
   display: block;
   padding: 15px 20px;
-  color: #171a4a;
   text-decoration: none;
   width: 150px;
 }
@@ -77,7 +76,7 @@ nav {
 /* estilos para la barra de navegación*/
 .menuVertical li a {
   display: block;
-  color: #171a4a;
+  color: white;
   padding: 15px 15px 15px 20px;
   text-decoration: none;
 }
@@ -182,7 +181,7 @@ body {
 
 /* estilos para la barra de navegación*/
 .navbar a {
-  color: #171a4a;
+  color: white;
   display: inline-block;
   padding: 20px;
   width: 100%;

@@ -2,7 +2,7 @@
     <div id="divTitulo">
         <div id="space"></div>
         <div id="titulo">
-            <h1 [ngClass]="{'clase-especial': mostrarEstilosEspeciales}" >CLIENTES</h1>
+            <h1>CLIENTES</h1>
         </div>
         <div id="divBtn">
             <a id="anchorAgregarClientes">
@@ -34,7 +34,7 @@
                         <a id="anchorPerros" [routerLink]="['/cliente', cliente.cedula, 'mascotas']">PERROS</a>
                     </td>
                     <td>
-                        <a class="btnEdi" [routerLink]="['/cliente/edit', cliente.cedula]">EDITAR</a>
+                        <a class="btnEdi" [routerLink]="['/clientes/edit', cliente.cedula]">EDITAR</a>
                         <a class="btnEli" (click)="eliminarcliente(cliente)">ELIMINAR</a>
                     </td>
                 </tr>
