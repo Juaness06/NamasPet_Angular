@@ -17,8 +17,8 @@
                         <th>PRECIO COMPRA</th>
                         <th class="thsss">FECHA</th>
                         <th>DROGAS</th>
-                        <th>ACCIONES</th>
-                        <th>AGREGAR</th>
+                        <th>AGREGAR DROGA</th>
+                        <th>ASIGNAR TRATAMIENTO</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -28,13 +28,13 @@
                         <td class="correo">{{ tratamiento.precioC }}</td>
                         <td>{{ tratamiento.fecha }}</td>
                         <td>
-                            <a id="anchorPerros" [routerLink]="['/tratamientos', tratamiento.id, 'drogas']">Drogas</a>
+                            <a class="anchor" id="anchorPerros" [routerLink]="['/tratamientos', tratamiento.id, 'drogas']">Drogas</a>
                         </td>
                         <td>
-                            <a id="btnAsignarDrogas" [routerLink]="['/tratamientos', tratamiento.id, 'asignar-drogas']">Asignar</a>
+                            <a class="anchor" id="btnAsignarDrogas" [routerLink]="['/tratamientos', tratamiento.id, 'asignar-drogas']">Agregar</a>
                         </td>
                         <td>
-                            <a id="btnAgregar" [routerLink]="['/tratamientos/', 'add']">Agregar</a>
+                            <a id="btnAgregar" [routerLink]="['/tratamientos/', 'add']">Asignar</a>
                         </td>
                     </tr>
                 </tbody>

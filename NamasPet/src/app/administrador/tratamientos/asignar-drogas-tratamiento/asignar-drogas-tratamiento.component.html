@@ -1,19 +1,22 @@
-<section id="sectionTitulo">
-    <h1>Asignar Droga a Tratamiento</h1>
-</section>
+<main id="contenedorMain">
+    <app-administrador-header></app-administrador-header>
+    <section id="sectionTitulo">
+        <h1>Asignar Droga a Tratamiento</h1>
+    </section>
+    <section id="sectionForm">
+        <div id="divForm">
+            <form (ngSubmit)="asignarDroga()">
+                <div>
+                    <label for="drogaIds">Nueva Droga</label>
+                    <select class="spinnerDeEstados" id="drogaIds" [(ngModel)]="formAsignacion.drogaId" name="drogaIds">
+                        <option *ngFor="let droga of drogasList" [value]="droga.codigo">{{droga.nombre}}</option>
+                    </select>
+                </div>
+                <div id="btnRegistrar">
+                    <button type="submit">Asignar Droga</button>
+                </div>
+            </form>
+        </div>
+    </section>
+</main>
 
-<section id="sectionForm">
-    <div id="divForm">
-        <form (ngSubmit)="asignarDroga()">
-            <div>
-                <label for="drogaIds">Nueva Droga</label>
-                <select id="drogaIds" [(ngModel)]="formAsignacion.drogaId" name="drogaIds">
-                    <option *ngFor="let droga of drogasList" [value]="droga.codigo">{{droga.nombre}}</option>
-                </select>
-            </div>
-            <div id="btnRegistrar">
-                <button type="submit">Asignar Droga</button>
-            </div>
-        </form>
-    </div>
-</section>

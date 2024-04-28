@@ -9,7 +9,7 @@
   margin-top: 30px;
   font-family: "Macondo", cursive;
   font-weight: 900;
-  color: #171a4a;
+  color: white;
   font-size: 25px;
   margin-bottom: 10px;
 }
@@ -72,4 +72,13 @@ button {
   color: #171a4a;
   font-family: "Patua One", serif;
   transition: background-color 0.3s ease;
+}
+
+.spinnerDeEstados {
+  font-family: "Patua One", serif;
+  color: #171a4a;
+  font-size: 20px;
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
 }
