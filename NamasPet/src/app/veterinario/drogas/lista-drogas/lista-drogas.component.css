@@ -1,3 +1,4 @@
+
 /* ============ section tabla =========== */
 
 #sectionTabla {
@@ -6,69 +7,42 @@
   justify-content: center;
   align-items: center;
   margin-top: 50px;
-  width: 100%;
 }
 
 #space {
   width: 470px;
 }
 
+#titulo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Macondo", cursive;
+  font-weight: bold;
+  font-weight: 900;
+}
+
+.thsss {
+  text-align: center;
+}
+
+.tdsss {
+  width: fit-content;
+}
+
 #divTitulo {
   display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
   margin-bottom: 30px;
   font-family: "Macondo", cursive;
   font-weight: 400;
   font-size: 35px;
   color: #171a4a;
-  width: 1160px;
 }
 
-#divTituloMascotas {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-h1 {
-  font-weight: 800;
-}
-
-#btnAgregar {
-  border-top-left-radius: 10px;
-  border-bottom-left-radius: 10px;
-  border-top-right-radius: 10px;
-  margin-bottom: 10px;
-}
-
-#anchorAgregarMascota {
-  text-decoration: none;
-  margin-left: 317px;
-  display: flex;
-  width: fit-content;
-  height: fit-content;
-}
-
-#space {
-  display: flex;
-  align-items: flex-end; /* Esto alineará tus ítems al final */
-  height: 100%; /* Asegúrate de que el div ocupe la altura que deseas */
-  height: 90px;
-}
-
-.iconos {
-  text-decoration: none;
-  color: #171a4a;
-  margin-right: 10px;
-  font-size: 40px;
-  /* Asegúrate de que el tamaño de los íconos y el espaciado es el deseado */
-}
-
-.iconos:hover {
-  font-size: 38px;
-}
-
-/** ============ tabla =========== */
-
+/* ============ tabla =========== */
 #divTabla::-webkit-scrollbar {
   width: 15px; /* Grosor de la barra de desplazamiento */
 }
@@ -90,19 +64,15 @@ h1 {
 
 #divTabla {
   border-radius: 10px;
-  max-height: 570px;
+  max-height: 562px;
   overflow-y: scroll;
-  width: fit-content;
   display: block;
 }
 
 table th {
-  white-space: nowrap;
-  text-align: center;
   font-family: "Patua One", serif;
   font-weight: lighter;
   font-size: 25px;
-  margin: 15px;
   padding: 15px;
   color: white;
 }
@@ -112,10 +82,8 @@ td {
   font-family: "Patua One", serif;
   text-align: center;
   vertical-align: middle;
-  max-width: 150px;
   height: 100px;
   overflow: hidden;
-  word-wrap: break-word;
   font-size: 20px;
   margin: 15px;
   padding: 15px;
@@ -157,83 +125,20 @@ td span {
 
 /* ============ anchors =========== */
 
-.btnEli {
-  position: relative;
-  text-decoration: none;
-  color: rgb(235, 23, 23);
-  font-size: 18px;
-  letter-spacing: 0.5px;
-  font-weight: 800;
-}
-
-.btnEli::after {
-  content: "";
-  position: absolute;
-  background-color: #000000;
-  height: 3;
-  width: 0;
-  left: 0;
-  bottom: -10px;
-  transition: 0.3s;
-}
-
-.btnEli:hover {
-  color: rgb(235, 23, 23);
-  font-size: 20px;
-  text-decoration: none;
-}
-
-.btnEli:hover::after {
-  width: 100%;
-  text-decoration: none;
-}
-
-.btnEdi {
+#btnAsignarDrogas {
   position: relative;
   text-decoration: none;
   color: rgb(70, 238, 92);
-  font-size: 18px;
+  font-size: 20px;
   letter-spacing: 0.5px;
 }
-
-.btnEdi::after {
-  content: "";
-  position: absolute;
-  background-color: #000000;
-  height: 3;
-  width: 0;
-  left: 0;
-  bottom: -10px;
-  transition: 0.3s;
-}
-
-.btnEdi:hover {
-  color: rgb(70, 238, 92);
-  font-size: 20px;
-  text-decoration: none;
-}
-
-.btnEdi:hover::after {
-  width: 100%;
-  text-decoration: none;
-}
-
-/** ============ btn agregar =========== */
 
 #btnAgregar {
-  position: static;
-  font-family: "Patua One", sans-serif;
+  position: relative;
   text-decoration: none;
-  background-color: #171a4a;
-  color: white;
-  font-size: 20px;
+  color: #f3d75a;
+  font-size: 25px;
   letter-spacing: 0.5px;
-  height: 80px;
-  width: 150px;
-  border: 1px solid #64c27b;
-  color: #ffec3d;
-  top: 0px;
-  border-bottom-right-radius: 10px;
 }
 
 #btnAgregar::after {
@@ -248,42 +153,31 @@ td span {
 }
 
 #btnAgregar:hover {
-  font-size: 23px;
+  font-size: 28px;
   text-decoration: none;
 }
 
-#btnAgregar:hover::after {
+#btnAsignarDrogas:hover::after {
   width: 100%;
   text-decoration: none;
 }
 
-/** ============ btn ver tarjetones =========== */
-
-#btnVistaGeneral {
-  margin-left: 5px;
-  border-top-left-radius: 10px;
-  border-bottom-left-radius: 10px;
-  border-top-right-radius: 10px;
-  margin-bottom: 10px;
+.correo {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 310px; /* Ajusta este valor según el ancho deseado para tu celda */
 }
 
-#btnVistaGeneral {
-  position: static;
-  font-family: "Patua One", sans-serif;
+#anchorPerros {
+  position: relative;
   text-decoration: none;
-  background-color: #171a4a;
-  color: white;
+  color: lightsalmon;
   font-size: 20px;
   letter-spacing: 0.5px;
-  height: 80px;
-  width: 150px;
-  border: 1px solid #64c27b;
-  color: #ccff7a;
-  top: 0px;
-  border-bottom-right-radius: 10px;
 }
 
-#btnVistaGeneral::after {
+#anchorPerros::after {
   content: "";
   position: absolute;
   background-color: #000000;
@@ -294,17 +188,39 @@ td span {
   transition: 0.3s;
 }
 
-#btnVistaGeneral:hover {
-  font-size: 22px;
+#anchorPerros:hover {
+  font-size: 23px;
   text-decoration: none;
 }
 
-#btnVistaGeneral:hover::after {
+#anchorPerros:hover::after {
   width: 100%;
   text-decoration: none;
 }
 
-#space2 {
+#btnAsignarDrogas::after {
+  content: "";
+  position: absolute;
+  background-color: #000000;
+  height: 3;
+  width: 0;
+  left: 0;
+  bottom: -10px;
+  transition: 0.3s;
+}
+
+#btnAsignarDrogas:hover {
+  font-size: 23px;
+  text-decoration: none;
+}
+
+#btnAsignarDrogas:hover::after {
   width: 100%;
-  height: 150px;
+  text-decoration: none;
+}
+
+#thCorreo {
+  display: flex;
+  text-align: center;
+  justify-content: center;
 }

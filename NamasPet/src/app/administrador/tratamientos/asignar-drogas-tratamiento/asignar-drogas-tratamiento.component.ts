@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router'; // Importa ActivatedRoute
+import { ActivatedRoute, Router } from '@angular/router'; // Importa ActivatedRoute
 import { Droga } from 'src/app/model/droga';
 import { DrogaService } from 'src/app/service/droga.service';
 import { TratamientoService } from 'src/app/service/tratamientos.service';
@@ -21,7 +21,8 @@ export class AsignarDrogasTratamientoComponent implements OnInit {
   constructor(
     private drogaService: DrogaService,
     private tratamientoService: TratamientoService,
-    private route: ActivatedRoute // Inyecta ActivatedRoute
+    private route: ActivatedRoute, // Inyecta ActivatedRoute
+    private router: Router
   ) {}
 
   ngOnInit(): void {
@@ -40,6 +41,7 @@ export class AsignarDrogasTratamientoComponent implements OnInit {
     this.drogaService.findById(this.formAsignacion.drogaId).subscribe(droga => {
       if (droga) {
         this.tratamientoService.agregarDrogaATratamiento(this.formAsignacion.tratamientoId, this.formAsignacion.drogaId);
+        this.router.navigate(['/drogas/all'])
       } else {
         console.log('Droga no encontrada');
       }

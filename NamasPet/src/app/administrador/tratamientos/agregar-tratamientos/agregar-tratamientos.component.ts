@@ -13,11 +13,9 @@ import { MascotaService } from 'src/app/service/mascota.service';
 @Component({
   selector: 'app-agregar-tratamientos',
   templateUrl: './agregar-tratamientos.component.html',
-  styleUrls: ['./agregar-tratamientos.component.css']
+  styleUrls: ['./agregar-tratamientos.component.css'],
 })
 export class AgregarTratamientosComponent implements OnInit {
-  
-
   sendtratamiento!: Tratamiento;
   drogasList: Droga[] = [];
   formTratamiento: Tratamiento = {
@@ -26,78 +24,73 @@ export class AgregarTratamientosComponent implements OnInit {
     precioC: 0.0,
     fecha: new Date(),
     droga: {
-        codigo: 0,
-        nombre: '',
-        precioV: 0,
-        precioC: 0,
-        unidades_C: 0,
-        unidades_V:0
+      codigo: 0,
+      nombre: '',
+      precioV: 0,
+      precioC: 0,
+      unidades_C: 0,
+      unidades_V: 0,
     },
     veterinario: {
-        id: 0,
-        nombre: '',
-        contrasena: '',
-        especialidad: '',
-        atenciones: 0,
-        foto: '',
-        activo: false,
+      id: 0,
+      nombre: '',
+      contrasena: '',
+      especialidad: '',
+      atenciones: 0,
+      foto: '',
+      activo: false,
     },
     perros: {
-        id: 0,
-        imagen: '',
-        nombre: '',
-        raza: '',
-        edad: 0,
-        actividad: false,
-        peso: 0.0,
-        numeroAtenciones: 0,
-        cedulaCliente: 0,
-    }
-
-  
-  
-};
-formVeterinario: Veterinario = {
-  id: 0,
-  nombre: '',
-  contrasena: '',
-  especialidad: '',
-  atenciones: 0,
-  foto: '',
-  activo: false,
-  tratamientos: []
-};
-
-formMascota: Mascota = {
-  id: 0,
-  imagen: '',
-  nombre: '',
-  raza: '',
-  edad: 0,
-  actividad: false,
-  peso: 0.0,
-  numeroAtenciones: 0,
-  cedulaCliente: 0,
-  cliente: {
-    cedula: 0,
+      id: 0,
+      imagen: '',
+      nombre: '',
+      raza: '',
+      edad: 0,
+      actividad: false,
+      peso: 0.0,
+      numeroAtenciones: 0,
+      cedulaCliente: 0,
+    },
+  };
+  formVeterinario: Veterinario = {
+    id: 0,
     nombre: '',
-    correo: '',
-    celular: 0,
     contrasena: '',
-    usuario: '',
-  },
-};
+    especialidad: '',
+    atenciones: 0,
+    foto: '',
+    activo: false,
+    tratamientos: [],
+  };
 
-formDroga: Droga = {
-  codigo: 0,
-  nombre: '',
-  precioV: 0,
-  precioC: 0,
-  unidades_C: 0,
-  unidades_V:0
-};
+  formMascota: Mascota = {
+    id: 0,
+    imagen: '',
+    nombre: '',
+    raza: '',
+    edad: 0,
+    actividad: false,
+    peso: 0.0,
+    numeroAtenciones: 0,
+    cedulaCliente: 0,
+    cliente: {
+      cedula: 0,
+      nombre: '',
+      correo: '',
+      celular: 0,
+      contrasena: '',
+      usuario: '',
+    },
+  };
 
-
+  formDroga: Droga = {
+    codigo: 0,
+    nombre: '',
+    precioV: 0,
+    precioC: 0,
+    unidades_C: 0,
+    unidades_V: 0,
+  };
 
   constructor(
     private tratamientoService: TratamientoService,
@@ -112,34 +105,38 @@ formDroga: Droga = {
   }
 
   loadDrogas() {
-    this.drogaService.findAll().subscribe(drogas => {
+    this.drogaService.findAll().subscribe((drogas) => {
       this.drogasList = drogas;
     });
   }
 
   onSubmit() {
-    console.log("dentro del on submit");
-    console.log("comprobar todos los id");
+    console.log('dentro del on submit');
+    console.log('comprobar todos los id');
     console.log(this.mascotaService.findById(this.formMascota.id));
     console.log(this.drogaService.findById(this.formDroga.codigo));
     console.log(this.veterinarioService.findById(this.formVeterinario.id));
-    
-    if (this.mascotaService.findById(this.formMascota.id) != null && this.drogaService.findById(this.formDroga.codigo) != null && this.veterinarioService.findById(this.formVeterinario.id) != null) {
-      console.log("dentro del if");
-      
+
+    if (
+      this.mascotaService.findById(this.formMascota.id) != null &&
+      this.drogaService.findById(this.formDroga.codigo) != null &&
+      this.veterinarioService.findById(this.formVeterinario.id) != null
+    ) {
+      console.log('dentro del if');
+
       console.log(this.formMascota.id);
       console.log(this.formDroga.codigo);
       console.log(this.formVeterinario.id);
       this.sendtratamiento = Object.assign({}, this.formTratamiento);
-      this.tratamientoService.addTratamiento(this.sendtratamiento,this.formMascota.id,this.formDroga.codigo,this.formVeterinario.id); 
-      this.router.navigate(['/tratamientos/all']);
+      this.tratamientoService.addTratamiento(
+        this.sendtratamiento,
+        this.formMascota.id,
+        this.formDroga.codigo,
+        this.formVeterinario.id
+      );
+      this.router.navigate(['/drogas/all']);
     } else {
       console.log('El cliente no existe');
-
-
     }
-    
   }
-  }
-  
-
+}

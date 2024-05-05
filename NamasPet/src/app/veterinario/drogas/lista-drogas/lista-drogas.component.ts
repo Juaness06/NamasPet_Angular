@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
-import { Droga } from '../../../model/droga';
-import { DrogaService } from 'src/app/service/droga.service';
 import { Tratamiento } from 'src/app/model/tratamiento';
+import { TratamientoService } from 'src/app/service/tratamientos.service';
 
 @Component({
   selector: 'app-lista-drogas',
@@ -9,16 +8,18 @@ import { Tratamiento } from 'src/app/model/tratamiento';
   styleUrls: ['./lista-drogas.component.css']
 })
 export class ListaDrogasComponent {
-  medicamentoList: Droga[] = [];
-  seleccionarMedicamento?: Droga;
 
-  constructor(private drogaService: DrogaService) {}
+  
+  medicamentoList: Tratamiento[] = [];
+  seleccionarMedicamento?: Tratamiento;
+
+  constructor(private tratamientoService: TratamientoService) {}
 
   ngOnInit(): void {
-    this.drogaService.findAll().subscribe((droga) => (this.medicamentoList = droga));
+    this.tratamientoService.findAll().subscribe((tratamientos) => (this.medicamentoList = tratamientos));
   }
 
-  mostrarMedicamento(droga: Droga): void {
-    this.seleccionarMedicamento = droga;
+  mostrarMedicamento(tratamiento: Tratamiento): void {
+    this.seleccionarMedicamento = tratamiento;
   }
 }
