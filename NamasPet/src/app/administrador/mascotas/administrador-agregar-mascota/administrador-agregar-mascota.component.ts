@@ -58,6 +58,7 @@ export class AdministradorAgregarMascotaComponent {
     if (this.clienteService.findById(this.formCliente.cedula) != null) {
       this.sendMascota = Object.assign({}, this.formMascota);
       this.sendCliente = Object.assign({}, this.formCliente);
+      console.log(this.sendMascota);
       this.mascotaService.agregarMascota(this.sendMascota,this.formCliente.cedula); 
       this.router.navigate(['/admin/mascotas/all']);
     } else {
