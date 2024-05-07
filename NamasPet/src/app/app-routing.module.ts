@@ -47,7 +47,7 @@ const routes: Routes = [
   {path: 'mascotas/edit/:id', component: EditarMascotasComponent},
   {path: 'clientes/all', component: ListaClientesComponent},
   {path: 'clientes/add', component: AgregarClientesComponent},
-  {path: 'cliente/edit/:cedula', component: EditarClientesComponent},
+  {path: 'clientes/edit/:cedula', component: EditarClientesComponent},
   {path: 'cliente/:cedula/mascotas', component: VerMascotasClienteComponent},
   {path: 'cliente/mascota/:id', component: VerMascotaClienteComponent},
   {path: 'login', component: LoginComponent},

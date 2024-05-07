@@ -30,15 +30,14 @@
             </thead>
             <tbody>
                 <tr *ngFor="let mascota of mascotasList">
-                    <td>{{ mascota.id }}</td>
+                    <td class="tdId">{{ mascota.id }}</td>
                     <td>{{ mascota.nombre }}</td>
                     <td>{{ mascota.raza }}</td>
                     <td>{{ mascota.edad }}</td>
                     <td>{{ mascota.actividad ? 'Activo' : 'Inactivo' }}</td>
                     <td>{{ mascota.peso }}</td>
                     <td>
-                        <img [src]="mascota.imagen" alt="Imagen de la mascota"
-                             style="max-width:100%; height:auto;">
+                        <img [src]="mascota.imagen" alt="Imagen de la mascota" style="max-width:100%; height:auto;">
                     </td>
                     <td>{{ mascota.numeroAtenciones }}</td>
                     <td id="tdEliminarEditar">
