@@ -7,18 +7,17 @@
         <h1 id="titulo">MASCOTAS</h1>
     </div>
     <div id="spaceInvisible">
+        <input type="text" id="searchBar" placeholder="Buscar mascota..." [(ngModel)]="filtro" (keyup)="filtrarMascotas()">
     </div>
 </section>
 
-<section class="sectionTarjetones"> <!-- Aquí se contienen todos los tarjetones -->
+<section class="sectionTarjetones">
     <div class="divTarjetones">
-        <a class="btnTarjeton" *ngFor="let mascota of mascotasList" [routerLink]="['/mascotas/', mascota.id]" >
+        <a class="btnTarjeton" *ngFor="let mascota of mascotasFiltradas" [routerLink]="['/mascotas/', mascota.id]" >
             <div class="card" >
-                <div class="card-image-container" (click)="mostrarMascota(mascota.id)"> <!-- Aquí se muestra la imagen de la mascota -->
-                    <!-- Uso de [src] para vincular dinámicamente la propiedad de imagen de la mascota -->
+                <div class="card-image-container" (click)="mostrarMascota(mascota.id)">
                     <img [src]="mascota.imagen" alt="Imagen de la mascota">
                 </div>
-                <!-- Uso de interpolación {{ }} para mostrar el nombre y el dueño de la mascota -->
                 <p class="card-title">{{ mascota.nombre }}</p>
             </div>
         </a>
