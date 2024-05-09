@@ -47,11 +47,27 @@ export class EditarMascotasComponent {
     this.route.paramMap.subscribe((params) => {
       const id = Number(params.get('id'));
       if (id) {
+        // Buscar la información de la mascota
         this.mascotaService.findById(id).subscribe(
           (mascotaInformacion) => {
             this.formMascota = { ...mascotaInformacion };
-            // Suponiendo que el cliente está vinculado en la información de la mascota
-            this.formCliente = mascotaInformacion.cliente || this.formCliente;
+            // Supongamos que el cliente está vinculado en la información de la mascota
+            if (mascotaInformacion.cedulaCliente) {
+              this.formMascota.cedulaCliente = mascotaInformacion.cedulaCliente;
+              // Buscar la información del cliente
+              this.mascotaService.findClientePerro(mascotaInformacion.id).subscribe(
+                (mascotasCliente) => {
+                  if (mascotasCliente.length > 0) {
+                    // Suponemos que todas las mascotas tienen el mismo cliente, así que tomamos el primero
+                    this.formCliente = mascotasCliente[0].cliente || this.formCliente;
+                  }
+                },
+                (error) => {
+                  console.error('Error al buscar las mascotas del cliente:', error);
+                  // Manejo adecuado del error, posiblemente reasignando a valores por defecto o mostrando un mensaje al usuario.
+                }
+              );
+            }
           },
           (error) => {
             console.error('Error al buscar la mascota:', error);

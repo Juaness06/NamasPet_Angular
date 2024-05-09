@@ -40,8 +40,10 @@ export class ListaMascotasComponent implements OnInit, OnDestroy {
 
 
   eliminarMascota(mascota: Mascota): void {
-    this.mascotasList = this.mascotasList.filter((m) => m !== mascota);
     this.mascotaService.eliminarMascota(mascota.id);
+    alert(mascota.nombre + ' cambio de estado');
+    //recorgar la pagina
+    window.location.reload();
   }
 
   mostrarFormulario(): void {
