@@ -62,8 +62,10 @@ export class ListaVeterinariosComponent implements OnInit  {
   }
 
   eliminarVeterinario(cliente: Veterinario): void {
-    this.veterinariosList = this.veterinariosList.filter((m) => m !== cliente);
     this.veterinarioService.eliminarCliente(cliente.id);
+    alert(cliente.nombre + ' cambio de estado');
+    //recorgar la pagina
+    window.location.reload();
   }
 
   mostrarFormulario(): void {
